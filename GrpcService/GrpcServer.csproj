@@ -12,7 +12,7 @@
 		<PackageReference Include="Grpc.AspNetCore" Version="2.32.0" />
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\Lib\AutorizeUserLib\AutorizeUserLib.csproj" />
+		<ProjectReference Include="..\Lib\BackEnd\AutorizeUserLib\AutorizeUserLib.csproj" />
 		<ProjectReference Include="..\Lib\CommonValueLib\CommonValueLib.csproj" />
 	</ItemGroup>
 

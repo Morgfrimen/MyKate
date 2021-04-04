@@ -19,7 +19,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\AutorizeUserLib\AutorizeUserLib.csproj" />
+	  <ProjectReference Include="..\..\BackEnd\AutorizeUserLib\AutorizeUserLib.csproj" />
 	</ItemGroup>
 
 </Project>

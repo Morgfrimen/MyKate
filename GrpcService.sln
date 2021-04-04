@@ -13,9 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp", "Frontend\WpfApp\W
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{4544EF2E-C007-4570-ABB7-D113C5AF06B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcProtoClient", "Lib\GrpcProto\GrpcProtoClient.csproj", "{4CB46F71-4A63-4205-994A-9E4B75209676}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcProtoClient", "Lib\FrontEnd\GrpcProto\GrpcProtoClient.csproj", "{4CB46F71-4A63-4205-994A-9E4B75209676}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutorizeUserLib", "Lib\AutorizeUserLib\AutorizeUserLib.csproj", "{0898E671-E34B-4BF1-9810-B9035BDA627E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutorizeUserLib", "Lib\BackEnd\\AutorizeUserLib\AutorizeUserLib.csproj", "{0898E671-E34B-4BF1-9810-B9035BDA627E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonValueLib", "Lib\CommonValueLib\CommonValueLib.csproj", "{2727C652-B2C3-435E-89A8-41A55A2F2435}"
 EndProject
