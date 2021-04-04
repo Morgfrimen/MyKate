@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "Autorize";
+
+package autorize;
+
+//Пока что только один байт, по хорошему тут шифрование должно быть
+message Token {
+    int32 role = 1;
+}
+
+message RequestAutorize{
+    Token token = 1;
+}
+
+message ResponseAutorize{
+    bool result = 1;
+}
+
+service Autorize{
+    rpc AutorizedUser (RequestAutorize) returns (ResponseAutorize);
+}
+
+//TODO: Нужны ли остальные поля?
