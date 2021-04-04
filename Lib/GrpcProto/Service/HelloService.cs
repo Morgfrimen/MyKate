@@ -1,10 +1,10 @@
-﻿using Grpc.Core;
+﻿using System.Threading.Tasks;
+
+using Grpc.Core;
 
 using GrpcService;
 
-using System.Threading.Tasks;
-
-namespace GrpcProto.Service
+namespace GrpcProtoClient.Service
 {
 	public class HelloService : Greeter.GreeterClient
 	{

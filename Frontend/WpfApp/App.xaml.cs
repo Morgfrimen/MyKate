@@ -1,8 +1,8 @@
 ﻿using Grpc.Net.Client;
 
-using GrpcProto.Service;
-
 using System.Windows;
+
+using GrpcProtoClient.Service;
 
 namespace WpfApp
 {
