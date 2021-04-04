@@ -7,12 +7,15 @@
 	<ItemGroup>
 		<Protobuf Include="$(SolutionDir)Profobuff\greet.proto" GrpcServices="Server" />
 		<Protobuf Include="$(SolutionDir)Profobuff\Autorize.proto" GrpcServices="Server" />
+		<Protobuf Include="$(SolutionDir)Profobuff\Table.proto" GrpcServices="Server" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Grpc.AspNetCore" Version="2.32.0" />
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\Lib\AutorizeUserLib\AutorizeUserLib.csproj" />
+		<ProjectReference Include="..\Lib\BackEnd\AutorizeUserLib\AutorizeUserLib.csproj" />
+		<ProjectReference Include="..\Lib\BackEnd\CacheBackendGrpcServer\CacheBackendGrpcServer.csproj" />
+		<ProjectReference Include="..\Lib\CommonModels\CommonModels.csproj" />
 		<ProjectReference Include="..\Lib\CommonValueLib\CommonValueLib.csproj" />
 	</ItemGroup>
 

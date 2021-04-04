@@ -4,6 +4,8 @@ using Autorize;
 
 using Grpc.Net.Client;
 
+using Table;
+
 namespace GrpcProtoClient
 {
     public sealed class Broker
@@ -11,6 +13,7 @@ namespace GrpcProtoClient
 #region Fields
 
         private Autorize.Autorize.AutorizeClient _autorizedClient;
+        private Table.TableService.TableServiceClient _tableServiceClient;
 
 #endregion
 
@@ -34,6 +37,20 @@ namespace GrpcProtoClient
             _autorizedClient ??= new Autorize.Autorize.AutorizeClient(Channel);
 
             return await _autorizedClient.AutorizedUserAsync(request, default);
+        }
+
+        public async Task<GetTableValueResponse> TableServiceAsync(GetTableValueRequest request)
+        {
+            _tableServiceClient ??= new TableService.TableServiceClient(Channel);
+
+            return await _tableServiceClient.GetTableValueAsync(request,default);
+        }
+
+        public async Task<TableResponse> TableChangeValueAsync(TableRequest request)
+        {
+            _tableServiceClient ??= new TableService.TableServiceClient(Channel);
+
+            return await _tableServiceClient.ChangeTableValueAsync(request, default);
         }
 
         public static Broker GetBroker(GrpcChannel channel) => Instanse ??= new Broker(channel);
