@@ -8,6 +8,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\Lib\GrpcProto\GrpcProtoClient.csproj" />
+		<ProjectReference Include="..\..\Lib\GrpcProto\GrpcProtoClient.csproj" />
 	</ItemGroup>
 </Project>

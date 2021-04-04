@@ -1,4 +1,4 @@
-﻿using GrpcService;
+﻿using GrpcProtoClient.Service;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -8,28 +8,31 @@ using Microsoft.Extensions.Hosting;
 
 namespace GrpcServer
 {
-	public class Startup
-	{
-		// This method gets called by the runtime. Use this method to add services to the container.
-		// For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-		public void ConfigureServices(IServiceCollection services) => services.AddGrpc();
+    public class Startup
+    {
+#region Methods
 
-		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-		{
-			if (env.IsDevelopment())
-			{
-				_ = app.UseDeveloperExceptionPage();
-			}
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+                _ = app.UseDeveloperExceptionPage();
+            _ = app.UseRouting();
+            _ = app.UseEndpoints
+                (
+                 endpoints =>
+                 {
+                     _ = endpoints.MapGrpcService<AutorizeUserService>();
+                     _ = endpoints.MapGet
+                         ("/", async context => await context.Response.WriteAsync("Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909"));
+                 }
+                );
+        }
 
-			_ = app.UseRouting();
+        // This method gets called by the runtime. Use this method to add services to the container.
+        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+        public void ConfigureServices(IServiceCollection services) => services.AddGrpc();
 
-			_ = app.UseEndpoints(endpoints =>
-			  {
-				  _ = endpoints.MapGrpcService<Greeter.GreeterBase>();
-
-				  _ = endpoints.MapGet("/", async context => await context.Response.WriteAsync("Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909"));
-			  });
-		}
-	}
+#endregion
+    }
 }
