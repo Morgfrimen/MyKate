@@ -16,8 +16,7 @@ namespace AutorizeUserLib
 
         public Autorized(int statusUser)
         {
-            if (Enum.TryParse(typeof(UserToken), statusUser.ToString(), true, out object value) && value is UserToken token)
-                _userToken = token;
+            if (Enum.TryParse(typeof(UserToken), statusUser.ToString(), true, out object value) && value is UserToken token) _userToken = token;
 
             //TODO: Logger
         }

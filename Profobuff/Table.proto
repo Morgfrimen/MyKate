@@ -14,13 +14,14 @@ message TableRequest{
     string value = 4;
 }
 
+enum ResponseType{
+    RESPONSE_OK = 0;
+    RESPONSE_USERERROR = 1;
+    RESPONSE_SERVERERROR = 2;
+    RESPONSE_BAD_REQUEST = 3;
+}
+
 message TableResponse{
-    enum ResponseType{
-        RESPONSE_OK = 0;
-        RESPONSE_USERERROR = 1;
-        RESPONSE_SERVERERROR = 2;
-        RESPONSE_BAD_REQUEST = 3;
-    }
     ResponseType responseType = 1;
     uint32 rowTable = 2;
     uint32 columnIndex = 3;
@@ -33,7 +34,8 @@ message GetTableValueRequest{
 }
 
 message GetTableValueResponse{
-    string value = 1;
+    ResponseType responseType = 1;
+    string value = 2;
 }
 
 service TableService{

@@ -3,21 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31025.218
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcServer", "GrpcService\GrpcServer.csproj", "{86EA2008-CAEB-4D3E-A421-1215447AF9C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcServer", "GrpcService\GrpcServer.csproj", "{86EA2008-CAEB-4D3E-A421-1215447AF9C0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{471B2029-F665-4DEC-8AEF-33CCD76AD7A0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{6C9AC48B-5B46-46BA-99C3-80EA99A6AD70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp", "Frontend\WpfApp\WpfApp.csproj", "{4D8654BD-C8D5-4251-985E-3EBCD4D44918}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp", "Frontend\WpfApp\WpfApp.csproj", "{4D8654BD-C8D5-4251-985E-3EBCD4D44918}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{4544EF2E-C007-4570-ABB7-D113C5AF06B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcProtoClient", "Lib\FrontEnd\GrpcProto\GrpcProtoClient.csproj", "{4CB46F71-4A63-4205-994A-9E4B75209676}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcProtoClient", "Lib\FrontEnd\GrpcProto\GrpcProtoClient.csproj", "{4CB46F71-4A63-4205-994A-9E4B75209676}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutorizeUserLib", "Lib\BackEnd\\AutorizeUserLib\AutorizeUserLib.csproj", "{0898E671-E34B-4BF1-9810-B9035BDA627E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutorizeUserLib", "Lib\BackEnd\AutorizeUserLib\AutorizeUserLib.csproj", "{0898E671-E34B-4BF1-9810-B9035BDA627E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonValueLib", "Lib\CommonValueLib\CommonValueLib.csproj", "{2727C652-B2C3-435E-89A8-41A55A2F2435}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonValueLib", "Lib\CommonValueLib\CommonValueLib.csproj", "{2727C652-B2C3-435E-89A8-41A55A2F2435}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonModels", "Lib\CommonModels\CommonModels.csproj", "{116E7F75-00EA-4297-9915-E8DB538FE721}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheBackendGrpcServer", "Lib\BackEnd\CacheBackendGrpcServer\CacheBackendGrpcServer.csproj", "{16BDDBA6-0B7D-4875-A21F-C90100535E09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{2727C652-B2C3-435E-89A8-41A55A2F2435}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2727C652-B2C3-435E-89A8-41A55A2F2435}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2727C652-B2C3-435E-89A8-41A55A2F2435}.Release|Any CPU.Build.0 = Release|Any CPU
+		{116E7F75-00EA-4297-9915-E8DB538FE721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{116E7F75-00EA-4297-9915-E8DB538FE721}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{116E7F75-00EA-4297-9915-E8DB538FE721}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{116E7F75-00EA-4297-9915-E8DB538FE721}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16BDDBA6-0B7D-4875-A21F-C90100535E09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16BDDBA6-0B7D-4875-A21F-C90100535E09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16BDDBA6-0B7D-4875-A21F-C90100535E09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16BDDBA6-0B7D-4875-A21F-C90100535E09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +67,8 @@ Global
 		{4CB46F71-4A63-4205-994A-9E4B75209676} = {4544EF2E-C007-4570-ABB7-D113C5AF06B0}
 		{0898E671-E34B-4BF1-9810-B9035BDA627E} = {4544EF2E-C007-4570-ABB7-D113C5AF06B0}
 		{2727C652-B2C3-435E-89A8-41A55A2F2435} = {4544EF2E-C007-4570-ABB7-D113C5AF06B0}
+		{116E7F75-00EA-4297-9915-E8DB538FE721} = {4544EF2E-C007-4570-ABB7-D113C5AF06B0}
+		{16BDDBA6-0B7D-4875-A21F-C90100535E09} = {471B2029-F665-4DEC-8AEF-33CCD76AD7A0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B90C675C-3255-404F-B1CF-51CBC6ADA926}
