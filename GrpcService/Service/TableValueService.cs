@@ -77,8 +77,10 @@ namespace GrpcProtoClient.Service
                 {
                     if (!CacheTableValue.GetCache()
                                      .AddCell(tableModel))
-                        throw new Exception("Ошибка добавления элемента в список");
-                }
+					{
+						throw new Exception("Ошибка добавления элемента в список");
+					}
+				}
                 else
                 {
                     IList<TableValueModel> list = CacheTableValue.GetCache()
