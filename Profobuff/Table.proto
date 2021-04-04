@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package Table;
+
+message TableRequest{
+    enum UserType{
+        Admin = 0;
+        User = 1;
+        Unknown = 2;
+    }
+    UserType userType = 1;
+    uint32 rowTable = 2;
+    uint32 columnIndex = 3;
+    string value = 4;
+}
+
+message TableResponse{
+    enum ResponseType{
+        RESPONSE_OK = 0;
+        RESPONSE_USERERROR = 1;
+        RESPONSE_SERVERERROR = 2;
+        RESPONSE_BAD_REQUEST = 3;
+    }
+    ResponseType responseType = 1;
+    uint32 rowTable = 2;
+    uint32 columnIndex = 3;
+    string value = 4;
+}
+
+message GetTableValueRequest{
+    uint32 rowTable = 1;
+    uint32 columnIndex = 2;
+}
+
+message GetTableValueResponse{
+    string value = 1;
+}
+
+service TableService{
+    rpc ChangeTableValue (TableRequest) returns (TableResponse) {}
+    rpc GetTableValue (GetTableValueRequest) returns (GetTableValueResponse) {}
+}
