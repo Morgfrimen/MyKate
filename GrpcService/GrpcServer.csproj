@@ -5,7 +5,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Protobuf Include="$(SolutionDir)Profobuff\greet.proto" GrpcServices="Server" />
 		<Protobuf Include="$(SolutionDir)Profobuff\Autorize.proto" GrpcServices="Server" />
 		<Protobuf Include="$(SolutionDir)Profobuff\Table.proto" GrpcServices="Server" />
 	</ItemGroup>

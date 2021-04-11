@@ -12,7 +12,7 @@ using Grpc.Core;
 
 using Table;
 
-namespace GrpcProtoClient.Service
+namespace GrpcServer.Service
 {
     public sealed class TableValueService : TableService.TableServiceBase
     {

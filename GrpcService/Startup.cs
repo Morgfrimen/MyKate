@@ -1,4 +1,4 @@
-﻿using GrpcProtoClient.Service;
+﻿using GrpcServer.Service;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

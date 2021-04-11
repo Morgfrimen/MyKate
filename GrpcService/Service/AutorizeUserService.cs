@@ -9,7 +9,7 @@ using CommonValueLib;
 
 using Grpc.Core;
 
-namespace GrpcProtoClient.Service
+namespace GrpcServer.Service
 {
     public sealed class AutorizeUserService : Autorize.Autorize.AutorizeBase
     {
