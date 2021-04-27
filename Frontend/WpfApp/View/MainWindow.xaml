@@ -3,14 +3,27 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:WpfApp.ViewModels"
         mc:Ignorable="d"
+   
+       
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel>
-            <TextBlock Text="Тест" />
-            <TextBox x:Name="TextBoxName" Text="Имя" />
-            <Button Content="Отправить запрос" />
-            <TextBlock x:Name="TextBlockResponse" Text="Резултат запроса" />
-        </StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <StatusBar Grid.Row="2">
+            <StatusBar.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </StatusBar.ItemsPanel>
+            <StatusBarItem>
+                <TextBlock Text="{Binding ConnectionStatus}"/>
+            </StatusBarItem>
+        </StatusBar>
     </Grid>
 </Window>

@@ -1,8 +1,8 @@
 syntax = "proto3";
  
-option csharp_namespace = "Test";
+option csharp_namespace = "Connection";
  
-package test;
+package ConnectionCheck;
 
 service TestConnection{
     rpc SayHello (HelloRequest) returns (HellResponce);

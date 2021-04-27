@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Windows;
 
-using Test;
+//using Test;
 
-using Grpc.Net.Client;
+//using Grpc.Net.Client;
+
+using WpfApp.View;
+using WpfApp.ViewModels;
 
 namespace WpfApp
 {
@@ -12,24 +15,28 @@ namespace WpfApp
     /// </summary>
     public partial class App : Application
     {
-#region Overrides of Application
+        private static string ConnectionStatus { get; set; }
 
-        protected override async void OnActivated(EventArgs e)
+        private async void App_OnStartup(object sender, StartupEventArgs e)
         {
-            base.OnActivated(e);
-            try
-            {
-                using var chanel = GrpcChannel.ForAddress("https://localhost:5001");
-                var test = new TestConnection.TestConnectionClient(chanel);
-                var response = await test.SayHelloAsync(new HelloRequest() { Name = "Тест успешен" });
-                MessageBox.Show($"Ответ от сервера:{response.Message}");
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show($"Ответ от сервера:{exception.Message}");
-            }
-        }
+            //try
+            //{
+            //    using var chanel = GrpcChannel.ForAddress("https://localhost:5001");
+            //    var test = new TestConnection.TestConnectionClient(chanel);
+            //    var response = await test.SayHelloAsync(new() { Name = "Тест успешен" });
+            //    ConnectionStatus = response.Message;
 
-#endregion
+
+            //}
+            //catch (Exception)
+            //{
+            //    ConnectionStatus = "Соединение не установленно"; //TODO: Resource
+            //}
+            MainWindow main = new()
+            {
+                DataContext = new MainWindowViewModels() { ConnectionStatus = ConnectionStatus }
+            };
+            main.Show();
+        }
     }
 }

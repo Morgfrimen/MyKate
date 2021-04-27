@@ -1,12 +1,12 @@
 ﻿using System.Threading.Tasks;
 
-using Grpc.Core;
+using Connection;
 
-using Test;
+using Grpc.Core;
 
 namespace GrpcService.Service
 {
-    public sealed class TestConnectionService : Test.TestConnection.TestConnectionBase
+    public sealed class TestConnectionService : Connection.TestConnection.TestConnectionBase
     {
 #region Overrides of TestConnectionBase
 
