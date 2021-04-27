@@ -11,8 +11,8 @@ namespace DbConnectionLib
     {
         public ContextDb()
         {
-            _ = Database.EnsureCreated();
             GetStringConnection();
+            _ = Database.EnsureCreated();
         }
 
         private string Connection { get; set; }

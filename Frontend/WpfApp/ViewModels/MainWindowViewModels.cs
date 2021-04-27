@@ -13,5 +13,13 @@
                 OnPropertyChanged(nameof(ConnectionStatus));
             }
         }
+
+        private readonly string _userStatus;
+
+        public string UserStatus
+        {
+            get => _userStatus;
+            init => _userStatus = value;
+        }
     }
 }

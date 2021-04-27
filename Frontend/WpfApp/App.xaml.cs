@@ -15,12 +15,26 @@ namespace WpfApp
         private async void App_OnStartup(object sender, StartupEventArgs e)
         {
             ConnectionServiceClient client = new();
+            UserServiceClient userService = new();
             MainWindow main = new()
             {
                 DataContext = new MainWindowViewModels
-                    {ConnectionStatus = await client.ConnectionCheck()}
+                {
+                    ConnectionStatus = await client.ConnectionCheck(),
+                    UserStatus = (await userService.GetStatusUser()).ToString("G")
+                }
             };
             main.Show();
         }
+
+#region Overrides of Application
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            Core.CloseChannel();
+            base.OnExit(e);
+        }
+
+#endregion
     }
 }

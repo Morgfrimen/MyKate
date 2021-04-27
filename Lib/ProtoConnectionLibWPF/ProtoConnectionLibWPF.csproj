@@ -11,12 +11,16 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
+		<PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
 	</ItemGroup>
 
 
 	<ItemGroup>
 		<Protobuf Include="$(SolutionDir)Lib\Proto\TestConnection.proto" GrpcServices="Client">
 			<Link>Proto\TestConnection.proto</Link>
+		</Protobuf>
+		<Protobuf Include="$(SolutionDir)Lib\Proto\Users.proto" GrpcServices="Client">
+			<Link>Proto\Users.proto</Link>
 		</Protobuf>
 	</ItemGroup>
 

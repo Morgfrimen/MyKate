@@ -18,7 +18,7 @@ namespace ProtoConnectionLibWPF
         {
             try
             {
-                using GrpcChannel chanel = GrpcChannel.ForAddress("https://localhost:5001");
+                GrpcChannel chanel = Cache.ChannelServer;
                 TestConnection.TestConnectionClient test = new(chanel);
                 HellResponce response = await test.SayHelloAsync(new());
                 _connectionStatus = response.Status
