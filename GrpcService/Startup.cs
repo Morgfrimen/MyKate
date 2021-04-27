@@ -1,4 +1,6 @@
-﻿using GrpcService.Service;
+﻿using DbConnectionLib;
+
+using GrpcService.Service;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,7 +14,11 @@ namespace GrpcService
     {
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-        public void ConfigureServices(IServiceCollection services) => services.AddGrpc();
+        public void ConfigureServices(IServiceCollection services)
+        {
+            _ = services.AddGrpc();
+            _ = services.AddDbContext<ContextDb>();
+        }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -23,7 +29,8 @@ namespace GrpcService
             (
                 endpoints =>
                 {
-                    _ = endpoints.MapGrpcService<GrpcService.Service.TestConnectionService>();
+                    _ = endpoints.MapGrpcService<TestConnectionService>();
+                    _ = endpoints.MapGrpcService<UsersService>();
                     _ = endpoints.MapGet
                     (
                         "/",

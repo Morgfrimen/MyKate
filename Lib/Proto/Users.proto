@@ -1,0 +1,21 @@
+syntax = "proto3";
+ 
+option csharp_namespace = "Users";
+ 
+
+
+service GetUserService{
+    rpc UserAutorize (UserRequest) returns (UserResponce);
+}
+
+message UserRequest {
+    string guid = 1;
+  }
+
+message UserResponce{    
+    enum StatusUser{
+        Admin = 0;
+        User = 1;
+    }
+    StatusUser status = 1;
+}

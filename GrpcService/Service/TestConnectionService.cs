@@ -6,13 +6,13 @@ using Grpc.Core;
 
 namespace GrpcService.Service
 {
-    public sealed class TestConnectionService : Connection.TestConnection.TestConnectionBase
+    public sealed class TestConnectionService : TestConnection.TestConnectionBase
     {
 #region Overrides of TestConnectionBase
 
         public override Task<HellResponce> SayHello(HelloRequest request, ServerCallContext context)
         {
-            var response = new HellResponce() {Message = "Соеденение есть"};
+            HellResponce response = new() {Status = true};
 
             return Task.FromResult(response);
         }

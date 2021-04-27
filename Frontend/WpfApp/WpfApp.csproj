@@ -7,26 +7,15 @@
 		<StartupObject>WpfApp.App</StartupObject>
 	</PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Google.Protobuf" Version="3.15.8" />
-		<PackageReference Include="Grpc.Net.Client" Version="2.37.0" />
-		<PackageReference Include="Grpc.Tools" Version="2.37.0">
-		  <PrivateAssets>all</PrivateAssets>
-		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-	</ItemGroup>
-
+	
 
 	<ItemGroup>
-		<Protobuf Include="$(SolutionDir)Lib\Proto\TestConnection.proto" GrpcServices="Client">
-			<Link>Proto\TestConnection.proto</Link>
-		</Protobuf>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Proto\" />
 	  <Folder Include="Models\" />
 	  <Folder Include="Core\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Lib\ProtoConnectionLibWPF\ProtoConnectionLibWPF.csproj" />
 	</ItemGroup>
 
 </Project>

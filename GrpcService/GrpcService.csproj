@@ -6,14 +6,21 @@
 
 	<ItemGroup>
 		<Protobuf Include="$(SolutionDir)Lib\Proto\TestConnection.proto" GrpcServices="Server">
-		  <Link>Proto\TestConnection.proto</Link>
+			<Link>Proto\TestConnection.proto</Link>
+		</Protobuf>
+		<Protobuf Include="$(SolutionDir)Lib\Proto\Users.proto" GrpcServices="Server">
+			<Link>Proto\Users.proto</Link>
 		</Protobuf>
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Grpc.AspNetCore" Version="2.32.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.5" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="Proto\" />
+		<Folder Include="Proto\" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\BackendLib\DbConnectionLib\DbConnectionLib.csproj" />
 	</ItemGroup>
 
 </Project>
