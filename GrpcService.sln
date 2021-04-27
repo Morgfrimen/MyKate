@@ -13,6 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp", "Frontend\WpfApp\W
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{4544EF2E-C007-4570-ABB7-D113C5AF06B0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Proto", "Proto", "{DC9ED86E-56F2-4101-AA54-F32E31F52543}"
+	ProjectSection(SolutionItems) = preProject
+		TestConnection.proto = TestConnection.proto
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +39,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{86EA2008-CAEB-4D3E-A421-1215447AF9C0} = {471B2029-F665-4DEC-8AEF-33CCD76AD7A0}
 		{4D8654BD-C8D5-4251-985E-3EBCD4D44918} = {6C9AC48B-5B46-46BA-99C3-80EA99A6AD70}
+		{DC9ED86E-56F2-4101-AA54-F32E31F52543} = {4544EF2E-C007-4570-ABB7-D113C5AF06B0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B90C675C-3255-404F-B1CF-51CBC6ADA926}

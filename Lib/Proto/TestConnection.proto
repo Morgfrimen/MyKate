@@ -1,0 +1,17 @@
+syntax = "proto3";
+ 
+option csharp_namespace = "Test";
+ 
+package test;
+
+service TestConnection{
+    rpc SayHello (HelloRequest) returns (HellResponce);
+}
+
+message HelloRequest {
+    string name = 1;
+  }
+
+message HellResponce{
+    string message = 1;
+}
