@@ -11,13 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{6C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp", "Frontend\WpfApp\WpfApp.csproj", "{4D8654BD-C8D5-4251-985E-3EBCD4D44918}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{4544EF2E-C007-4570-ABB7-D113C5AF06B0}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Proto", "Proto", "{DC9ED86E-56F2-4101-AA54-F32E31F52543}"
-	ProjectSection(SolutionItems) = preProject
-		TestConnection.proto = TestConnection.proto
-	EndProjectSection
-EndProject
+
+
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProtoLibConnection", "ProtoLibConnection", "{71F7FBB4-3202-4C73-A392-DE87C7A30EA3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtoConnectionLibWPF", "Lib\ProtoConnectionLibWPF\ProtoConnectionLibWPF.csproj", "{33471681-CA2D-4707-AFB9-16DFB739D75E}"
