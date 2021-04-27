@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /BackendLib/DbConnectionLib/ConnectionString.txt
 /GrpcService/ConnectionString.txt
+/BackendLib/DbConnectionLib/Migrations

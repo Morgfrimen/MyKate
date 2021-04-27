@@ -16,7 +16,11 @@ namespace GrpcService.Service
     {
         private ContextDb ContextDb { get; }
 
-        public UsersService(ContextDb contextDb) => ContextDb = contextDb;
+        public UsersService(ContextDb contextDb)
+        {
+            ContextDb = contextDb;
+            ContextDb.DefaultDbSetMuvo();
+        }
 
 #region Overrides of GetUserServiceBase
 

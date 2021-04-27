@@ -1,14 +1,17 @@
 ﻿using System.Configuration;
 using System.IO;
+using System.Linq;
 
 using DbConnectionLib.Models;
 
 using Microsoft.EntityFrameworkCore;
 
+
 namespace DbConnectionLib
 {
     public sealed class ContextDb : DbContext
     {
+        private const int MaxDefaultMuvo = 7;
         public ContextDb()
         {
             GetStringConnection();
@@ -17,6 +20,7 @@ namespace DbConnectionLib
 
         private string Connection { get; set; }
         public DbSet<Admin> Admins { get; set; }
+        public DbSet<Muvo> Muvos { get; set; }
 
 #region Overrides of DbContext
 
@@ -24,6 +28,18 @@ namespace DbConnectionLib
             optionsBuilder.UseSqlServer(Connection);
 
 #endregion
+
+        public void DefaultDbSetMuvo()
+        {
+            if(Muvos.Any()) return;
+
+            for (int index = 0; index < MaxDefaultMuvo; index++)
+            {
+                Muvos.Add(new() {Name = $"МУВО{index + 1}"});
+            }
+
+            SaveChanges();
+        }
 
         private void GetStringConnection()
         {
