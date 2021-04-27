@@ -26,6 +26,8 @@
 
 	<ItemGroup>
 	  <Folder Include="Proto\" />
+	  <Folder Include="ViewModels\" />
+	  <Folder Include="Models\" />
 	</ItemGroup>
 
 	<ItemGroup>
