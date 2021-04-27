@@ -4,7 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModels="clr-namespace:WpfApp.ViewModels"
+        xmlns:page="clr-namespace:WpfApp.View"
         mc:Ignorable="d"
+        MinHeight="450"
+        MinWidth="650"
+        FontSize="16"
         d:DataContext="{d:DesignInstance viewModels:MainWindowViewModels}"
 
 
@@ -15,6 +19,28 @@
             <RowDefinition Height="80*" />
             <RowDefinition Height="10*" />
         </Grid.RowDefinitions>
+
+
+        <ItemsControl Grid.Row="1" ItemsSource="{Binding MuvoList}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" 
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="1" CornerRadius="15"
+                            Margin="10,5">
+                        <Button Padding="10,5">
+                            <ContentControl VerticalAlignment="Center" HorizontalAlignment="Center" Content="{Binding }"/>
+                        </Button>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
 
         <StatusBar Grid.Row="2" VerticalContentAlignment="Center">
             <StatusBar.ItemsPanel>

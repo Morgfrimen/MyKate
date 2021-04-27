@@ -21,5 +21,13 @@
             get => _userStatus;
             init => _userStatus = value;
         }
+
+        private readonly string[] _muvoList;
+
+        public string[] MuvoList
+        {
+            get => _muvoList;
+            init => _muvoList = value;
+        }
     }
 }

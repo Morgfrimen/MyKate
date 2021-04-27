@@ -1,0 +1,19 @@
+syntax = "proto3";
+ 
+option csharp_namespace = "Muvo";
+ 
+
+
+service GetListMuvoService{
+    rpc MuvoList (MuvoListRequest) returns (MuvoListResponce);
+}
+
+message MuvoListRequest {
+  }
+
+message MuvoListResponce{    
+    message array{
+        string nameMuvo = 1;
+    }
+    repeated array arrays = 1;
+}

@@ -11,6 +11,9 @@
 		<Protobuf Include="$(SolutionDir)Lib\Proto\Users.proto" GrpcServices="Server">
 			<Link>Proto\Users.proto</Link>
 		</Protobuf>
+		<Protobuf Include="$(SolutionDir)Lib\Proto\Muvo.proto" GrpcServices="Server">
+			<Link>Proto\Muvo.proto</Link>
+		</Protobuf>
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Grpc.AspNetCore" Version="2.32.0" />

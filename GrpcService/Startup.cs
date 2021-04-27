@@ -31,6 +31,7 @@ namespace GrpcService
                 {
                     _ = endpoints.MapGrpcService<TestConnectionService>();
                     _ = endpoints.MapGrpcService<UsersService>();
+                    _ = endpoints.MapGrpcService<MuvoService>();
                     _ = endpoints.MapGet
                     (
                         "/",

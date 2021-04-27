@@ -16,12 +16,14 @@ namespace WpfApp
         {
             ConnectionServiceClient client = new();
             UserServiceClient userService = new();
+            MuvoServiceClient muvo = new();
             MainWindow main = new()
             {
                 DataContext = new MainWindowViewModels
                 {
                     ConnectionStatus = await client.ConnectionCheck(),
-                    UserStatus = (await userService.GetStatusUser()).ToString("G")
+                    UserStatus = (await userService.GetStatusUser()).ToString("G"),
+                    MuvoList = await muvo.GetMuvoList()
                 }
             };
             main.Show();
