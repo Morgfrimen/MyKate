@@ -31,9 +31,10 @@
                             <ControlTemplate TargetType="DataGridColumnHeader">
                                 <Border BorderThickness="0.5"
                                         BorderBrush="Black">
-                                    <ContentControl Content="{TemplateBinding Content}">
+                                    <ContentPresenter HorizontalAlignment="Stretch"
+                                                      VerticalAlignment="Center">
                                        
-                                    </ContentControl>
+                                    </ContentPresenter>
                                 </Border>
                             </ControlTemplate>
                         </Setter.Value>
@@ -41,8 +42,16 @@
                 </Style>
             </DataGrid.ColumnHeaderStyle>
             <DataGrid.Columns>
-                <DataGridTemplateColumn Width="*"
-                                        Header="Наименование"/>
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <TextBlock TextAlignment="Center" 
+                                    Text="Название"/>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                </DataGridTemplateColumn>
 
                 <DataGridTemplateColumn Width="*">
                     <DataGridTemplateColumn.HeaderTemplate>
@@ -59,6 +68,9 @@
                                         <Setter Property="Background"
                                                 Value="Transparent"/>
                                     </Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="BorderBrush" Value="Black"/>
+                                    </Style>
                                 </Grid.Resources>
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
@@ -71,13 +83,19 @@
 
 
 
-                                <TextBlock Grid.Row="0" 
-                                           Grid.Column="0"
-                                           Grid.ColumnSpan="2"
+                                <Border Grid.Row="0" 
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="2"
+                                        BorderThickness="0,0,0,0.5">
+                                    <TextBlock TextAlignment="Center"
                                            Text="за период"/>
-                                <TextBlock Grid.Row="1" 
-                                           Grid.Column="0"
+                                </Border>
+                                <Border Grid.Row="1" 
+                                        Grid.Column="0"
+                                        BorderThickness="0,0,0.5,0">
+                                    <TextBlock 
                                            Text="минимальное"/>
+                                </Border>
                                 <TextBlock Grid.Row="1" 
                                            Grid.Column="1"
                                            Text="максимальное"/>
