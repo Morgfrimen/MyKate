@@ -13,8 +13,8 @@
                HorizontalAlignment="Center">
         <WrapPanel.Resources>
             <Style TargetType="Button">
-                <Setter Property="Padding" Value="10,5"/>
-                <Setter Property="Margin" Value="10,5"/>
+                <Setter Property="Padding" Value="10,5" />
+                <Setter Property="Margin" Value="10,5" />
             </Style>
         </WrapPanel.Resources>
         <Button Content="ГПЗ текущий год" />

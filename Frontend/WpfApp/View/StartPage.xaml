@@ -1,0 +1,36 @@
+﻿<Page x:Class="WpfApp.View.StartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      xmlns:vm="clr-namespace:WpfApp.ViewModels"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="StartPage">
+    <Page.DataContext>
+        <vm:StartPageViewModels />
+    </Page.DataContext>
+
+    <ItemsControl MinWidth="100" MinHeight="100" 
+        ItemsSource="{Binding MuvoList}"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch">
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <WrapPanel Orientation="Horizontal"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center" />
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <Border BorderThickness="1" CornerRadius="15"
+                        Margin="10,5">
+                    <Button Padding="10,5">
+                        <ContentControl VerticalAlignment="Center" HorizontalAlignment="Center" Content="{Binding }" />
+                    </Button>
+                </Border>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+</Page>

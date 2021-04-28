@@ -3,11 +3,11 @@
 namespace WpfApp.View
 {
     /// <summary>
-    ///     Логика взаимодействия для SecondPage.xaml
+    ///     Логика взаимодействия для StartPage.xaml
     /// </summary>
-    public partial class SecondPage : Page
+    public partial class StartPage : Page
     {
-        public SecondPage()
+        public StartPage()
         {
             InitializeComponent();
         }

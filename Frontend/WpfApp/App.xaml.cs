@@ -12,23 +12,6 @@ namespace WpfApp
     /// </summary>
     public partial class App : Application
     {
-        private async void App_OnStartup(object sender, StartupEventArgs e)
-        {
-            ConnectionServiceClient client = new();
-            UserServiceClient userService = new();
-            MuvoServiceClient muvo = new();
-            MainWindow main = new()
-            {
-                DataContext = new MainWindowViewModels
-                {
-                    ConnectionStatus = await client.ConnectionCheck(),
-                    UserStatus = (await userService.GetStatusUser()).ToString("G"),
-                    MuvoList = await muvo.GetMuvoList()
-                }
-            };
-            main.Show();
-        }
-
 #region Overrides of Application
 
         protected override void OnExit(ExitEventArgs e)
@@ -38,5 +21,20 @@ namespace WpfApp
         }
 
 #endregion
+
+        private async void App_OnStartup(object sender, StartupEventArgs e)
+        {
+            ConnectionServiceClient client = new();
+            UserServiceClient userService = new();
+            MainWindow main = new()
+            {
+                DataContext = new MainWindowViewModels
+                {
+                    ConnectionStatus = await client.ConnectionCheck(),
+                    UserStatus = (await userService.GetStatusUser()).ToString("G")
+                }
+            };
+            main.Show();
+        }
     }
 }

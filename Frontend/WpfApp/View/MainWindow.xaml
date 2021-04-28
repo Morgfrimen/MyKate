@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModels="clr-namespace:WpfApp.ViewModels"
-        xmlns:page="clr-namespace:WpfApp.View"
         mc:Ignorable="d"
         MinHeight="450"
         MinWidth="650"
@@ -20,28 +19,7 @@
             <RowDefinition Height="10*" />
         </Grid.RowDefinitions>
 
-
-        <ItemsControl Grid.Row="1" ItemsSource="{Binding MuvoList}">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel Orientation="Horizontal" 
-                               VerticalAlignment="Center"
-                               HorizontalAlignment="Center"/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Border BorderThickness="1" CornerRadius="15"
-                            Margin="10,5">
-                        <Button Padding="10,5">
-                            <ContentControl VerticalAlignment="Center" HorizontalAlignment="Center" Content="{Binding }"/>
-                        </Button>
-                    </Border>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
-
-        <!--TODO: Подумать про страницы-->
+        <Frame Grid.Row="1" Source="StartPage.xaml"/>
 
 
         <StatusBar Grid.Row="2" VerticalContentAlignment="Center">
@@ -59,9 +37,9 @@
             <StatusBarItem Grid.Column="0">
                 <UniformGrid Columns="2">
                     <TextBlock Text="Статус пользователя:"
-                               HorizontalAlignment="Right"/>
+                               HorizontalAlignment="Right" />
                     <TextBlock Text="{Binding UserStatus}"
-                               HorizontalAlignment="Left"/>
+                               HorizontalAlignment="Left" />
                 </UniformGrid>
             </StatusBarItem>
             <StatusBarItem Grid.Column="1" HorizontalAlignment="Right">

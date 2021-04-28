@@ -7,15 +7,14 @@
 		<StartupObject>WpfApp.App</StartupObject>
 	</PropertyGroup>
 
-	
 
 	<ItemGroup>
-	  <Folder Include="Models\" />
-	  <Folder Include="Core\" />
+		<Folder Include="Models\" />
+		<Folder Include="Core\" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\Lib\ProtoConnectionLibWPF\ProtoConnectionLibWPF.csproj" />
+		<ProjectReference Include="..\..\Lib\ProtoConnectionLibWPF\ProtoConnectionLibWPF.csproj" />
 	</ItemGroup>
 
 </Project>
