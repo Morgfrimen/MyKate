@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 using ProtoConnectionLibWPF;
 
@@ -16,16 +17,21 @@ namespace WpfApp
 
         protected override void OnExit(ExitEventArgs e)
         {
-            Core.CloseChannel();
             base.OnExit(e);
+            ProtoConnectionLibWPF.Core.CloseChannel();
+            Environment.Exit(0);
         }
 
 #endregion
+
+        internal string[] ListMuvo { get; private set; }
 
         private async void App_OnStartup(object sender, StartupEventArgs e)
         {
             ConnectionServiceClient client = new();
             UserServiceClient userService = new();
+            MuvoServiceClient muvo = new();
+            ListMuvo = await muvo.GetMuvoList();
             MainWindow main = new()
             {
                 DataContext = new MainWindowViewModels

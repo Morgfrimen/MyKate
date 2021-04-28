@@ -4,8 +4,10 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       mc:Ignorable="d"
+      xmlns:local ="clr-namespace:WpfApp.View"
       xmlns:vm="clr-namespace:WpfApp.ViewModels"
       d:DesignHeight="450" d:DesignWidth="800"
+      d:DataContext="{d:DesignInstance vm:StartPageViewModels}"
       Title="StartPage">
     <Page.DataContext>
         <vm:StartPageViewModels />
@@ -26,8 +28,15 @@
             <DataTemplate>
                 <Border BorderThickness="1" CornerRadius="15"
                         Margin="10,5">
-                    <Button Padding="10,5">
+                    <Button Padding="10,5"
+                            Command="{x:Static local:StartPage.NavigateSecondPageCommand}">
+                        <Button.CommandBindings>
+                            <CommandBinding Command="{x:Static local:StartPage.NavigateSecondPageCommand}"
+                                            Executed="CommandBinding_OnExecuted">
+                            </CommandBinding>
+                        </Button.CommandBindings>
                         <ContentControl VerticalAlignment="Center" HorizontalAlignment="Center" Content="{Binding }" />
+                        
                     </Button>
                 </Border>
             </DataTemplate>

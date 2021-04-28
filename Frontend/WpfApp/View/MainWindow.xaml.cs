@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace WpfApp.View
 {
@@ -7,6 +8,11 @@ namespace WpfApp.View
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow() => InitializeComponent();
+        public static Frame FrameMainWindow { get; private set; }
+        public MainWindow()
+        {
+            InitializeComponent();
+            FrameMainWindow = Frame;
+        }
     }
 }

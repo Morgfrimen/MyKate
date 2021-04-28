@@ -9,10 +9,9 @@ namespace WpfApp.ViewModels
             GetMuvo();
         }
 
-        private async void GetMuvo()
+        private void GetMuvo()
         {
-            MuvoServiceClient muvo = new();
-            MuvoList = await muvo.GetMuvoList();
+            MuvoList = (App.Current as App).ListMuvo;
         }
 
         private string[] _muvoList;
