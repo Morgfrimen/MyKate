@@ -4,9 +4,37 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApp.View"
+      xmlns:sys="clr-namespace:System;assembly=mscorlib"
       mc:Ignorable="d" 
+      FontSize="11"
       d:DesignHeight="450" d:DesignWidth="800"
+      MinHeight="350"
+      MinWidth="700"
       Title="DataGridExcelPage">
+    <Page.Resources>
+        <Thickness x:Key="ThicknessHeaderRightAndBottom"  Bottom="1" Right="1"/>
+        <Thickness x:Key="ThicknessHeaderOnlyBottom"  Bottom="1"/>
+        <Thickness x:Key="ThicknessHeaderOnlyRight"  Right="1"/>
+        <Thickness x:Key="DefaultPadding" Top="15" Bottom="15"/>
+        <sys:Double x:Key="MaxHeightGridHeaderDataGrid">250</sys:Double>
+        <Style TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment"
+                    Value="Stretch"/>
+            <Setter Property="TextAlignment"
+                    Value="Center"/>
+            <Setter Property="Padding"
+                    Value="10,5"/>
+            <Setter Property="Background"
+                    Value="Transparent"/>
+            <Setter Property="TextWrapping" 
+                    Value="Wrap"/>
+        </Style>
+
+        <Style TargetType="Border">
+            <Setter Property="BorderBrush"
+                    Value="Black"/>
+        </Style>
+    </Page.Resources>
 
     <Grid>
         <DataGrid AutoGenerateColumns="False"
@@ -29,7 +57,7 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="DataGridColumnHeader">
-                                <Border BorderThickness="0.25,0.5"
+                                <Border BorderThickness="0.5,1"
                                         BorderBrush="Black">
                                     <ContentPresenter HorizontalAlignment="Stretch"
                                                       VerticalAlignment="Center">
@@ -42,84 +70,411 @@
                 </Style>
             </DataGrid.ColumnHeaderStyle>
             <DataGrid.Columns>
-                <DataGridTemplateColumn Width="*">
+                <DataGridTemplateColumn Width="5*">
                     <DataGridTemplateColumn.HeaderTemplate>
                         <DataTemplate>
-                            <Grid>
-                                <TextBlock TextAlignment="Center" 
-                                    Text="Название"/>
+                            <Grid MaxHeight="{StaticResource MaxHeightGridHeaderDataGrid}">
+                                <Grid.Resources>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+                                        <Setter Property="TextWrapping"
+                                                Value="Wrap"/>
+                                        <Setter Property="TextAlignment"
+                                                Value="Center"/>
+                                        <Setter Property="VerticalAlignment"
+                                                Value="Center"/>
+                                    </Style>
+                                    <Style TargetType="Border" BasedOn="{StaticResource {x:Type Border}}">
+                                        <Setter Property="BorderBrush"
+                                                Value="Black"/>
+                                        <Setter Property="Padding"
+                                                Value="{StaticResource DefaultPadding}"/>
+                                    </Style>
+                                </Grid.Resources>
+                                <TextBlock Text="Название МУВО"/>
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.HeaderTemplate>
                 </DataGridTemplateColumn>
 
-                <DataGridTemplateColumn Width="*">
+                <DataGridTemplateColumn Width="25*">
                     <DataGridTemplateColumn.HeaderTemplate>
                         <DataTemplate>
-                            <Grid >
+                            <Grid  Height="{StaticResource MaxHeightGridHeaderDataGrid}">
                                 <Grid.Resources>
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="HorizontalAlignment"
-                                                Value="Stretch"/>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+                                        <Setter Property="TextWrapping"
+                                                Value="Wrap"/>
                                         <Setter Property="TextAlignment"
                                                 Value="Center"/>
-                                        <Setter Property="Padding"
-                                                Value="10,5"/>
-                                        <Setter Property="Background"
-                                                Value="Transparent"/>
+                                        <Setter Property="VerticalAlignment"
+                                                Value="Center"/>
                                     </Style>
                                     <Style TargetType="Border">
-                                        <Setter Property="BorderBrush" Value="Black"/>
+                                        <Setter Property="BorderBrush"
+                                                Value="Black"/>
+                                        <Setter Property="Padding"
+                                                Value="{StaticResource DefaultPadding}"/>
                                     </Style>
                                 </Grid.Resources>
                                 <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
 
-
-
                                 <Border Grid.Row="0" 
+                                        Grid.RowSpan="2"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="4"
+                                        BorderThickness="{StaticResource ThicknessHeaderOnlyBottom}">
+                                    <TextBlock Text="Действующие договоры прошлых периодов для позиций SAP SRM"
+                                               />
+                                </Border>
+                                <Border Grid.Row="2" 
                                         Grid.Column="0"
                                         Grid.ColumnSpan="2"
-                                        BorderThickness="0,0,0,0.5">
-                                    <TextBlock TextAlignment="Center"
-                                           Text="за период"/>
-                                </Border>
-                                <Border Grid.Row="1" 
-                                        Grid.Column="0"
-                                        BorderThickness="0,0,0.5,0">
+                                        BorderThickness="{StaticResource ThicknessHeaderRightAndBottom}">
                                     <TextBlock 
-                                           Text="минимальное"/>
+                                               Text="на 01.01.2021"/>
                                 </Border>
-                                <TextBlock Grid.Row="1" 
-                                           Grid.Column="1"
-                                           Text="максимальное"/>
+                                <Border Grid.Row="2" 
+                                        Grid.Column="2"
+                                        Grid.ColumnSpan="2"
+                                        BorderThickness="{StaticResource ThicknessHeaderOnlyBottom}">
+                                    <TextBlock 
+                                               Text="на 31.12.2021 по последнему отчету"/>
+                                </Border>
+                                <Border Grid.Row="3" 
+                                        Grid.Column="0"
+                                        BorderThickness="{StaticResource ThicknessHeaderOnlyRight}">
+                                    <TextBlock 
+                                               Text="к-во"/>
+                                </Border>
+                                <Border Grid.Row="3" 
+                                        Grid.Column="1"
+                                        BorderThickness="{StaticResource ThicknessHeaderOnlyRight}">
+                                    <TextBlock 
+                                               Text="сумма (рублей)"/>
+                                </Border>
+                                <Border Grid.Row="3" 
+                                        Grid.Column="2"
+                                        
+                                        BorderThickness="{StaticResource ThicknessHeaderOnlyRight}">
+                                    <TextBlock 
+                                               Text="к-во"/>
+                                </Border>
+                                <Border Grid.Row="3" 
+                                        Grid.Column="3">
+                                    <TextBlock 
+                                               Text="сумма (рублей)"/>
+                                </Border>
 
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.HeaderTemplate>
-                    <DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellTemplate> <!--TODO: ТУТ НУЖНО СДЕЛАТЬ ДЛЯ ЯЧЕЕК ПРИМЕРНО ТАК,КАК ЗДЕСЬ-->
                         <DataTemplate>
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBox Grid.Column="0"
+                                <TextBlock Grid.Column="0"
                                          Text="Пошло"
                                          Margin="1,0,1,0"/>
-                                <TextBox Grid.Column="1" 
+                                <TextBlock Grid.Column="1" 
                                          Text="Поехало" 
                                          Margin="1,0,1,0"/>
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="70*">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Grid  Height="{StaticResource MaxHeightGridHeaderDataGrid}">
+                                <Grid.Resources>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+                                        <Setter Property="TextWrapping"
+                                                Value="Wrap"/>
+                                        <Setter Property="TextAlignment"
+                                                Value="Center"/>
+                                    </Style> 
+                                    <Style TargetType="Border" BasedOn="{StaticResource {x:Type Border}}">
+                                        <Setter Property="BorderBrush"
+                                                Value="Black"/>
+                                        <Setter Property="Padding"
+                                                Value="{StaticResource DefaultPadding}"/>
+                                    </Style>
+                                </Grid.Resources>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <Border Grid.Row="0"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="16"
+                                        BorderThickness="{StaticResource ThicknessHeaderOnlyBottom}">
+                                    <TextBlock Text="ГПЗ текущего года (только позиции SAP SRM)"
+                                               />
+                                </Border>
+
+                                <!--#region  1 Квартал -->
+                                
+                                <Border Grid.Row="1"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="4"
+                                        Background="Yellow"
+                                        BorderThickness="{StaticResource ThicknessHeaderRightAndBottom}">
+                                    <TextBlock Text="1 квартал"
+                                               FontWeight="Bold"
+                                               />
+                                </Border>
+
+                                <Border Grid.Row="2"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="2"
+                                        BorderThickness="{StaticResource ThicknessHeaderRightAndBottom}">
+                                    <TextBlock Text="добавлено позиций"
+                                             />
+                                </Border>
+
+                                <Border Grid.Row="2"
+                                        Grid.Column="2"
+                                        Grid.ColumnSpan="2"
+                                        BorderThickness="{StaticResource ThicknessHeaderRightAndBottom}">
+                                    <TextBlock Text="исключено позиций"/>
+                                </Border>
+
+                                <Border Grid.Row="3" 
+                                        Grid.Column="0"
+                                        BorderThickness="{StaticResource ThicknessHeaderOnlyRight}">
+                                    <TextBlock 
+                                               Text="к-во"/>
+                                </Border>
+                                <Border Grid.Row="3" 
+                                        Grid.Column="1"
+                                        BorderThickness="{StaticResource ThicknessHeaderOnlyRight}">
+                                    <TextBlock 
+                                               Text="сумма (рублей)"/>
+                                </Border>
+                                <Border Grid.Row="3" 
+                                        Grid.Column="2"
+                                        BorderThickness="{StaticResource ThicknessHeaderOnlyRight}">
+                                    <TextBlock 
+                                               Text="к-во"/>
+                                </Border>
+                                <Border Grid.Row="3" 
+                                        Grid.Column="3"
+                                        BorderThickness="{StaticResource ThicknessHeaderOnlyRight}">
+                                    <TextBlock 
+                                               Text="сумма (рублей)"/>
+                                </Border>
+
+                                <!--#endregion-->
+
+
+                                <!--#region  2 Квартал -->
+
+                                <Border Grid.Row="1"
+                                        Grid.Column="4"
+                                        Grid.ColumnSpan="4"
+                                        Background="Yellow"
+                                        BorderThickness="{StaticResource ThicknessHeaderRightAndBottom}">
+                                    <TextBlock Text="2 квартал"
+                                               FontWeight="Bold"
+                                               />
+                                </Border>
+
+                                <Border Grid.Row="2"
+                                        Grid.Column="4"
+                                        Grid.ColumnSpan="2"
+                                        BorderThickness="{StaticResource ThicknessHeaderRightAndBottom}">
+                                    <TextBlock Text="добавлено позиций"
+                                               />
+                                </Border>
+
+                                <Border Grid.Row="2"
+                                        Grid.Column="6"
+                                        Grid.ColumnSpan="2"
+                                        BorderThickness="{StaticResource ThicknessHeaderRightAndBottom}">
+                                    <TextBlock Text="исключено позиций"
+                                               />
+                                </Border>
+
+                                <Border Grid.Row="3" 
+                                        Grid.Column="4"
+                                        BorderThickness="{StaticResource ThicknessHeaderOnlyRight}">
+                                    <TextBlock 
+                                               Text="к-во"/>
+                                </Border>
+                                <Border Grid.Row="3" 
+                                        Grid.Column="5"
+                                        BorderThickness="{StaticResource ThicknessHeaderOnlyRight}">
+                                    <TextBlock 
+                                               Text="сумма (рублей)"/>
+                                </Border>
+                                <Border Grid.Row="3" 
+                                        Grid.Column="6"
+                                        BorderThickness="{StaticResource ThicknessHeaderOnlyRight}">
+                                    <TextBlock 
+                                               Text="к-во"/>
+                                </Border>
+                                <Border Grid.Row="3" 
+                                        Grid.Column="7"
+                                        BorderThickness="{StaticResource ThicknessHeaderOnlyRight}">
+                                    <TextBlock 
+                                               Text="сумма (рублей)"/>
+                                </Border>
+
+                                <!--#endregion-->
+
+                                <!--#region  3 Квартал -->
+
+                                <Border Grid.Row="1"
+                                        Grid.Column="8"
+                                        Grid.ColumnSpan="4"
+                                        Background="Yellow"
+                                        BorderThickness="{StaticResource ThicknessHeaderRightAndBottom}">
+                                    <TextBlock Text="3 квартал"
+                                               FontWeight="Bold"/>
+                                </Border>
+
+                                <Border Grid.Row="2"
+                                        Grid.Column="8"
+                                        Grid.ColumnSpan="2"
+                                        BorderThickness="{StaticResource ThicknessHeaderRightAndBottom}">
+                                    <TextBlock Text="добавлено позиций"/>
+                                </Border>
+
+                                <Border Grid.Row="2"
+                                        Grid.Column="10"
+                                        Grid.ColumnSpan="2"
+                                        BorderThickness="{StaticResource ThicknessHeaderRightAndBottom}">
+                                    <TextBlock Text="исключено позиций"
+                                               />
+                                </Border>
+
+                                <Border Grid.Row="3" 
+                                        Grid.Column="8"
+                                        BorderThickness="{StaticResource ThicknessHeaderOnlyRight}">
+                                    <TextBlock 
+                                               Text="к-во"/>
+                                </Border>
+                                <Border Grid.Row="3" 
+                                        Grid.Column="9"
+                                        BorderThickness="{StaticResource ThicknessHeaderOnlyRight}">
+                                    <TextBlock 
+                                        Text="сумма (рублей)"
+                                        />
+                                </Border>
+                                <Border Grid.Row="3" 
+                                        Grid.Column="10"
+                                        BorderThickness="{StaticResource ThicknessHeaderOnlyRight}">
+                                    <TextBlock 
+                                               Text="к-во"/>
+                                </Border>
+                                <Border Grid.Row="3" 
+                                        Grid.Column="11"
+                                        BorderThickness="{StaticResource ThicknessHeaderOnlyRight}">
+                                    <TextBlock 
+                                               Text="сумма (рублей)"/>
+                                </Border>
+
+                                <!--#endregion-->
+
+
+                                <!--#region  4 Квартал -->
+
+                                <Border Grid.Row="1"
+                                        Grid.Column="12"
+                                        Grid.ColumnSpan="4"
+                                        Background="Yellow"
+                                        BorderThickness="{StaticResource ThicknessHeaderRightAndBottom}">
+                                    <TextBlock Text="4 квартал"
+                                               FontWeight="Bold"
+                                               />
+                                </Border>
+
+                                <Border Grid.Row="2"
+                                        Grid.Column="12"
+                                        Grid.ColumnSpan="2"
+                                        BorderThickness="{StaticResource ThicknessHeaderRightAndBottom}">
+                                    <TextBlock Text="добавлено позиций"
+                                               />
+                                </Border>
+
+                                <Border Grid.Row="2"
+                                        Grid.Column="14"
+                                        Grid.ColumnSpan="2"
+                                        BorderThickness="{StaticResource ThicknessHeaderRightAndBottom}">
+                                    <TextBlock Text="исключено позиций"
+                                               />
+                                </Border>
+
+                                <Border Grid.Row="3" 
+                                        Grid.Column="12"
+                                        BorderThickness="{StaticResource ThicknessHeaderOnlyRight}">
+                                    <TextBlock 
+                                               Text="к-во"/>
+                                </Border>
+                                <Border Grid.Row="3" 
+                                        Grid.Column="13"
+                                        BorderThickness="{StaticResource ThicknessHeaderOnlyRight}">
+                                    <TextBlock 
+                                               Text="сумма (рублей)"/>
+                                </Border>
+                                <Border Grid.Row="3" 
+                                        Grid.Column="14"
+                                        BorderThickness="{StaticResource ThicknessHeaderOnlyRight}">
+                                    <TextBlock 
+                                               Text="к-во"/>
+                                </Border>
+                                <Border Grid.Row="3" 
+                                        Grid.Column="15"
+                                        BorderThickness="{StaticResource ThicknessHeaderOnlyRight}">
+                                    <TextBlock 
+                                               Text="сумма (рублей)"/>
+                                </Border>
+
+                                <!--#endregion-->
+
+
+
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                </DataGridTemplateColumn>
+
             </DataGrid.Columns>
         </DataGrid>
 
