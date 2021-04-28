@@ -9,7 +9,101 @@
       Title="DataGridExcelPage">
 
     <Grid>
-        <DataGrid/>
-        
+        <DataGrid AutoGenerateColumns="False"
+                  CanUserAddRows="True"
+                  Background="White">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" 
+                            Value="Transparent"/>
+                    <Setter Property="MinHeight"
+                            Value="50"/>
+                    <Setter Property="ContentTemplate">
+                        <Setter.Value>
+                            <DataTemplate>
+                                <Grid />
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
+
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="DataGridColumnHeader">
+                                <Border BorderThickness="0.5"
+                                        BorderBrush="Black">
+                                    <ContentControl Content="{TemplateBinding Content}">
+                                       
+                                    </ContentControl>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="*"
+                                        Header="Наименование"/>
+
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Grid >
+                                <Grid.Resources>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment"
+                                                Value="Stretch"/>
+                                        <Setter Property="TextAlignment"
+                                                Value="Center"/>
+                                        <Setter Property="Padding"
+                                                Value="10,5"/>
+                                        <Setter Property="Background"
+                                                Value="Transparent"/>
+                                    </Style>
+                                </Grid.Resources>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+
+
+                                <TextBlock Grid.Row="0" 
+                                           Grid.Column="0"
+                                           Grid.ColumnSpan="2"
+                                           Text="за период"/>
+                                <TextBlock Grid.Row="1" 
+                                           Grid.Column="0"
+                                           Text="минимальное"/>
+                                <TextBlock Grid.Row="1" 
+                                           Grid.Column="1"
+                                           Text="максимальное"/>
+
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Grid.Column="0"
+                                         Text="Пошло"
+                                         Margin="1,0,1,0"/>
+                                <TextBox Grid.Column="1" 
+                                         Text="Поехало" 
+                                         Margin="1,0,1,0"/>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </Page>
