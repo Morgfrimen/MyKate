@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows;
 
 using ProtoConnectionLibWPF;
@@ -7,6 +7,7 @@ using ProtoConnectionLibWPF;
 using WpfApp.View;
 using WpfApp.View.InformWindow;
 using WpfApp.ViewModels;
+using WpfApp.ViewModels.Information;
 
 namespace WpfApp
 {
@@ -30,24 +31,33 @@ namespace WpfApp
 
         private async void App_OnStartup(object sender, StartupEventArgs e)
         {
-            InformationWindow informWindows = new();
+            CancellationTokenSource cancellationTokenSource = new();
+            InformWindowViewModels informVm = new(cancellationTokenSource);
+            informVm.ExitAppEvent += InformVM_ExitAppEvent;
+            InformationWindow informWindows = new()
+            {
+                DataContext = informVm
+            };
             informWindows.Show();
-
             ConnectionServiceClient client = new();
             UserServiceClient userService = new();
             MuvoServiceClient muvo = new();
-            ListMuvo = await muvo.GetMuvoList();
-          
+            ListMuvo = await muvo.GetMuvoList(cancellationTokenSource.Token);
             MainWindow main = new()
             {
                 DataContext = new MainWindowViewModels
                 {
-                    ConnectionStatus = await client.ConnectionCheck(),
-                    UserStatus = (await userService.GetStatusUser()).ToString("G")
+                    ConnectionStatus = await client.ConnectionCheck(cancellationTokenSource.Token),
+                    UserStatus = (await userService.GetStatusUser(cancellationTokenSource.Token)).ToString("G")
                 }
             };
             main.Show();
             informWindows.Close();
+        }
+
+        private void InformVM_ExitAppEvent()
+        {
+            Shutdown(0);
         }
     }
 }

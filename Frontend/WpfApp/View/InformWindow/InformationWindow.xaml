@@ -7,8 +7,14 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         WindowStyle="ToolWindow"
-        
+        xmlns:vm="clr-namespace:WpfApp.ViewModels.Information"
+        d:DataContext="{d:DesignInstance vm:InformWindowViewModels}"
         Title="Уведомление" Height="200" Width="400">
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static local:InformationWindow.CancelConnectionApp}"
+                        Executed="CommandBinding_OnExecuted"
+                        CanExecute="CommandBinding_OnCanExecute"/>
+    </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -16,15 +22,16 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0"
-                   Text="TextTODO"
+                   Text="Идет подключение к серверу и синхронизация данных"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>
-        
+
         <Button Grid.Row="1"
                 Content="Отмена подключения и выход из приложения"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"
-                Padding="15,5"/>
+                Padding="15,5"
+                Command="{x:Static local:InformationWindow.CancelConnectionApp}"/>
 
     </Grid>
 </Window>

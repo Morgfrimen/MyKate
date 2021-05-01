@@ -12,6 +12,7 @@
 		<Folder Include="Core\Command\" />
 		<Folder Include="Core\Exception\" />
 		<Folder Include="Models\" />
+		<Folder Include="ViewModels\Information\" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 using Connection;
@@ -14,13 +15,14 @@ namespace ProtoConnectionLibWPF
     {
         private string _connectionStatus;
 
-        public async Task<string> ConnectionCheck()
+        public async Task<string> ConnectionCheck(CancellationToken cancellationToken)
         {
+            if (cancellationToken.IsCancellationRequested) return default;
             try
             {
                 GrpcChannel chanel = Cache.ChannelServer;
                 TestConnection.TestConnectionClient test = new(chanel);
-                HellResponce response = await test.SayHelloAsync(new());
+                HellResponce response = await test.SayHelloAsync(new(),cancellationToken: cancellationToken);
                 _connectionStatus = response.Status
                                         ? nameof(ConnectionStatusEnum.OK)
                                         : nameof(ConnectionStatusEnum.ERROR);
