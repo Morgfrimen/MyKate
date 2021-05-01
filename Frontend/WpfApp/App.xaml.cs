@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows;
 
 using ProtoConnectionLibWPF;
 
 using WpfApp.View;
+using WpfApp.View.InformWindow;
 using WpfApp.ViewModels;
 
 namespace WpfApp
@@ -28,10 +30,14 @@ namespace WpfApp
 
         private async void App_OnStartup(object sender, StartupEventArgs e)
         {
+            InformationWindow informWindows = new();
+            informWindows.Show();
+
             ConnectionServiceClient client = new();
             UserServiceClient userService = new();
             MuvoServiceClient muvo = new();
             ListMuvo = await muvo.GetMuvoList();
+          
             MainWindow main = new()
             {
                 DataContext = new MainWindowViewModels
@@ -41,6 +47,7 @@ namespace WpfApp
                 }
             };
             main.Show();
+            informWindows.Close();
         }
     }
 }
