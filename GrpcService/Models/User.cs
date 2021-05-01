@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GrpcService
+namespace GrpcService.Models
 {
     internal sealed class User
     {
