@@ -1,12 +1,11 @@
-﻿using System.Windows.Controls;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 
-namespace WpfApp.View
+namespace WpfApp.View.Page
 {
     /// <summary>
     ///     Логика взаимодействия для SecondPage.xaml
     /// </summary>
-    public partial class SecondPage : Page
+    public partial class SecondPage : System.Windows.Controls.Page
     {
         public static RoutedCommand GPZСurrentYear = new();
 

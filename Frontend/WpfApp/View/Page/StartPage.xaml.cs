@@ -1,13 +1,11 @@
-﻿using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 
-namespace WpfApp.View
+namespace WpfApp.View.Page
 {
     /// <summary>
     ///     Логика взаимодействия для StartPage.xaml
     /// </summary>
-    public partial class StartPage : Page
+    public partial class StartPage : System.Windows.Controls.Page
     {
         public static RoutedCommand NavigateSecondPageCommand = new();
         public StartPage()
