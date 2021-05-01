@@ -5,18 +5,16 @@ namespace WpfApp.ViewModels.Information
 {
     public sealed class InformWindowViewModels : ViewModelsBase
     {
-        public CancellationTokenSource CancellationTokenSource { get; }
-
-        public InformWindowViewModels(CancellationTokenSource cancellationTokenSource)
-        {
+        public InformWindowViewModels(CancellationTokenSource cancellationTokenSource) =>
             CancellationTokenSource = cancellationTokenSource;
-        }
 
-        public event Action ExitAppEvent;
+        public CancellationTokenSource CancellationTokenSource { get; }
 
         internal void OnExitAppEvent()
         {
             this.ExitAppEvent?.Invoke();
         }
+
+        public event Action ExitAppEvent;
     }
 }

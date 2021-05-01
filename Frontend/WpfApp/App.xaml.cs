@@ -16,6 +16,8 @@ namespace WpfApp
     /// </summary>
     public partial class App : Application
     {
+        internal string[] ListMuvo { get; private set; }
+
 #region Overrides of Application
 
         protected override void OnExit(ExitEventArgs e)
@@ -26,8 +28,6 @@ namespace WpfApp
         }
 
 #endregion
-
-        internal string[] ListMuvo { get; private set; }
 
         private async void App_OnStartup(object sender, StartupEventArgs e)
         {
@@ -42,13 +42,14 @@ namespace WpfApp
             ConnectionServiceClient client = new();
             UserServiceClient userService = new();
             MuvoServiceClient muvo = new();
-            ListMuvo = await muvo.GetMuvoList(cancellationTokenSource.Token);
+            ListMuvo = await MuvoServiceClient.GetMuvoList(cancellationTokenSource.Token);
             MainWindow main = new()
             {
                 DataContext = new MainWindowViewModels
                 {
                     ConnectionStatus = await client.ConnectionCheck(cancellationTokenSource.Token),
-                    UserStatus = (await userService.GetStatusUser(cancellationTokenSource.Token)).ToString("G")
+                    UserStatus = (await UserServiceClient.GetStatusUser
+                                      (cancellationTokenSource.Token)).ToString("G")
                 }
             };
             main.Show();

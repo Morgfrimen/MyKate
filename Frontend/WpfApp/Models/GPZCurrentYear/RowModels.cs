@@ -1,7 +1,7 @@
 ﻿namespace WpfApp.Models.GPZCurrentYear
 {
     /// <summary>
-    /// Одна строка данных для ГПЗ текущего года
+    ///     Одна строка данных для ГПЗ текущего года
     /// </summary>
     public sealed class RowModels
     {

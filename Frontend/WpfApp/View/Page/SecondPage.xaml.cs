@@ -7,14 +7,16 @@ namespace WpfApp.View.Page
     /// </summary>
     public partial class SecondPage : System.Windows.Controls.Page
     {
-        public static RoutedCommand GPZСurrentYear = new();
-
-
         public SecondPage()
         {
             InitializeComponent();
         }
 
-        private void GPZCurrentYear_OnExecuted(object sender, ExecutedRoutedEventArgs e) => MainWindow.FrameMainWindow.Navigate(new DataGridExcelPage());
+        public static RoutedCommand GpzСurrentYear { get; } = new();
+
+        private void GPZCurrentYear_OnExecuted(object sender, ExecutedRoutedEventArgs e)
+        {
+            _ = MainWindow.FrameMainWindow.Navigate(new DataGridExcelPage());
+        }
     }
 }

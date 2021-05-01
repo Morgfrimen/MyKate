@@ -4,8 +4,6 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       mc:Ignorable="d"
-      xmlns:local ="clr-namespace:WpfApp.View"
-      xmlns:vm="clr-namespace:WpfApp.ViewModels"
       xmlns:page="clr-namespace:WpfApp.ViewModels.Page"
       xmlns:page1="clr-namespace:WpfApp.View.Page"
       d:DesignHeight="450" d:DesignWidth="800"
@@ -15,8 +13,8 @@
         <page:StartPageViewModels />
     </Page.DataContext>
 
-    <ItemsControl MinWidth="100" MinHeight="100" 
-        ItemsSource="{Binding MuvoList}"
+    <ItemsControl MinWidth="100" MinHeight="100"
+                  ItemsSource="{Binding MuvoList}"
                   HorizontalAlignment="Stretch"
                   VerticalAlignment="Stretch">
         <ItemsControl.ItemsPanel>
@@ -34,11 +32,10 @@
                             Command="{x:Static page1:StartPage.NavigateSecondPageCommand}">
                         <Button.CommandBindings>
                             <CommandBinding Command="{x:Static page1:StartPage.NavigateSecondPageCommand}"
-                                            Executed="CommandBinding_OnExecuted">
-                            </CommandBinding>
+                                            Executed="CommandBinding_OnExecuted" />
                         </Button.CommandBindings>
                         <ContentControl VerticalAlignment="Center" HorizontalAlignment="Center" Content="{Binding }" />
-                        
+
                     </Button>
                 </Border>
             </DataTemplate>

@@ -10,12 +10,12 @@ namespace WpfApp.View.InformWindow
     /// </summary>
     public partial class InformationWindow : Window
     {
-        public static RoutedCommand CancelConnectionApp = new();
-
         public InformationWindow()
         {
             InitializeComponent();
         }
+
+        public static RoutedCommand CancelConnectionApp { get; } = new();
 
         private void CommandBinding_OnExecuted(object sender, ExecutedRoutedEventArgs e)
         {

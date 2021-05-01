@@ -13,25 +13,25 @@
     <Window.CommandBindings>
         <CommandBinding Command="{x:Static local:InformationWindow.CancelConnectionApp}"
                         Executed="CommandBinding_OnExecuted"
-                        CanExecute="CommandBinding_OnCanExecute"/>
+                        CanExecute="CommandBinding_OnCanExecute" />
     </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0"
                    Text="Идет подключение к серверу и синхронизация данных"
                    VerticalAlignment="Center"
-                   HorizontalAlignment="Center"/>
+                   HorizontalAlignment="Center" />
 
         <Button Grid.Row="1"
                 Content="Отмена подключения и выход из приложения"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"
                 Padding="15,5"
-                Command="{x:Static local:InformationWindow.CancelConnectionApp}"/>
+                Command="{x:Static local:InformationWindow.CancelConnectionApp}" />
 
     </Grid>
 </Window>

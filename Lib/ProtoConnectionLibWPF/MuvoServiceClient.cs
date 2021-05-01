@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,20 +11,20 @@ namespace ProtoConnectionLibWPF
 {
     public sealed class MuvoServiceClient
     {
-        public async Task<string[]> GetMuvoList(CancellationToken token)
+        public static async Task<string[]> GetMuvoList(CancellationToken token)
         {
-            if (token.IsCancellationRequested)
-                return null;
+            if (token.IsCancellationRequested) return null;
 
             try
             {
                 GrpcChannel channel = Cache.ChannelServer;
                 GetListMuvoService.GetListMuvoServiceClient client = new(channel);
-                MuvoListResponce responce = await client.MuvoListAsync(new(),cancellationToken: token);
+                MuvoListResponce responce = await client.MuvoListAsync
+                                                (new(), cancellationToken: token);
 
                 return responce.Arrays.Select(responceArray => responceArray.NameMuvo).ToArray();
             }
-            catch (System.Exception)
+            catch (Exception)
             {
                 //TODO:LKogger
                 return null;

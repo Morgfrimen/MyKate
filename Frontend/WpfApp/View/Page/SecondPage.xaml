@@ -3,15 +3,14 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:local="clr-namespace:WpfApp.View"
       xmlns:page="clr-namespace:WpfApp.View.Page"
       mc:Ignorable="d"
       FontSize="16"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SecondPage">
     <Page.CommandBindings>
-        <CommandBinding Command="{x:Static page:SecondPage.GPZСurrentYear}"
-                        Executed="GPZCurrentYear_OnExecuted"/>
+        <CommandBinding Command="{x:Static page:SecondPage.GpzСurrentYear}"
+                        Executed="GPZCurrentYear_OnExecuted" />
     </Page.CommandBindings>
 
     <WrapPanel Orientation="Vertical"
@@ -24,7 +23,7 @@
             </Style>
         </WrapPanel.Resources>
         <Button Content="ГПЗ текущий год"
-                Command="{x:Static page:SecondPage.GPZСurrentYear}"/>
+                Command="{x:Static page:SecondPage.GpzСurrentYear}" />
         <Button Content="ГПЗ прошлый год" />
         <Button Content="Договора текущего года" />
         <Button Content="Договора прошлого года" />

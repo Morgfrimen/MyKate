@@ -1,7 +1,11 @@
-﻿namespace WpfApp.ViewModels.Page
+﻿using System.Windows;
+
+namespace WpfApp.ViewModels.Page
 {
     public sealed class StartPageViewModels : ViewModelsBase
     {
+        private string[] _muvoList;
+
         public StartPageViewModels()
         {
             GetMuvo();
@@ -9,10 +13,8 @@
 
         private void GetMuvo()
         {
-            MuvoList = (App.Current as App).ListMuvo;
+            MuvoList = (Application.Current as App).ListMuvo;
         }
-
-        private string[] _muvoList;
 
         public string[] MuvoList
         {

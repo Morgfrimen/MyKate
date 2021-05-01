@@ -2,6 +2,9 @@
 {
     public static class Core
     {
-        public static void CloseChannel() => Cache.CloseChannel();
+        public static void CloseChannel()
+        {
+            Cache.CloseChannel();
+        }
     }
 }

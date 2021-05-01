@@ -168,7 +168,7 @@
                             <Border Style="{StaticResource {x:Type Border}}"
                                     BorderThickness="1,0,0,0">
                                 <TextBlock Text="{Binding Name}"
-                                       Style="{StaticResource {x:Type TextBlock}}" />
+                                           Style="{StaticResource {x:Type TextBlock}}" />
                             </Border>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -597,7 +597,7 @@
                                         BorderThickness="{StaticResource ThicknessHeaderOnlyRight}"
                                         Style="{StaticResource {x:Type Border}}">
                                     <TextBlock Text="{Binding FirstQuarter.AddFirst.PriceRow}"
-                                               Style="{StaticResource {x:Type TextBlock}}"/>
+                                               Style="{StaticResource {x:Type TextBlock}}" />
                                 </Border>
                                 <Border Grid.Column="2"
                                         BorderThickness="{StaticResource ThicknessHeaderOnlyRight}"
@@ -609,7 +609,7 @@
                                         BorderThickness="{StaticResource ThicknessHeaderOnlyRight}"
                                         Style="{StaticResource {x:Type Border}}">
                                     <TextBlock Text="{Binding FirstQuarter.AddSecond.PriceRow}"
-                                               Style="{StaticResource {x:Type TextBlock}}"/>
+                                               Style="{StaticResource {x:Type TextBlock}}" />
                                 </Border>
                                 <!--#endregion-->
 
@@ -624,7 +624,7 @@
                                         BorderThickness="{StaticResource ThicknessHeaderOnlyRight}"
                                         Style="{StaticResource {x:Type Border}}">
                                     <TextBlock Text="{Binding SecondQuarter.AddFirst.PriceRow}"
-                                               Style="{StaticResource {x:Type TextBlock}}"/>
+                                               Style="{StaticResource {x:Type TextBlock}}" />
                                 </Border>
                                 <Border Grid.Column="6"
                                         BorderThickness="{StaticResource ThicknessHeaderOnlyRight}"
@@ -636,7 +636,7 @@
                                         BorderThickness="{StaticResource ThicknessHeaderOnlyRight}"
                                         Style="{StaticResource {x:Type Border}}">
                                     <TextBlock Text="{Binding SecondQuarter.AddSecond.PriceRow}"
-                                               Style="{StaticResource {x:Type TextBlock}}"/>
+                                               Style="{StaticResource {x:Type TextBlock}}" />
                                 </Border>
                                 <!--#endregion-->
 
@@ -651,7 +651,7 @@
                                         BorderThickness="{StaticResource ThicknessHeaderOnlyRight}"
                                         Style="{StaticResource {x:Type Border}}">
                                     <TextBlock Text="{Binding TreeQuarter.AddFirst.PriceRow}"
-                                               Style="{StaticResource {x:Type TextBlock}}"/>
+                                               Style="{StaticResource {x:Type TextBlock}}" />
                                 </Border>
                                 <Border Grid.Column="10"
                                         BorderThickness="{StaticResource ThicknessHeaderOnlyRight}"
@@ -663,7 +663,7 @@
                                         BorderThickness="{StaticResource ThicknessHeaderOnlyRight}"
                                         Style="{StaticResource {x:Type Border}}">
                                     <TextBlock Text="{Binding TreeQuarter.AddSecond.PriceRow}"
-                                               Style="{StaticResource {x:Type TextBlock}}"/>
+                                               Style="{StaticResource {x:Type TextBlock}}" />
                                 </Border>
                                 <!--#endregion-->
 
@@ -678,7 +678,7 @@
                                         BorderThickness="{StaticResource ThicknessHeaderOnlyRight}"
                                         Style="{StaticResource {x:Type Border}}">
                                     <TextBlock Text="{Binding FourthQuarter.AddFirst.PriceRow}"
-                                               Style="{StaticResource {x:Type TextBlock}}"/>
+                                               Style="{StaticResource {x:Type TextBlock}}" />
                                 </Border>
                                 <Border Grid.Column="14"
                                         BorderThickness="{StaticResource ThicknessHeaderOnlyRight}"
@@ -689,13 +689,9 @@
                                 <Border Grid.Column="15"
                                         Style="{StaticResource {x:Type Border}}">
                                     <TextBlock Text="{Binding FourthQuarter.AddSecond.PriceRow}"
-                                               Style="{StaticResource {x:Type TextBlock}}"/>
+                                               Style="{StaticResource {x:Type TextBlock}}" />
                                 </Border>
                                 <!--#endregion-->
-
-
-
-
 
 
                             </Grid>

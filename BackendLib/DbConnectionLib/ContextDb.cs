@@ -6,12 +6,10 @@ using DbConnectionLib.Models;
 
 using Microsoft.EntityFrameworkCore;
 
-
 namespace DbConnectionLib
 {
     public sealed class ContextDb : DbContext
     {
-        private const int MaxDefaultMuvo = 7;
         public ContextDb()
         {
             GetStringConnection();
@@ -24,21 +22,20 @@ namespace DbConnectionLib
 
 #region Overrides of DbContext
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
-            optionsBuilder.UseSqlServer(Connection);
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            _ = optionsBuilder.UseSqlServer(Connection);
+        }
 
 #endregion
 
         public void DefaultDbSetMuvo()
         {
-            if(Muvos.Any()) return;
+            if (Muvos.Any()) return;
 
             for (int index = 0; index < MaxDefaultMuvo; index++)
-            {
-                Muvos.Add(new() {Name = $"МУВО{index + 1}"});
-            }
-
-            SaveChanges();
+                _ = Muvos.Add(new() {Name = $"МУВО{index + 1}"});
+            _ = SaveChanges();
         }
 
         private void GetStringConnection()
@@ -59,5 +56,7 @@ namespace DbConnectionLib
                 Connection = settings[nameof(Connection)].Value;
             }
         }
+
+        private const int MaxDefaultMuvo = 7;
     }
 }
