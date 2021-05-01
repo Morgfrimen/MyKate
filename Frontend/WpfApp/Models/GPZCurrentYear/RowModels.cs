@@ -7,10 +7,10 @@
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public CountAndSum FirstColumnSap { get; set; }
-        public CountAndSum FirstQuarter { get; set; }
-        public CountAndSum SecondQuarter { get; set; }
-        public CountAndSum TreeQuarter { get; set; }
-        public CountAndSum FourthQuarter { get; set; }
+        public SapPresent FirstColumnSap { get; set; }
+        public Quarter FirstQuarter { get; set; }
+        public Quarter SecondQuarter { get; set; }
+        public Quarter TreeQuarter { get; set; }
+        public Quarter FourthQuarter { get; set; }
     }
 }

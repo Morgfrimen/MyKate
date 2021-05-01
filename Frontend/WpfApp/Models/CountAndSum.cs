@@ -2,7 +2,7 @@
 {
     public sealed class CountAndSum
     {
-        internal uint Count { get; set; }
-        internal decimal Price { get; set; }
+        public uint Count { get; set; }
+        public decimal PriceRow { get; set; }
     }
 }
