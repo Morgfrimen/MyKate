@@ -364,3 +364,5 @@ FodyWeavers.xsd
 /BackendLib/DbConnectionLib/ConnectionString.txt
 /GrpcService/ConnectionString.txt
 /BackendLib/DbConnectionLib/Migrations
+/ExcelData/Приложение №2 на 03.04.2021.xlsx
+/ExcelPatternDataGrid
