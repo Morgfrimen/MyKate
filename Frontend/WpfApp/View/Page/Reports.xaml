@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:WpfApp.View.Page"
       mc:Ignorable="d"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Reports">
+      Title="Отчеты">
     <Page.CommandBindings>
         <CommandBinding Command="{x:Static local:Reports.NavigateReport31}"
                         Executed="CommandBinding_OnExecuted" />

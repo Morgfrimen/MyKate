@@ -7,7 +7,7 @@
       mc:Ignorable="d"
       FontSize="16"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="SecondPage">
+      Title="Выбор интересующей опции">
     <Page.CommandBindings>
         <CommandBinding Command="{x:Static page:SecondPage.NavigateToReportsPage}"
                         Executed="NavigateToReportsPageOnExecuted" />
