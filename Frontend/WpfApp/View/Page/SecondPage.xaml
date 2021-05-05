@@ -22,11 +22,11 @@
                 <Setter Property="Margin" Value="10,5" />
             </Style>
         </WrapPanel.Resources>
-        <Button Content="ГПЗ текущий год"/>
+        <Button Content="ГПЗ текущий год" />
         <Button Content="ГПЗ прошлый год" />
         <Button Content="Договора текущего года" />
         <Button Content="Договора прошлого года" />
         <Button Content="Отчеты"
-                Command="{x:Static page:SecondPage.NavigateToReportsPage}"/>
+                Command="{x:Static page:SecondPage.NavigateToReportsPage}" />
     </WrapPanel>
 </Page>
