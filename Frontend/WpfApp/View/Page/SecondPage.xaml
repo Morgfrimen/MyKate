@@ -9,8 +9,8 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SecondPage">
     <Page.CommandBindings>
-        <CommandBinding Command="{x:Static page:SecondPage.GpzСurrentYear}"
-                        Executed="GPZCurrentYear_OnExecuted" />
+        <CommandBinding Command="{x:Static page:SecondPage.NavigateToReportsPage}"
+                        Executed="NavigateToReportsPageOnExecuted" />
     </Page.CommandBindings>
 
     <WrapPanel Orientation="Vertical"
@@ -22,10 +22,11 @@
                 <Setter Property="Margin" Value="10,5" />
             </Style>
         </WrapPanel.Resources>
-        <Button Content="ГПЗ текущий год"
-                Command="{x:Static page:SecondPage.GpzСurrentYear}" />
+        <Button Content="ГПЗ текущий год"/>
         <Button Content="ГПЗ прошлый год" />
         <Button Content="Договора текущего года" />
         <Button Content="Договора прошлого года" />
+        <Button Content="Отчеты"
+                Command="{x:Static page:SecondPage.NavigateToReportsPage}"/>
     </WrapPanel>
 </Page>

@@ -12,11 +12,11 @@ namespace WpfApp.View.Page
             InitializeComponent();
         }
 
-        public static RoutedCommand GpzСurrentYear { get; } = new();
+        public static RoutedCommand NavigateToReportsPage { get; } = new();
 
-        private void GPZCurrentYear_OnExecuted(object sender, ExecutedRoutedEventArgs e)
+        private void NavigateToReportsPageOnExecuted(object sender, ExecutedRoutedEventArgs e)
         {
-            _ = MainWindow.FrameMainWindow.Navigate(new DataGridExcelPage());
+            _ = MainWindow.FrameMainWindow.Navigate(new Reports());
         }
     }
 }
