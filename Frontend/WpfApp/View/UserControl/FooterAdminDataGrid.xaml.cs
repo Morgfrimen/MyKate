@@ -3,7 +3,7 @@
     /// <summary>
     ///     Логика взаимодействия для FooterAdminDataGrid.xaml
     /// </summary>
-    public partial class FooterAdminDataGrid : UserControl
+    public partial class FooterAdminDataGrid : System.Windows.Controls.UserControl
     {
         public FooterAdminDataGrid()
         {
