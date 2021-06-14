@@ -9,8 +9,6 @@
       d:DesignHeight="500" d:DesignWidth="800"
       MinHeight="350"
       MinWidth="700"
-      xmlns:gpzCurrentYear="clr-namespace:WpfApp.Models.GPZCurrentYear"
-      xmlns:simplepresent="clr-namespace:WpfApp.Models"
       Title="Отчет форма 3-1">
     <Page.Resources>
 
@@ -35,13 +33,13 @@
             <Setter Property="BorderBrush"
                     Value="Black" />
         </Style>
-        <Style TargetType="Button" BasedOn="{StaticResource Button_Menu_Standard}"/>
+        <Style TargetType="Button" BasedOn="{StaticResource Button_Menu_Standard}" />
     </Page.Resources>
 
     <Grid>
         <DataGrid AutoGenerateColumns="False"
                   CanUserAddRows="True"
-                  Background="White" 
+                  Background="White"
                   ItemsSource="{StaticResource DefaultReportOne}">
             <DataGrid.ColumnHeaderStyle>
                 <Style TargetType="DataGridColumnHeader">

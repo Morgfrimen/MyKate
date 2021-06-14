@@ -4,8 +4,6 @@
     {
         private readonly string _connectionStatus = "Default";
 
-        public string UserStatus { get; init; }
-
         public string ConnectionStatus
         {
             get => _connectionStatus;
@@ -15,5 +13,7 @@
                 OnPropertyChanged(nameof(ConnectionStatus));
             }
         }
+
+        public string UserStatus { get; init; }
     }
 }

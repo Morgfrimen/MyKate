@@ -13,21 +13,21 @@
                         Executed="NavigateToReportsPageOnExecuted" />
     </Page.CommandBindings>
     <Page.Resources>
-       <Style TargetType="Button" BasedOn="{StaticResource Button_Menu_Standard}"/>
-       <Style TargetType="WrapPanel">
+        <Style TargetType="Button" BasedOn="{StaticResource Button_Menu_Standard}" />
+        <Style TargetType="WrapPanel">
             <Setter Property="Orientation"
-                    Value="Vertical"/>
+                    Value="Vertical" />
             <Setter Property="VerticalAlignment"
-                    Value="Center"/>
+                    Value="Center" />
             <Setter Property="HorizontalAlignment"
-                    Value="Center"/>
+                    Value="Center" />
         </Style>
     </Page.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
         <!--#region Column 0 -->
@@ -38,14 +38,14 @@
             <Button Content="Договора текущего года" />
             <Button Content="Договора прошлого года" />
             <Button Content="Отчеты"
-                Command="{x:Static page:SecondPage.NavigateToReportsPage}" />
+                    Command="{x:Static page:SecondPage.NavigateToReportsPage}" />
         </WrapPanel>
         <!--#endregion-->
-        
+
         <WrapPanel Grid.Row="0"
                    Grid.Column="1">
-            <Button Content="Поключиться к ЕИС"/>
-            <Button Content="Проверить закупку"/>
+            <Button Content="Поключиться к ЕИС" />
+            <Button Content="Проверить закупку" />
         </WrapPanel>
     </Grid>
 </Page>

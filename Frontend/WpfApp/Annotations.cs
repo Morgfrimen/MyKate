@@ -122,13 +122,13 @@ namespace WpfApp
     )]
     public sealed class StringFormatMethodAttribute : Attribute
     {
+        [NotNull] public string FormatParameterName { get; }
+
         /// <param name="formatParameterName">
         ///     Specifies which parameter of an annotated method should be treated as the format string
         /// </param>
         public StringFormatMethodAttribute([NotNull] string formatParameterName) =>
             FormatParameterName = formatParameterName;
-
-        [NotNull] public string FormatParameterName { get; }
     }
 
     /// <summary>
@@ -167,9 +167,8 @@ namespace WpfApp
     )]
     public sealed class ValueProviderAttribute : Attribute
     {
-        public ValueProviderAttribute([NotNull] string name) => Name = name;
-
         [NotNull] public string Name { get; }
+        public ValueProviderAttribute([NotNull] string name) => Name = name;
     }
 
     /// <summary>
@@ -193,6 +192,9 @@ namespace WpfApp
     )]
     public sealed class ValueRangeAttribute : Attribute
     {
+        public object From { get; }
+        public object To { get; }
+
         public ValueRangeAttribute(long from, long to)
         {
             From = from;
@@ -208,9 +210,6 @@ namespace WpfApp
         public ValueRangeAttribute(long value) => From = To = value;
 
         public ValueRangeAttribute(ulong value) => From = To = value;
-
-        public object From { get; }
-        public object To { get; }
     }
 
     /// <summary>
@@ -308,12 +307,11 @@ namespace WpfApp
     [AttributeUsage(AttributeTargets.Method)]
     public sealed class NotifyPropertyChangedInvocatorAttribute : Attribute
     {
+        [CanBeNull] public string ParameterName { get; }
         public NotifyPropertyChangedInvocatorAttribute() { }
 
         public NotifyPropertyChangedInvocatorAttribute([NotNull] string parameterName) =>
             ParameterName = parameterName;
-
-        [CanBeNull] public string ParameterName { get; }
     }
 
     /// <summary>
@@ -375,6 +373,9 @@ namespace WpfApp
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
     public sealed class ContractAnnotationAttribute : Attribute
     {
+        [NotNull] public string Contract { get; }
+
+        public bool ForceFullStates { get; }
         public ContractAnnotationAttribute([NotNull] string contract) : this(contract, false) { }
 
         public ContractAnnotationAttribute([NotNull] string contract, bool forceFullStates)
@@ -382,10 +383,6 @@ namespace WpfApp
             Contract = contract;
             ForceFullStates = forceFullStates;
         }
-
-        [NotNull] public string Contract { get; }
-
-        public bool ForceFullStates { get; }
     }
 
     /// <summary>
@@ -402,11 +399,10 @@ namespace WpfApp
     [AttributeUsage(AttributeTargets.All)]
     public sealed class LocalizationRequiredAttribute : Attribute
     {
+        public bool Required { get; }
         public LocalizationRequiredAttribute() : this(true) { }
 
         public LocalizationRequiredAttribute(bool required) => Required = required;
-
-        public bool Required { get; }
     }
 
     /// <summary>
@@ -451,9 +447,8 @@ namespace WpfApp
     [BaseTypeRequired(typeof(Attribute))]
     public sealed class BaseTypeRequiredAttribute : Attribute
     {
-        public BaseTypeRequiredAttribute([NotNull] Type baseType) => BaseType = baseType;
-
         [NotNull] public Type BaseType { get; }
+        public BaseTypeRequiredAttribute([NotNull] Type baseType) => BaseType = baseType;
     }
 
     /// <summary>
@@ -463,6 +458,10 @@ namespace WpfApp
     [AttributeUsage(AttributeTargets.All)]
     public sealed class UsedImplicitlyAttribute : Attribute
     {
+        public ImplicitUseTargetFlags TargetFlags { get; }
+
+        public ImplicitUseKindFlags UseKindFlags { get; }
+
         public UsedImplicitlyAttribute() : this
             (ImplicitUseKindFlags.Default, ImplicitUseTargetFlags.Default) { }
 
@@ -478,10 +477,6 @@ namespace WpfApp
             UseKindFlags = useKindFlags;
             TargetFlags = targetFlags;
         }
-
-        public ImplicitUseKindFlags UseKindFlags { get; }
-
-        public ImplicitUseTargetFlags TargetFlags { get; }
     }
 
     /// <summary>
@@ -496,6 +491,10 @@ namespace WpfApp
         (AttributeTargets.Class | AttributeTargets.GenericParameter | AttributeTargets.Parameter)]
     public sealed class MeansImplicitUseAttribute : Attribute
     {
+        [UsedImplicitly] public ImplicitUseTargetFlags TargetFlags { get; }
+
+        [UsedImplicitly] public ImplicitUseKindFlags UseKindFlags { get; }
+
         public MeansImplicitUseAttribute() : this
             (ImplicitUseKindFlags.Default, ImplicitUseTargetFlags.Default) { }
 
@@ -511,10 +510,6 @@ namespace WpfApp
             UseKindFlags = useKindFlags;
             TargetFlags = targetFlags;
         }
-
-        [UsedImplicitly] public ImplicitUseKindFlags UseKindFlags { get; }
-
-        [UsedImplicitly] public ImplicitUseTargetFlags TargetFlags { get; }
     }
 
     /// <summary>
@@ -563,11 +558,10 @@ namespace WpfApp
     [AttributeUsage(AttributeTargets.All, Inherited = false)]
     public sealed class PublicAPIAttribute : Attribute
     {
+        [CanBeNull] public string Comment { get; }
         public PublicAPIAttribute() { }
 
         public PublicAPIAttribute([NotNull] string comment) => Comment = comment;
-
-        [CanBeNull] public string Comment { get; }
     }
 
     /// <summary>
@@ -608,12 +602,11 @@ namespace WpfApp
     [AttributeUsage(AttributeTargets.Method)]
     public sealed class MustUseReturnValueAttribute : Attribute
     {
+        [CanBeNull] public string Justification { get; }
         public MustUseReturnValueAttribute() { }
 
         public MustUseReturnValueAttribute([NotNull] string justification) =>
             Justification = justification;
-
-        [CanBeNull] public string Justification { get; }
     }
 
     /// <summary>
@@ -648,12 +641,11 @@ namespace WpfApp
     [AttributeUsage(AttributeTargets.Parameter)]
     public sealed class PathReferenceAttribute : Attribute
     {
+        [CanBeNull] public string BasePath { get; }
         public PathReferenceAttribute() { }
 
         public PathReferenceAttribute([NotNull] [PathReference] string basePath) =>
             BasePath = basePath;
-
-        [CanBeNull] public string BasePath { get; }
     }
 
     /// <summary>
@@ -714,13 +706,6 @@ namespace WpfApp
     public sealed class MacroAttribute : Attribute
     {
         /// <summary>
-        ///     Allows specifying a macro that will be executed for a <see cref="SourceTemplateAttribute">source template</see>
-        ///     parameter when the template is expanded.
-        /// </summary>
-        [CanBeNull]
-        public string Expression { get; set; }
-
-        /// <summary>
         ///     Allows specifying which occurrence of the target parameter becomes editable when the template is deployed.
         /// </summary>
         /// <remarks>
@@ -729,6 +714,13 @@ namespace WpfApp
         ///     use values >= 0. To make the parameter non-editable when the template is expanded, use -1.
         /// </remarks>
         public int Editable { get; set; }
+
+        /// <summary>
+        ///     Allows specifying a macro that will be executed for a <see cref="SourceTemplateAttribute">source template</see>
+        ///     parameter when the template is expanded.
+        /// </summary>
+        [CanBeNull]
+        public string Expression { get; set; }
 
         /// <summary>
         ///     Identifies the target parameter of a <see cref="SourceTemplateAttribute">source template</see> if the
@@ -745,9 +737,8 @@ namespace WpfApp
     )]
     public sealed class AspMvcAreaMasterLocationFormatAttribute : Attribute
     {
-        public AspMvcAreaMasterLocationFormatAttribute([NotNull] string format) => Format = format;
-
         [NotNull] public string Format { get; }
+        public AspMvcAreaMasterLocationFormatAttribute([NotNull] string format) => Format = format;
     }
 
     [AttributeUsage
@@ -757,10 +748,10 @@ namespace WpfApp
     )]
     public sealed class AspMvcAreaPartialViewLocationFormatAttribute : Attribute
     {
+        [NotNull] public string Format { get; }
+
         public AspMvcAreaPartialViewLocationFormatAttribute([NotNull] string format) =>
             Format = format;
-
-        [NotNull] public string Format { get; }
     }
 
     [AttributeUsage
@@ -770,9 +761,8 @@ namespace WpfApp
     )]
     public sealed class AspMvcAreaViewLocationFormatAttribute : Attribute
     {
-        public AspMvcAreaViewLocationFormatAttribute([NotNull] string format) => Format = format;
-
         [NotNull] public string Format { get; }
+        public AspMvcAreaViewLocationFormatAttribute([NotNull] string format) => Format = format;
     }
 
     [AttributeUsage
@@ -782,9 +772,8 @@ namespace WpfApp
     )]
     public sealed class AspMvcMasterLocationFormatAttribute : Attribute
     {
-        public AspMvcMasterLocationFormatAttribute([NotNull] string format) => Format = format;
-
         [NotNull] public string Format { get; }
+        public AspMvcMasterLocationFormatAttribute([NotNull] string format) => Format = format;
     }
 
     [AttributeUsage
@@ -794,9 +783,8 @@ namespace WpfApp
     )]
     public sealed class AspMvcPartialViewLocationFormatAttribute : Attribute
     {
-        public AspMvcPartialViewLocationFormatAttribute([NotNull] string format) => Format = format;
-
         [NotNull] public string Format { get; }
+        public AspMvcPartialViewLocationFormatAttribute([NotNull] string format) => Format = format;
     }
 
     [AttributeUsage
@@ -806,9 +794,8 @@ namespace WpfApp
     )]
     public sealed class AspMvcViewLocationFormatAttribute : Attribute
     {
-        public AspMvcViewLocationFormatAttribute([NotNull] string format) => Format = format;
-
         [NotNull] public string Format { get; }
+        public AspMvcViewLocationFormatAttribute([NotNull] string format) => Format = format;
     }
 
     /// <summary>
@@ -824,12 +811,11 @@ namespace WpfApp
     )]
     public sealed class AspMvcActionAttribute : Attribute
     {
+        [CanBeNull] public string AnonymousProperty { get; }
         public AspMvcActionAttribute() { }
 
         public AspMvcActionAttribute([NotNull] string anonymousProperty) =>
             AnonymousProperty = anonymousProperty;
-
-        [CanBeNull] public string AnonymousProperty { get; }
     }
 
     /// <summary>
@@ -841,12 +827,11 @@ namespace WpfApp
         (AttributeTargets.Parameter | AttributeTargets.Field | AttributeTargets.Property)]
     public sealed class AspMvcAreaAttribute : Attribute
     {
+        [CanBeNull] public string AnonymousProperty { get; }
         public AspMvcAreaAttribute() { }
 
         public AspMvcAreaAttribute([NotNull] string anonymousProperty) =>
             AnonymousProperty = anonymousProperty;
-
-        [CanBeNull] public string AnonymousProperty { get; }
     }
 
     /// <summary>
@@ -862,12 +847,11 @@ namespace WpfApp
     )]
     public sealed class AspMvcControllerAttribute : Attribute
     {
+        [CanBeNull] public string AnonymousProperty { get; }
         public AspMvcControllerAttribute() { }
 
         public AspMvcControllerAttribute([NotNull] string anonymousProperty) =>
             AnonymousProperty = anonymousProperty;
-
-        [CanBeNull] public string AnonymousProperty { get; }
     }
 
     /// <summary>
@@ -983,20 +967,18 @@ namespace WpfApp
         (AttributeTargets.Parameter | AttributeTargets.Property | AttributeTargets.Field)]
     public sealed class HtmlElementAttributesAttribute : Attribute
     {
+        [CanBeNull] public string Name { get; }
         public HtmlElementAttributesAttribute() { }
 
         public HtmlElementAttributesAttribute([NotNull] string name) => Name = name;
-
-        [CanBeNull] public string Name { get; }
     }
 
     [AttributeUsage
         (AttributeTargets.Parameter | AttributeTargets.Field | AttributeTargets.Property)]
     public sealed class HtmlAttributeValueAttribute : Attribute
     {
-        public HtmlAttributeValueAttribute([NotNull] string name) => Name = name;
-
         [NotNull] public string Name { get; }
+        public HtmlAttributeValueAttribute([NotNull] string name) => Name = name;
     }
 
     /// <summary>
@@ -1040,10 +1022,10 @@ namespace WpfApp
         (AttributeTargets.Method | AttributeTargets.Constructor | AttributeTargets.Property)]
     public sealed class CollectionAccessAttribute : Attribute
     {
+        public CollectionAccessType CollectionAccessType { get; }
+
         public CollectionAccessAttribute(CollectionAccessType collectionAccessType) =>
             CollectionAccessType = collectionAccessType;
-
-        public CollectionAccessType CollectionAccessType { get; }
     }
 
     /// <summary>
@@ -1079,10 +1061,10 @@ namespace WpfApp
     [AttributeUsage(AttributeTargets.Parameter)]
     public sealed class AssertionConditionAttribute : Attribute
     {
+        public AssertionConditionType ConditionType { get; }
+
         public AssertionConditionAttribute(AssertionConditionType conditionType) =>
             ConditionType = conditionType;
-
-        public AssertionConditionType ConditionType { get; }
     }
 
     /// <summary>
@@ -1192,15 +1174,15 @@ namespace WpfApp
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
     public sealed class AspChildControlTypeAttribute : Attribute
     {
+        [NotNull] public Type ControlType { get; }
+
+        [NotNull] public string TagName { get; }
+
         public AspChildControlTypeAttribute([NotNull] string tagName, [NotNull] Type controlType)
         {
             TagName = tagName;
             ControlType = controlType;
         }
-
-        [NotNull] public string TagName { get; }
-
-        [NotNull] public Type ControlType { get; }
     }
 
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Method)]
@@ -1215,53 +1197,52 @@ namespace WpfApp
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
     public sealed class AspRequiredAttributeAttribute : Attribute
     {
-        public AspRequiredAttributeAttribute([NotNull] string attribute) => Attribute = attribute;
-
         [NotNull] public string Attribute { get; }
+        public AspRequiredAttributeAttribute([NotNull] string attribute) => Attribute = attribute;
     }
 
     [AttributeUsage(AttributeTargets.Property)]
     public sealed class AspTypePropertyAttribute : Attribute
     {
+        public bool CreateConstructorReferences { get; }
+
         public AspTypePropertyAttribute(bool createConstructorReferences) =>
             CreateConstructorReferences = createConstructorReferences;
-
-        public bool CreateConstructorReferences { get; }
     }
 
     [AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]
     public sealed class RazorImportNamespaceAttribute : Attribute
     {
-        public RazorImportNamespaceAttribute([NotNull] string name) => Name = name;
-
         [NotNull] public string Name { get; }
+        public RazorImportNamespaceAttribute([NotNull] string name) => Name = name;
     }
 
     [AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]
     public sealed class RazorInjectionAttribute : Attribute
     {
+        [NotNull] public string FieldName { get; }
+
+        [NotNull] public string Type { get; }
+
         public RazorInjectionAttribute([NotNull] string type, [NotNull] string fieldName)
         {
             Type = type;
             FieldName = fieldName;
         }
-
-        [NotNull] public string Type { get; }
-
-        [NotNull] public string FieldName { get; }
     }
 
     [AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]
     public sealed class RazorDirectiveAttribute : Attribute
     {
-        public RazorDirectiveAttribute([NotNull] string directive) => Directive = directive;
-
         [NotNull] public string Directive { get; }
+        public RazorDirectiveAttribute([NotNull] string directive) => Directive = directive;
     }
 
     [AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]
     public sealed class RazorPageBaseTypeAttribute : Attribute
     {
+        [NotNull] public string BaseType { get; }
+        [CanBeNull] public string PageName { get; }
         public RazorPageBaseTypeAttribute([NotNull] string baseType) => BaseType = baseType;
 
         public RazorPageBaseTypeAttribute([NotNull] string baseType, string pageName)
@@ -1269,9 +1250,6 @@ namespace WpfApp
             BaseType = baseType;
             PageName = pageName;
         }
-
-        [NotNull] public string BaseType { get; }
-        [CanBeNull] public string PageName { get; }
     }
 
     [AttributeUsage(AttributeTargets.Method)]

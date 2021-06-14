@@ -16,7 +16,7 @@
                         CanExecute="CommandBinding_OnCanExecute" />
     </Window.CommandBindings>
     <Window.Resources>
-        <Style TargetType="Button" BasedOn="{StaticResource Button_Menu_Standard}"/>
+        <Style TargetType="Button" BasedOn="{StaticResource Button_Menu_Standard}" />
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>

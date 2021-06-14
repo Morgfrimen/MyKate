@@ -14,7 +14,7 @@
         <page:StartPageViewModels />
     </Page.DataContext>
     <Page.Resources>
-        <Style TargetType="Button" BasedOn="{StaticResource Button_Menu_Standard}"/>
+        <Style TargetType="Button" BasedOn="{StaticResource Button_Menu_Standard}" />
     </Page.Resources>
 
     <ItemsControl MinWidth="100" MinHeight="100"

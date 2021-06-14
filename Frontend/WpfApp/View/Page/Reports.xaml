@@ -13,7 +13,7 @@
                         Executed="CommandBinding_OnExecuted" />
     </Page.CommandBindings>
     <Page.Resources>
-        <Style TargetType="Button" BasedOn="{StaticResource Button_Menu_Standard}"/>
+        <Style TargetType="Button" BasedOn="{StaticResource Button_Menu_Standard}" />
     </Page.Resources>
 
     <WrapPanel Orientation="Vertical"

@@ -3,6 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              Startup="App_OnStartup">
     <Application.Resources>
-        <ResourceDictionary Source="Style/CommonDefaultStyleAndDefaultValue.xaml" x:Key="Standard"/>
+        <ResourceDictionary Source="Style/CommonDefaultStyleAndDefaultValue.xaml" x:Key="Standard" />
     </Application.Resources>
 </Application>

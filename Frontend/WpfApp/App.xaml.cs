@@ -18,6 +18,8 @@ namespace WpfApp
     {
         internal string[] ListMuvo { get; private set; }
 
+#region Implemented
+
 #region Overrides of Application
 
         protected override void OnExit(ExitEventArgs e)
@@ -60,5 +62,7 @@ namespace WpfApp
         {
             Shutdown(0);
         }
+
+#endregion
     }
 }

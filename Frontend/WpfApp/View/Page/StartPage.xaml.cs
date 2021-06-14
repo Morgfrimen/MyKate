@@ -7,16 +7,20 @@ namespace WpfApp.View.Page
     /// </summary>
     public partial class StartPage : System.Windows.Controls.Page
     {
-        public StartPage()
-        {
-            InitializeComponent();
-        }
-
         public static RoutedCommand NavigateSecondPageCommand { get; } = new();
+
+#region Implemented
 
         private void CommandBinding_OnExecuted(object sender, ExecutedRoutedEventArgs e)
         {
             _ = MainWindow.FrameMainWindow.Navigate(new SecondPage());
+        }
+
+#endregion
+
+        public StartPage()
+        {
+            InitializeComponent();
         }
     }
 }

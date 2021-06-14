@@ -6,16 +6,6 @@ namespace WpfApp.ViewModels.Page
     {
         private string[] _muvoList;
 
-        public StartPageViewModels()
-        {
-            GetMuvo();
-        }
-
-        private void GetMuvo()
-        {
-            MuvoList = (Application.Current as App).ListMuvo;
-        }
-
         public string[] MuvoList
         {
             get => _muvoList;
@@ -24,6 +14,20 @@ namespace WpfApp.ViewModels.Page
                 _muvoList = value;
                 OnPropertyChanged(nameof(MuvoList));
             }
+        }
+
+#region Implemented
+
+        private void GetMuvo()
+        {
+            MuvoList = (Application.Current as App).ListMuvo;
+        }
+
+#endregion
+
+        public StartPageViewModels()
+        {
+            GetMuvo();
         }
     }
 }

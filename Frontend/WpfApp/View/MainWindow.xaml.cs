@@ -8,12 +8,12 @@ namespace WpfApp.View
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static Frame FrameMainWindow { get; private set; }
+
         public MainWindow()
         {
             InitializeComponent();
             FrameMainWindow = Frame;
         }
-
-        public static Frame FrameMainWindow { get; private set; }
     }
 }
