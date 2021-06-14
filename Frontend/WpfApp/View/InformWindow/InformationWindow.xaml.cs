@@ -12,7 +12,10 @@ namespace WpfApp.View.InformWindow
     {
         public static RoutedCommand CancelConnectionApp { get; } = new();
 
-#region Implemented
+        private void CommandBinding_OnCanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
 
         private void CommandBinding_OnExecuted(object sender, ExecutedRoutedEventArgs e)
         {
@@ -21,13 +24,6 @@ namespace WpfApp.View.InformWindow
             vm.CancellationTokenSource.Cancel();
             vm.OnExitAppEvent();
         }
-
-        private void CommandBinding_OnCanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
-            e.CanExecute = true;
-        }
-
-#endregion
 
         public InformationWindow()
         {

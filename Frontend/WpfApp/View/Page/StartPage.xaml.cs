@@ -9,14 +9,10 @@ namespace WpfApp.View.Page
     {
         public static RoutedCommand NavigateSecondPageCommand { get; } = new();
 
-#region Implemented
-
         private void CommandBinding_OnExecuted(object sender, ExecutedRoutedEventArgs e)
         {
             _ = MainWindow.FrameMainWindow.Navigate(new SecondPage());
         }
-
-#endregion
 
         public StartPage()
         {
