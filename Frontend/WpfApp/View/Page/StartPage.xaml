@@ -8,6 +8,7 @@
       xmlns:page1="clr-namespace:WpfApp.View.Page"
       d:DesignHeight="450" d:DesignWidth="800"
       d:DataContext="{d:DesignInstance page:StartPageViewModels}"
+      d:Background="White"
       Title="Список МУВО">
     <Page.DataContext>
         <page:StartPageViewModels />
