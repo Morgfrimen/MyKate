@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace WpfApp.ViewModels
 {
-    internal abstract class ViewModelsBase : INotifyPropertyChanged
+    public abstract class ViewModelsBase : INotifyPropertyChanged
     {
         [NotifyPropertyChangedInvocator]
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)

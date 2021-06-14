@@ -2,11 +2,11 @@
 
 namespace WpfApp.ViewModels.Page
 {
-    internal sealed class StartPageViewModels : ViewModelsBase
+    public sealed class StartPageViewModels : ViewModelsBase
     {
         private string[] _muvoList;
 
-        internal string[] MuvoList
+        public string[] MuvoList
         {
             get => _muvoList;
             private set

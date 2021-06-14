@@ -1,6 +1,6 @@
 ﻿namespace WpfApp.ViewModels
 {
-    internal sealed class MainWindowViewModels : ViewModelsBase
+    public sealed class MainWindowViewModels : ViewModelsBase
     {
         private readonly string _connectionStatus = "Default";
 

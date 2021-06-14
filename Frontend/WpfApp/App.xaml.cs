@@ -40,9 +40,9 @@ namespace WpfApp
             };
             informWindows.Show();
             ConnectionServiceClient client = new();
-            UserServiceClient userService = new();
-            MuvoServiceClient muvo = new();
-            ListMuvo = await MuvoServiceClient.GetMuvoList(cancellationTokenSource.Token);
+			UserServiceClient userService = new();
+			MuvoServiceClient muvo = new();
+			ListMuvo = await MuvoServiceClient.GetMuvoList(cancellationTokenSource.Token);
             MainWindow main = new()
             {
                 DataContext = new MainWindowViewModels
