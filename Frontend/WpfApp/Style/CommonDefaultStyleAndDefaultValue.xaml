@@ -56,6 +56,13 @@
         </Setter>
     </Style>
 
+    <Style TargetType="UserControl" x:Key="Footer_DataGrid">
+        <Setter Property="Margin"
+                Value="0,10"/>
+        <Setter Property="Padding"
+                Value="20,0"/>
+    </Style>
+
 
     <!--#region DefaultValue -->
     <x:Array Type="gpzCurrentYear:RowModels" x:Key="DefaultReportOne">
