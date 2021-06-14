@@ -11,7 +11,7 @@ namespace WpfApp.View.Page
 
         private void NavigateToReportsPageOnExecuted(object sender, ExecutedRoutedEventArgs e)
         {
-            _ = MainWindow.FrameMainWindow.Navigate(new Reports());
+            _ = MainWindow.FrameMainWindow.Navigate(new SelectReport());
         }
 
         public SecondPage()

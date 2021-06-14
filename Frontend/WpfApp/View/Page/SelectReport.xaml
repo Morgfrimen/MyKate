@@ -1,4 +1,4 @@
-﻿<Page x:Class="WpfApp.View.Page.Reports"
+﻿<Page x:Class="WpfApp.View.Page.SelectReport"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -9,7 +9,7 @@
       d:Background="White"
       Title="Отчеты">
     <Page.CommandBindings>
-        <CommandBinding Command="{x:Static local:Reports.NavigateReport31}"
+        <CommandBinding Command="{x:Static local:SelectReport.NavigateReport31}"
                         Executed="CommandBinding_OnExecuted" />
     </Page.CommandBindings>
     <Page.Resources>
@@ -20,7 +20,7 @@
                VerticalAlignment="Center"
                HorizontalAlignment="Center">
         <Button Content="Отчет форма З-1"
-                Command="{x:Static local:Reports.NavigateReport31}" />
+                Command="{x:Static local:SelectReport.NavigateReport31}" />
         <Button Content="Отчет форма З-2" />
         <Button Content="Отчет форма З-3" />
         <Button Content="Отчет форма З-4" />

@@ -1,20 +1,22 @@
 ﻿using System.Windows.Input;
 
+using WpfApp.View.Page.Reporst;
+
 namespace WpfApp.View.Page
 {
     /// <summary>
-    ///     Логика взаимодействия для Reports.xaml
+    ///     Логика взаимодействия для SelectReport.xaml
     /// </summary>
-    public partial class Reports : System.Windows.Controls.Page
+    public partial class SelectReport : System.Windows.Controls.Page
     {
         public static RoutedCommand NavigateReport31 = new();
 
         private void CommandBinding_OnExecuted(object sender, ExecutedRoutedEventArgs e)
         {
-            MainWindow.FrameMainWindow.Navigate(new DataGridExcelPage());
+            MainWindow.FrameMainWindow.Navigate(new Report3_1());
         }
 
-        public Reports()
+        public SelectReport()
         {
             InitializeComponent();
         }
