@@ -9,8 +9,10 @@
       d:Background="White"
       Title="Отчеты">
     <Page.CommandBindings>
-        <CommandBinding Command="{x:Static local:SelectReport.NavigateReport31}"
-                        Executed="CommandBinding_OnExecuted" />
+        <CommandBinding Command="{x:Static local:SelectReport.NavigateReport3_1}"
+                        Executed="CommandBinding_OnExecuted_Report3_1" />
+        <CommandBinding Command="{x:Static local:SelectReport.NavigateReport3_3}"
+                        Executed="CommandBinding_OnExecuted_Report3_3"/>
     </Page.CommandBindings>
     <Page.Resources>
         <Style TargetType="Button" BasedOn="{StaticResource Button_Menu_Standard}" />
@@ -20,9 +22,10 @@
                VerticalAlignment="Center"
                HorizontalAlignment="Center">
         <Button Content="Отчет форма З-1"
-                Command="{x:Static local:SelectReport.NavigateReport31}" />
+                Command="{x:Static local:SelectReport.NavigateReport3_1}" />
         <Button Content="Отчет форма З-2" />
-        <Button Content="Отчет форма З-3" />
+        <Button Content="Отчет форма З-3" 
+                Command="{x:Static local:SelectReport.NavigateReport3_3}"/>
         <Button Content="Отчет форма З-4" />
     </WrapPanel>
 </Page>

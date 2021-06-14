@@ -63,6 +63,26 @@
                 Value="20,0"/>
     </Style>
 
+    <Style TargetType="DataGrid" x:Key="DataGrid_Reports">
+        <Setter Property="AutoGenerateColumns"
+                Value="False"/>
+        <Setter Property="CanUserAddRows"
+                Value="True"/>
+        <Setter Property="Background"
+                Value="White"/>
+    </Style>
+
+    <Style TargetType="RowDefinition" x:Key="Report_FirstRow">
+        <Setter Property="Height"
+                Value="90*"/>
+    </Style>
+    <Style TargetType="RowDefinition" x:Key="Report_Footer">
+        <Setter Property="Height"
+                Value="10*"/>
+        <Setter Property="MinHeight"
+                Value="50"/>
+    </Style>
+
 
     <!--#region DefaultValue -->
     <x:Array Type="gpzCurrentYear:RowModels" x:Key="DefaultReportOne">

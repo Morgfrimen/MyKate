@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 using Users;
@@ -11,24 +8,17 @@ using WpfApp.View.UserControl;
 
 namespace WpfApp.View.Page.Reporst
 {
-	public abstract class ReportBaseView : System.Windows.Controls.Page
-	{
-        protected void SetGridPanel(Grid grid)
-        {
-            if(grid is null)
-                return;
-            GridPanel = grid;
-        }
-
+    public abstract class ReportBaseView : System.Windows.Controls.Page
+    {
         protected Grid GridPanel { get; private set; }
 
 #region Overrides of FrameworkElement
 
         protected override void OnInitialized(EventArgs e)
         {
-            if(GridPanel is not null)
+            if (GridPanel is not null)
             {
-                var status = (App.Current as App).StatusUser;
+                UserResponce.Types.StatusUser status = (Application.Current as App).StatusUser;
                 System.Windows.Controls.UserControl footer = status switch
                 {
                     UserResponce.Types.StatusUser.Admin => new FooterAdminDataGrid(),
@@ -38,9 +28,21 @@ namespace WpfApp.View.Page.Reporst
                 GridPanel.Children.Add(footer);
                 Grid.SetRow(footer, 1);
             }
+
             base.OnInitialized(e);
         }
 
 #endregion
-	}
+
+        //TODO:Костыль - чтобы GridPanel не был null, потом убрать,а то сроки немного горят
+        protected void GridPanel_OnInitialized(object sender, EventArgs e) => SetGridPanel
+            (sender as Grid);
+
+        protected void SetGridPanel(Grid grid)
+        {
+            if (grid is null) return;
+
+            GridPanel = grid;
+        }
+    }
 }

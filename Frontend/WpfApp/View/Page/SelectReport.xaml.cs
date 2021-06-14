@@ -9,9 +9,10 @@ namespace WpfApp.View.Page
     /// </summary>
     public partial class SelectReport : System.Windows.Controls.Page
     {
-        public static RoutedCommand NavigateReport31 = new();
+        public static RoutedCommand NavigateReport3_1 = new();
+        public static RoutedCommand NavigateReport3_3 = new();
 
-        private void CommandBinding_OnExecuted(object sender, ExecutedRoutedEventArgs e)
+        private void CommandBinding_OnExecuted_Report3_1(object sender, ExecutedRoutedEventArgs e)
         {
             MainWindow.FrameMainWindow.Navigate(new Report3_1());
         }
@@ -19,6 +20,11 @@ namespace WpfApp.View.Page
         public SelectReport()
         {
             InitializeComponent();
+        }
+
+        private void CommandBinding_OnExecuted_Report3_3(object sender, ExecutedRoutedEventArgs e)
+        {
+            MainWindow.FrameMainWindow.Navigate(new Report3_3());
         }
     }
 }

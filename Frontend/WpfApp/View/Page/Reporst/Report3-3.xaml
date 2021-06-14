@@ -1,14 +1,31 @@
-﻿<Page x:Class="WpfApp.View.Page.Reporst.Report3_3"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:WpfApp.View.Page.Reporst"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Report3_3">
+﻿<local:ReportBaseView x:Class="WpfApp.View.Page.Reporst.Report3_3"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:local="clr-namespace:WpfApp.View.Page.Reporst"
+                      mc:Ignorable="d"
+                      d:DesignHeight="450" d:DesignWidth="800"
+                      Title="Report3_3">
+    <Page.Resources>
+        <Style TargetType="DataGrid" BasedOn="{StaticResource DataGrid_Reports}" />
+    </Page.Resources>
 
-    <Grid>
-        
+    <Grid Initialized="GridPanel_OnInitialized">
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource Report_FirstRow}" />
+            <RowDefinition Style="{StaticResource Report_Footer}" />
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№ п/п"/>
+                <DataGridTextColumn Header="№ позиции закупки"/>
+                <DataGridTextColumn Header="Предмет закупки"/>
+                <DataGridTextColumn Header="Наименование контрагента"/>
+                <DataGridTextColumn Header="Реквизиты договора (номер, дата)"/>
+                <DataGridTextColumn Header="Стоимость договора (рублей)"/>
+                <DataGridTextColumn Header="Фактическая оплата на дату отчета (рублей)"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
-</Page>
+</local:ReportBaseView>
