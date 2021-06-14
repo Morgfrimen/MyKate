@@ -12,16 +12,13 @@
         <CommandBinding Command="{x:Static local:Reports.NavigateReport31}"
                         Executed="CommandBinding_OnExecuted" />
     </Page.CommandBindings>
+    <Page.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource Button_Menu_Standard}"/>
+    </Page.Resources>
 
     <WrapPanel Orientation="Vertical"
                VerticalAlignment="Center"
                HorizontalAlignment="Center">
-        <WrapPanel.Resources>
-            <Style TargetType="Button">
-                <Setter Property="Padding" Value="10,5" />
-                <Setter Property="Margin" Value="10,5" />
-            </Style>
-        </WrapPanel.Resources>
         <Button Content="Отчет форма З-1"
                 Command="{x:Static local:Reports.NavigateReport31}" />
         <Button Content="Отчет форма З-2" />

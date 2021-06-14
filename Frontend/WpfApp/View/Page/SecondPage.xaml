@@ -13,60 +13,8 @@
                         Executed="NavigateToReportsPageOnExecuted" />
     </Page.CommandBindings>
     <Page.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Padding"
-                    Value="10,5"/>
-            <Setter Property="Margin"
-                    Value="10,5"/>  
-            <Setter Property="HorizontalContentAlignment"
-                    Value="Center"/>
-            <Setter Property="VerticalContentAlignment"
-                    Value="Center"/>
-            <Setter Property="Background"
-                    Value="LightGray"/>
-            <Setter Property="ContentTemplate">
-                <Setter.Value>
-                    <DataTemplate>
-                        <Border x:Name="BorderButton"
-                                BorderBrush="Gray"
-                                Background="Transparent"
-                                BorderThickness="1"
-                                Padding="25,0"
-                                CornerRadius="10">
-                            <TextBlock Text="{Binding}"
-                                       Padding="0,5"/>
-                            
-                        </Border>
-                    </DataTemplate>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="10,20,10,20"
-                                BorderThickness="1"
-                                Padding="10"
-                                Background="{TemplateBinding Background}"
-                                BorderBrush="Black">
-                            <ContentControl Content="{TemplateBinding Content}"
-                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background"
-                                        Value="LightBlue"/>
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="False">
-                                <Setter Property="Background"
-                                        Value="Transparent"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style TargetType="WrapPanel">
+       <Style TargetType="Button" BasedOn="{StaticResource Button_Menu_Standard}"/>
+       <Style TargetType="WrapPanel">
             <Setter Property="Orientation"
                     Value="Vertical"/>
             <Setter Property="VerticalAlignment"
@@ -97,7 +45,7 @@
         <WrapPanel Grid.Row="0"
                    Grid.Column="1">
             <Button Content="Поключиться к ЕИС"/>
-            <Button Content="Проверить заку"/>
+            <Button Content="Проверить закупку"/>
         </WrapPanel>
     </Grid>
 </Page>

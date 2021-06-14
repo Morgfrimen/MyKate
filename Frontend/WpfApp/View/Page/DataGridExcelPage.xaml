@@ -35,6 +35,7 @@
             <Setter Property="BorderBrush"
                     Value="Black" />
         </Style>
+        <Style TargetType="Button" BasedOn="{StaticResource Button_Menu_Standard}"/>
     </Page.Resources>
 
     <Grid>
