@@ -9,29 +9,7 @@
         MinWidth="650"
         FontSize="16"
         d:DataContext="{d:DesignInstance viewModels:MainWindowViewModels}"
-        Title="MainWindow" Height="450" Width="800">
-    <Window.Resources>
-        <ControlTemplate x:Key="FrameControlTemplate" TargetType="{x:Type Frame}">
-            <DockPanel LastChildFill="False">
-                <Border DockPanel.Dock="Top" 
-                    BorderThickness="1" 
-                        BorderBrush="Black">
-                    <Grid d:Height="30">
-                        <Grid.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#FFDA2C2C" Offset="0.665"/>
-                                <GradientStop Color="#FFE60D0D" Offset="0.929"/>
-                                <GradientStop Color="#FFC94747" Offset="0.481"/>
-                                <GradientStop Color="#FFE62B2B" Offset="0.305"/>
-                                <GradientStop Color="#FFC35E5E" Offset="0.046"/>
-                                <GradientStop Color="#FFE83131" Offset="0.18"/>
-                            </LinearGradientBrush>
-                        </Grid.Background>
-                    </Grid>
-                </Border>
-            </DockPanel>
-        </ControlTemplate>
-    </Window.Resources>
+        Title="МУВО" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="5*" MaxHeight="30" />
@@ -39,7 +17,7 @@
             <RowDefinition Height="10*" MaxHeight="30" />
         </Grid.RowDefinitions>
 
-        <Frame Template="{DynamicResource FrameControlTemplate}" Grid.Row="1"
+        <Frame Grid.Row="1"
                x:Name="Frame"
                Source="Page/StartPage.xaml"
                NavigationUIVisibility="Visible" >
