@@ -13,6 +13,7 @@
       xmlns:simplepresent="clr-namespace:WpfApp.Models"
       Title="Отчет форма 3-1">
     <Page.Resources>
+
         <Thickness x:Key="ThicknessHeaderRightAndBottom" Bottom="1" Right="1" />
         <Thickness x:Key="ThicknessHeaderOnlyBottom" Bottom="1" />
         <Thickness x:Key="ThicknessHeaderOnlyRight" Right="1" />
@@ -30,7 +31,6 @@
             <Setter Property="TextWrapping"
                     Value="Wrap" />
         </Style>
-
         <Style TargetType="Border">
             <Setter Property="BorderBrush"
                     Value="Black" />
@@ -41,77 +41,8 @@
     <Grid>
         <DataGrid AutoGenerateColumns="False"
                   CanUserAddRows="True"
-                  Background="White">
-            <!--#region TODO: ВЫНЕСТИ В ОТДЕЛЬНЫЙ ФАЙЛ -->
-            <DataGrid.ItemsSource>
-                <x:Array Type="gpzCurrentYear:RowModels">
-                    <gpzCurrentYear:RowModels Name="Муво 1"
-                                              Id="1">
-                        <gpzCurrentYear:RowModels.FirstColumnSap>
-                            <gpzCurrentYear:SapPresent>
-                                <gpzCurrentYear:SapPresent.First>
-                                    <simplepresent:CountAndSum Count="10"
-                                                               PriceRow="100" />
-                                </gpzCurrentYear:SapPresent.First>
-                                <gpzCurrentYear:SapPresent.Second>
-                                    <simplepresent:CountAndSum Count="6"
-                                                               PriceRow="235" />
-                                </gpzCurrentYear:SapPresent.Second>
-                            </gpzCurrentYear:SapPresent>
-                        </gpzCurrentYear:RowModels.FirstColumnSap>
-                        <gpzCurrentYear:RowModels.FirstQuarter>
-                            <gpzCurrentYear:Quarter>
-                                <gpzCurrentYear:Quarter.AddFirst>
-                                    <simplepresent:CountAndSum Count="10"
-                                                               PriceRow="16000" />
-                                </gpzCurrentYear:Quarter.AddFirst>
-                                <gpzCurrentYear:Quarter.AddSecond>
-                                    <simplepresent:CountAndSum Count="25"
-                                                               PriceRow="274000" />
-                                </gpzCurrentYear:Quarter.AddSecond>
-                            </gpzCurrentYear:Quarter>
-                        </gpzCurrentYear:RowModels.FirstQuarter>
-                        <gpzCurrentYear:RowModels.SecondQuarter>
-                            <gpzCurrentYear:Quarter>
-                                <gpzCurrentYear:Quarter.AddFirst>
-                                    <simplepresent:CountAndSum Count="10"
-                                                               PriceRow="16000" />
-                                </gpzCurrentYear:Quarter.AddFirst>
-                                <gpzCurrentYear:Quarter.AddSecond>
-                                    <simplepresent:CountAndSum Count="25"
-                                                               PriceRow="274000" />
-                                </gpzCurrentYear:Quarter.AddSecond>
-                            </gpzCurrentYear:Quarter>
-                        </gpzCurrentYear:RowModels.SecondQuarter>
-                        <gpzCurrentYear:RowModels.TreeQuarter>
-                            <gpzCurrentYear:Quarter>
-                                <gpzCurrentYear:Quarter.AddFirst>
-                                    <simplepresent:CountAndSum Count="10"
-                                                               PriceRow="16000" />
-                                </gpzCurrentYear:Quarter.AddFirst>
-                                <gpzCurrentYear:Quarter.AddSecond>
-                                    <simplepresent:CountAndSum Count="25"
-                                                               PriceRow="274000" />
-                                </gpzCurrentYear:Quarter.AddSecond>
-                            </gpzCurrentYear:Quarter>
-                        </gpzCurrentYear:RowModels.TreeQuarter>
-                        <gpzCurrentYear:RowModels.FourthQuarter>
-                            <gpzCurrentYear:Quarter>
-                                <gpzCurrentYear:Quarter.AddFirst>
-                                    <simplepresent:CountAndSum Count="3"
-                                                               PriceRow="1" />
-                                </gpzCurrentYear:Quarter.AddFirst>
-                                <gpzCurrentYear:Quarter.AddSecond>
-                                    <simplepresent:CountAndSum Count="4"
-                                                               PriceRow="50000" />
-                                </gpzCurrentYear:Quarter.AddSecond>
-                            </gpzCurrentYear:Quarter>
-                        </gpzCurrentYear:RowModels.FourthQuarter>
-                    </gpzCurrentYear:RowModels>
-
-                </x:Array>
-            </DataGrid.ItemsSource>
-            <!--#endregion-->
+                  Background="White" 
+                  ItemsSource="{StaticResource DefaultReportOne}">
             <DataGrid.ColumnHeaderStyle>
                 <Style TargetType="DataGridColumnHeader">
                     <Setter Property="Background"
