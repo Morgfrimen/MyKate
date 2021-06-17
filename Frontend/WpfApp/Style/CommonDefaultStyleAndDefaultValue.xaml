@@ -56,11 +56,18 @@
         </Setter>
     </Style>
 
+    <Style TargetType="Page" x:Key="Page_Style">
+        <Setter Property="FontSize"
+                Value="20"/>
+    </Style>
+
     <Style TargetType="UserControl" x:Key="Footer_DataGrid">
         <Setter Property="Margin"
                 Value="0,10"/>
         <Setter Property="Padding"
                 Value="20,0"/>
+        <Setter Property="FontSize"
+                Value="20"/>
     </Style>
 
     <Style TargetType="DataGrid" x:Key="DataGrid_Reports">
@@ -70,11 +77,13 @@
                 Value="True"/>
         <Setter Property="Background"
                 Value="White"/>
+        <Setter Property="FontSize"
+                Value="16"/>
     </Style>
 
     <Style TargetType="RowDefinition" x:Key="Report_FirstRow">
         <Setter Property="Height"
-                Value="90*"/>
+                Value="80*"/>
     </Style>
     <Style TargetType="RowDefinition" x:Key="Report_Footer">
         <Setter Property="Height"
