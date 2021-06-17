@@ -21,7 +21,7 @@ namespace WpfApp.ViewModels.Page
             MuvoList = (Application.Current as App).ListMuvo;
         }
 
-        internal StartPageViewModels()
+        public StartPageViewModels()
         {
             GetMuvo();
         }
