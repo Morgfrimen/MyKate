@@ -14,35 +14,52 @@
         <page:StartPageViewModels />
     </Page.DataContext>
     <Page.Resources>
-        <Style TargetType="Button" BasedOn="{StaticResource Button_Menu_Standard}" />
+        <Style TargetType="Button" BasedOn="{StaticResource Button_Menu_Standard}">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+        </Style>
     </Page.Resources>
 
-    <ItemsControl MinWidth="100" MinHeight="100"
-                  ItemsSource="{Binding MuvoList}"
-                  HorizontalAlignment="Stretch"
-                  VerticalAlignment="Stretch">
-        <ItemsControl.ItemsPanel>
-            <ItemsPanelTemplate>
-                <WrapPanel Orientation="Horizontal"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Center" />
-            </ItemsPanelTemplate>
-        </ItemsControl.ItemsPanel>
-        <ItemsControl.ItemTemplate>
-            <DataTemplate>
-                <Border BorderThickness="1" CornerRadius="15"
-                        Margin="10,5">
-                    <Button Padding="10,5"
-                            Command="{x:Static page1:StartPage.NavigateSecondPageCommand}">
-                        <Button.CommandBindings>
-                            <CommandBinding Command="{x:Static page1:StartPage.NavigateSecondPageCommand}"
-                                            Executed="CommandBinding_OnExecuted" />
-                        </Button.CommandBindings>
-                        <ContentControl VerticalAlignment="Center" HorizontalAlignment="Center" Content="{Binding }" />
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="40*"/>
+        </Grid.RowDefinitions>
 
-                    </Button>
-                </Border>
-            </DataTemplate>
-        </ItemsControl.ItemTemplate>
-    </ItemsControl>
+        <ItemsControl Grid.Row="0"
+                      MinWidth="100" 
+                      MinHeight="100"
+                      ItemsSource="{Binding MuvoList}"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Bottom">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               Margin="150,0"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="1" CornerRadius="15"
+                            Margin="30,5">
+                        <Button Padding="10,5"
+                                Command="{x:Static page1:StartPage.NavigateSecondPageCommand}">
+                            <Button.CommandBindings>
+                                <CommandBinding Command="{x:Static page1:StartPage.NavigateSecondPageCommand}"
+                                                Executed="CommandBinding_OnExecuted" />
+                            </Button.CommandBindings>
+                            <ContentControl VerticalAlignment="Center" HorizontalAlignment="Center"
+                                            Content="{Binding }" />
+
+                        </Button>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <Button Grid.Row="1"
+                Margin="150,0"
+                Content="Центральный аппарат"/>
+    </Grid>
 </Page>
