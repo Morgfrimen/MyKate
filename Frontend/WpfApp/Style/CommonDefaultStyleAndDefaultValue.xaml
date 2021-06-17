@@ -87,9 +87,11 @@
     </Style>
     <Style TargetType="RowDefinition" x:Key="Report_Footer">
         <Setter Property="Height"
-                Value="10*"/>
+                Value="20*"/>
         <Setter Property="MinHeight"
                 Value="50"/>
+        <Setter Property="MaxHeight"
+                Value="60"/>
     </Style>
 
 
