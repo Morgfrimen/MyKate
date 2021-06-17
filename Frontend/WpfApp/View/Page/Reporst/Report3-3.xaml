@@ -19,13 +19,36 @@
         </Grid.RowDefinitions>
         <DataGrid Grid.Row="0">
             <DataGrid.Columns>
-                <DataGridTextColumn Width="*" Header="№ п/п" />
-                <DataGridTextColumn Width="*" Header="№ позиции закупки" />
-                <DataGridTextColumn Width="*" Header="Предмет закупки" />
-                <DataGridTextColumn Width="*" Header="Наименование контрагента" />
-                <DataGridTextColumn Width="*" Header="Реквизиты договора (номер, дата)" />
-                <DataGridTextColumn Width="*" Header="Стоимость договора (рублей)" />
-                <DataGridTextColumn Width="*" Header="Фактическая оплата на дату отчета (рублей)" />
+                <DataGridTextColumn Width="0.6*"
+                                    MinWidth="60"
+                                    Header="№ п/п" 
+                                    ElementStyle="{DynamicResource ReportHeader}"
+                                    HeaderStyle="{DynamicResource DataGridReport3_3_4}" />
+                <DataGridTextColumn Width="*"
+                                    Header="№ позиции закупки"
+                                    ElementStyle="{DynamicResource ReportHeader}"
+                                    HeaderStyle="{DynamicResource DataGridReport3_3_4}" />
+                <DataGridTextColumn Width="*"
+                                    Header="Предмет закупки"
+                                    ElementStyle="{DynamicResource ReportHeader}"
+                                    HeaderStyle="{DynamicResource DataGridReport3_3_4}" />
+                <DataGridTextColumn Width="*"
+                                    Header="Наименование контрагента"
+                                    ElementStyle="{DynamicResource ReportHeader}"
+                                    HeaderStyle="{DynamicResource DataGridReport3_3_4}" />
+                <DataGridTextColumn Width="*" 
+                                    Header="Реквизиты договора (номер, дата)"
+                                    ElementStyle="{DynamicResource ReportHeader}"
+                                    HeaderStyle="{DynamicResource DataGridReport3_3_4}" />
+                <DataGridTextColumn Width="*" 
+                                    Header="Стоимость договора (рублей)"
+                                    ElementStyle="{DynamicResource ReportHeader}"
+                                    HeaderStyle="{DynamicResource DataGridReport3_3_4}" />
+                <DataGridTextColumn Width="1.4*" 
+                                    MinWidth="100"
+                                    Header="Фактическая оплата на дату отчета (рублей)"
+                                    ElementStyle="{DynamicResource ReportHeader}"
+                                    HeaderStyle="{DynamicResource DataGridReport3_3_4}" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

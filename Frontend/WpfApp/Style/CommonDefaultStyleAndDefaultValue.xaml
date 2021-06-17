@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:gpzCurrentYear="clr-namespace:WpfApp.Models.GPZCurrentYear"
                     xmlns:models="clr-namespace:WpfApp.Models">
-    <Style TargetType="Button" x:Key="Button_Menu_Standard">
+    <Style TargetType="Button"
+           x:Key="Button_Menu_Standard">
         <Setter Property="Padding"
                 Value="10,5" />
         <Setter Property="Margin"
@@ -42,11 +43,13 @@
                                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
                     </Border>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
                             <Setter Property="Background"
                                     Value="LightBlue" />
                         </Trigger>
-                        <Trigger Property="IsMouseOver" Value="False">
+                        <Trigger Property="IsMouseOver"
+                                 Value="False">
                             <Setter Property="Background"
                                     Value="Transparent" />
                         </Trigger>
@@ -56,12 +59,14 @@
         </Setter>
     </Style>
 
-    <Style TargetType="Page" x:Key="Page_Style">
+    <Style TargetType="Page"
+           x:Key="Page_Style">
         <Setter Property="FontSize"
                 Value="20" />
     </Style>
 
-    <Style TargetType="UserControl" x:Key="Footer_DataGrid">
+    <Style TargetType="UserControl"
+           x:Key="Footer_DataGrid">
         <Setter Property="Margin"
                 Value="0,10" />
         <Setter Property="Padding"
@@ -70,7 +75,8 @@
                 Value="20" />
     </Style>
 
-    <Style TargetType="DataGrid" x:Key="DataGrid_Reports">
+    <Style TargetType="DataGrid"
+           x:Key="DataGrid_Reports">
         <Setter Property="AutoGenerateColumns"
                 Value="False" />
         <Setter Property="CanUserAddRows"
@@ -81,11 +87,13 @@
                 Value="16" />
     </Style>
 
-    <Style TargetType="RowDefinition" x:Key="Report_FirstRow">
+    <Style TargetType="RowDefinition"
+           x:Key="Report_FirstRow">
         <Setter Property="Height"
                 Value="80*" />
     </Style>
-    <Style TargetType="RowDefinition" x:Key="Report_Footer">
+    <Style TargetType="RowDefinition"
+           x:Key="Report_Footer">
         <Setter Property="Height"
                 Value="20*" />
         <Setter Property="MinHeight"
@@ -94,9 +102,52 @@
                 Value="60" />
     </Style>
 
+    <!-- ReSharper disable once InconsistentNaming -->
+    <Style TargetType="DataGridColumnHeader"
+           x:Key="DataGridReport3_3_4">
+        <Setter Property="MinHeight"
+                Value="70" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="TextBlock">
+                    <TextBlock TextWrapping="Wrap"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="DataGridColumnHeader">
+                    <Border BorderBrush="Black"
+                            Padding="5,5"
+                            BorderThickness="1">
+                        <ContentControl MaxWidth="150"
+                                        VerticalContentAlignment="Center"
+                                        HorizontalContentAlignment="Center">
+                            <TextBlock TextWrapping="WrapWithOverflow"
+                                       Text="{TemplateBinding Content}"/>
+                        </ContentControl>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="TextBlock"
+           x:Key="ReportHeader">
+        <Setter Property="TextWrapping"
+                Value="Wrap" />
+        <Setter Property="FontWeight"
+                Value="Bold" />
+        <Setter Property="TextAlignment"
+                Value="Center" />
+        <Setter Property="VerticalAlignment"
+                Value="Center" />
+    </Style>
+
 
     <!--#region DefaultValue -->
-    <x:Array Type="gpzCurrentYear:RowModels" x:Key="DefaultReportOne">
+    <x:Array Type="gpzCurrentYear:RowModels"
+             x:Key="DefaultReportOne">
         <gpzCurrentYear:RowModels Name="Муво 1"
                                   Id="1">
             <gpzCurrentYear:RowModels.FirstColumnSap>
