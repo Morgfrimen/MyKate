@@ -6,19 +6,19 @@
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <Style TargetType="Button" BasedOn="{StaticResource Button_Menu_Standard}"/>
-        <Style TargetType="UserControl" BasedOn="{StaticResource Footer_DataGrid}"/>
+        <Style TargetType="Button" BasedOn="{StaticResource Button_Menu_Standard}" />
+        <Style TargetType="UserControl" BasedOn="{StaticResource Footer_DataGrid}" />
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
         <Button Grid.Column="0"
-                Content="Отменить изменения"/>
+                Content="Отменить изменения" />
         <Button Grid.Column="1"
-                Content="Сохранить изменения"/>
+                Content="Сохранить изменения" />
 
     </Grid>
 </UserControl>

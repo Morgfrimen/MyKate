@@ -19,7 +19,13 @@ namespace WpfApp
     public partial class App : Application
     {
         internal string[] ListMuvo { get; private set; }
-        internal UserResponce.Types.StatusUser StatusUser { get; private set; }//Это нужно для выбора Footer в отчетах (пока)ничего умнее ночью в голову мне не пришло :)
+
+        internal UserResponce.Types.StatusUser
+            StatusUser
+        {
+            get;
+            private set;
+        } //Это нужно для выбора Footer в отчетах (пока)ничего умнее ночью в голову мне не пришло :)
 
 #region Overrides of Application
 
@@ -43,7 +49,7 @@ namespace WpfApp
             };
             informWindows.Show();
             ConnectionServiceClient client = new();
-			ListMuvo = await MuvoServiceClient.GetMuvoList(cancellationTokenSource.Token);
+            ListMuvo = await MuvoServiceClient.GetMuvoList(cancellationTokenSource.Token);
             StatusUser = await UserServiceClient.GetStatusUser(cancellationTokenSource.Token);
             MainWindow main = new()
             {

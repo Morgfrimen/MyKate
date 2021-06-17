@@ -1,29 +1,29 @@
 ﻿<local:ReportBaseView x:Class="WpfApp.View.Page.Reporst.Report3_4"
-                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-                xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-                xmlns:local="clr-namespace:WpfApp.View.Page.Reporst"
-                mc:Ignorable="d"
-                Style="{StaticResource Page_Style}"
-                d:DesignHeight="450" d:DesignWidth="800"
-                Title="Report3_4">
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:local="clr-namespace:WpfApp.View.Page.Reporst"
+                      mc:Ignorable="d"
+                      Style="{StaticResource Page_Style}"
+                      d:DesignHeight="450" d:DesignWidth="800"
+                      Title="Report3_4">
     <Page.Resources>
         <Style TargetType="DataGrid" BasedOn="{StaticResource DataGrid_Reports}" />
     </Page.Resources>
 
     <Grid Initialized="GridPanel_OnInitialized">
         <Grid.RowDefinitions>
-        <RowDefinition Style="{StaticResource Report_FirstRow}" />
-        <RowDefinition Style="{StaticResource Report_Footer}" />
+            <RowDefinition Style="{StaticResource Report_FirstRow}" />
+            <RowDefinition Style="{StaticResource Report_Footer}" />
         </Grid.RowDefinitions>
         <DataGrid Grid.Row="0">
             <DataGrid.Columns>
-                <DataGridTextColumn Width="*" Header="№ п/п"/>
-                <DataGridTextColumn Width="*" Header="Наименование контрагента"/>
-                <DataGridTextColumn Width="*" Header="Предмет закупки"/>
-                <DataGridTextColumn Width="*" Header="Сумма на дату отчета (рублей) с НДС"/>
-                <DataGridTextColumn Width="*" Header="Примечание"/>
+                <DataGridTextColumn Width="*" Header="№ п/п" />
+                <DataGridTextColumn Width="*" Header="Наименование контрагента" />
+                <DataGridTextColumn Width="*" Header="Предмет закупки" />
+                <DataGridTextColumn Width="*" Header="Сумма на дату отчета (рублей) с НДС" />
+                <DataGridTextColumn Width="*" Header="Примечание" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

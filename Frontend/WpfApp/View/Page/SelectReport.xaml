@@ -29,7 +29,7 @@
         <Button Content="Отчет форма З-2" />
         <Button Content="Отчет форма З-3"
                 Command="{x:Static local:SelectReport.NavigateReport3_3}" />
-        <Button Content="Отчет форма З-4" 
-                Command="{x:Static local:SelectReport.NavigateReport3_4}"/>
+        <Button Content="Отчет форма З-4"
+                Command="{x:Static local:SelectReport.NavigateReport3_4}" />
     </WrapPanel>
 </Page>

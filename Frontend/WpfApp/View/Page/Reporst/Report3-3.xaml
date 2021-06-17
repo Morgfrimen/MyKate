@@ -19,13 +19,13 @@
         </Grid.RowDefinitions>
         <DataGrid Grid.Row="0">
             <DataGrid.Columns>
-                <DataGridTextColumn Width="*" Header="№ п/п"/>
-                <DataGridTextColumn Width="*"  Header="№ позиции закупки"/>
-                <DataGridTextColumn Width="*"  Header="Предмет закупки"/>
-                <DataGridTextColumn Width="*"  Header="Наименование контрагента"/>
-                <DataGridTextColumn Width="*"  Header="Реквизиты договора (номер, дата)"/>
-                <DataGridTextColumn Width="*"  Header="Стоимость договора (рублей)"/>
-                <DataGridTextColumn Width="*"  Header="Фактическая оплата на дату отчета (рублей)"/>
+                <DataGridTextColumn Width="*" Header="№ п/п" />
+                <DataGridTextColumn Width="*" Header="№ позиции закупки" />
+                <DataGridTextColumn Width="*" Header="Предмет закупки" />
+                <DataGridTextColumn Width="*" Header="Наименование контрагента" />
+                <DataGridTextColumn Width="*" Header="Реквизиты договора (номер, дата)" />
+                <DataGridTextColumn Width="*" Header="Стоимость договора (рублей)" />
+                <DataGridTextColumn Width="*" Header="Фактическая оплата на дату отчета (рублей)" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
