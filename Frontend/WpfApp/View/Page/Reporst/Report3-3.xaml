@@ -21,7 +21,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Width="0.6*"
                                     MinWidth="60"
-                                    Header="№ п/п" 
+                                    Header="№ п/п"
                                     ElementStyle="{DynamicResource ReportHeader}"
                                     HeaderStyle="{DynamicResource DataGridReport3_3_4}" />
                 <DataGridTextColumn Width="*"
@@ -36,15 +36,15 @@
                                     Header="Наименование контрагента"
                                     ElementStyle="{DynamicResource ReportHeader}"
                                     HeaderStyle="{DynamicResource DataGridReport3_3_4}" />
-                <DataGridTextColumn Width="*" 
+                <DataGridTextColumn Width="*"
                                     Header="Реквизиты договора (номер, дата)"
                                     ElementStyle="{DynamicResource ReportHeader}"
                                     HeaderStyle="{DynamicResource DataGridReport3_3_4}" />
-                <DataGridTextColumn Width="*" 
+                <DataGridTextColumn Width="*"
                                     Header="Стоимость договора (рублей)"
                                     ElementStyle="{DynamicResource ReportHeader}"
                                     HeaderStyle="{DynamicResource DataGridReport3_3_4}" />
-                <DataGridTextColumn Width="1.4*" 
+                <DataGridTextColumn Width="1.4*"
                                     MinWidth="100"
                                     Header="Фактическая оплата на дату отчета (рублей)"
                                     ElementStyle="{DynamicResource ReportHeader}"

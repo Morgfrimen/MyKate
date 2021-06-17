@@ -168,6 +168,7 @@ namespace WpfApp
     public sealed class ValueProviderAttribute : Attribute
     {
         [NotNull] public string Name { get; }
+
         public ValueProviderAttribute([NotNull] string name) => Name = name;
     }
 
@@ -448,6 +449,7 @@ namespace WpfApp
     public sealed class BaseTypeRequiredAttribute : Attribute
     {
         [NotNull] public Type BaseType { get; }
+
         public BaseTypeRequiredAttribute([NotNull] Type baseType) => BaseType = baseType;
     }
 
@@ -738,6 +740,7 @@ namespace WpfApp
     public sealed class AspMvcAreaMasterLocationFormatAttribute : Attribute
     {
         [NotNull] public string Format { get; }
+
         public AspMvcAreaMasterLocationFormatAttribute([NotNull] string format) => Format = format;
     }
 
@@ -762,6 +765,7 @@ namespace WpfApp
     public sealed class AspMvcAreaViewLocationFormatAttribute : Attribute
     {
         [NotNull] public string Format { get; }
+
         public AspMvcAreaViewLocationFormatAttribute([NotNull] string format) => Format = format;
     }
 
@@ -773,6 +777,7 @@ namespace WpfApp
     public sealed class AspMvcMasterLocationFormatAttribute : Attribute
     {
         [NotNull] public string Format { get; }
+
         public AspMvcMasterLocationFormatAttribute([NotNull] string format) => Format = format;
     }
 
@@ -784,6 +789,7 @@ namespace WpfApp
     public sealed class AspMvcPartialViewLocationFormatAttribute : Attribute
     {
         [NotNull] public string Format { get; }
+
         public AspMvcPartialViewLocationFormatAttribute([NotNull] string format) => Format = format;
     }
 
@@ -795,6 +801,7 @@ namespace WpfApp
     public sealed class AspMvcViewLocationFormatAttribute : Attribute
     {
         [NotNull] public string Format { get; }
+
         public AspMvcViewLocationFormatAttribute([NotNull] string format) => Format = format;
     }
 
@@ -978,6 +985,7 @@ namespace WpfApp
     public sealed class HtmlAttributeValueAttribute : Attribute
     {
         [NotNull] public string Name { get; }
+
         public HtmlAttributeValueAttribute([NotNull] string name) => Name = name;
     }
 
@@ -1198,6 +1206,7 @@ namespace WpfApp
     public sealed class AspRequiredAttributeAttribute : Attribute
     {
         [NotNull] public string Attribute { get; }
+
         public AspRequiredAttributeAttribute([NotNull] string attribute) => Attribute = attribute;
     }
 
@@ -1214,6 +1223,7 @@ namespace WpfApp
     public sealed class RazorImportNamespaceAttribute : Attribute
     {
         [NotNull] public string Name { get; }
+
         public RazorImportNamespaceAttribute([NotNull] string name) => Name = name;
     }
 
@@ -1235,6 +1245,7 @@ namespace WpfApp
     public sealed class RazorDirectiveAttribute : Attribute
     {
         [NotNull] public string Directive { get; }
+
         public RazorDirectiveAttribute([NotNull] string directive) => Directive = directive;
     }
 
@@ -1243,6 +1254,7 @@ namespace WpfApp
     {
         [NotNull] public string BaseType { get; }
         [CanBeNull] public string PageName { get; }
+
         public RazorPageBaseTypeAttribute([NotNull] string baseType) => BaseType = baseType;
 
         public RazorPageBaseTypeAttribute([NotNull] string baseType, string pageName)

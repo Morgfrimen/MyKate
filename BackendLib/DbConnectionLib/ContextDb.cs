@@ -10,14 +10,9 @@ namespace DbConnectionLib
 {
     public sealed class ContextDb : DbContext
     {
-        public ContextDb()
-        {
-            GetStringConnection();
-            _ = Database.EnsureCreated();
-        }
+        public DbSet<Admin> Admins { get; set; }
 
         private string Connection { get; set; }
-        public DbSet<Admin> Admins { get; set; }
         public DbSet<Muvo> Muvos { get; set; }
 
 #region Overrides of DbContext
@@ -55,6 +50,12 @@ namespace DbConnectionLib
             {
                 Connection = settings[nameof(Connection)].Value;
             }
+        }
+
+        public ContextDb()
+        {
+            GetStringConnection();
+            _ = Database.EnsureCreated();
         }
 
         private const int MaxDefaultMuvo = 7;

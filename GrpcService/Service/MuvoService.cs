@@ -13,12 +13,6 @@ namespace GrpcService.Service
     {
         private readonly ContextDb _contextDb;
 
-        public MuvoService(ContextDb contextDb)
-        {
-            _contextDb = contextDb;
-            _contextDb.DefaultDbSetMuvo();
-        }
-
 #region Overrides of GetListMuvoServiceBase
 
         public override Task<MuvoListResponce> MuvoList(MuvoListRequest request,
@@ -27,17 +21,19 @@ namespace GrpcService.Service
             DbConnectionLib.Models.Muvo[] listMuvo = _contextDb.Muvos.ToArray();
             MuvoListResponce.Types.array[] arrays =
                 new MuvoListResponce.Types.array[listMuvo.Length];
-
             for (int index = 0; index < listMuvo.Length; index++)
-            {
                 arrays[index] = new() {NameMuvo = listMuvo[index].Name};
-            }
-
             MuvoListResponce responces = new() {Arrays = {arrays}};
 
             return Task.FromResult(responces);
         }
 
 #endregion
+
+        public MuvoService(ContextDb contextDb)
+        {
+            _contextDb = contextDb;
+            _contextDb.DefaultDbSetMuvo();
+        }
     }
 }

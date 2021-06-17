@@ -110,7 +110,7 @@
         <Setter Property="ContentTemplate">
             <Setter.Value>
                 <DataTemplate DataType="TextBlock">
-                    <TextBlock TextWrapping="Wrap"/>
+                    <TextBlock TextWrapping="Wrap" />
                 </DataTemplate>
             </Setter.Value>
         </Setter>
@@ -124,7 +124,7 @@
                                         VerticalContentAlignment="Center"
                                         HorizontalContentAlignment="Center">
                             <TextBlock TextWrapping="WrapWithOverflow"
-                                       Text="{TemplateBinding Content}"/>
+                                       Text="{TemplateBinding Content}" />
                         </ContentControl>
                     </Border>
                 </ControlTemplate>

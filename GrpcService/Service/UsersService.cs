@@ -14,8 +14,6 @@ namespace GrpcService.Service
 {
     public sealed class UsersService : GetUserService.GetUserServiceBase
     {
-        public UsersService(ContextDb contextDb) => ContextDb = contextDb;
-
         private ContextDb ContextDb { get; }
 
 #region Overrides of GetUserServiceBase
@@ -33,5 +31,7 @@ namespace GrpcService.Service
         }
 
 #endregion
+
+        public UsersService(ContextDb contextDb) => ContextDb = contextDb;
     }
 }

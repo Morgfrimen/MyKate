@@ -20,8 +20,7 @@ namespace WpfApp
     {
         internal string[] ListMuvo { get; private set; }
 
-        internal UserResponce.Types.StatusUser
-            StatusUser
+        internal UserResponce.Types.StatusUser StatusUser
         {
             get;
             private set;

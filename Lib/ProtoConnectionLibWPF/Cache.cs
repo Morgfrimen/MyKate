@@ -11,19 +11,19 @@ namespace ProtoConnectionLibWPF
 
         private static string _urlServer;
 
-        static Cache()
+        internal static GrpcChannel ChannelServer { get; set; }
+
+        internal static Guid GuidUser
         {
-            Configuration configFile = ConfigurationManager.OpenExeConfiguration
-                (ConfigurationUserLevel.None);
-            KeyValueConfigurationCollection settings = configFile.AppSettings.Settings;
-            ReadOrWriteSettings
-                (configFile, settings, nameof(UrlServer), "https://localhost:5001", ref _urlServer);
-            ReadOrWriteSettings
-                (configFile, settings, nameof(GuidUser), Guid.NewGuid().ToString(), ref _guidUser);
-            ChannelServer = GrpcChannel.ForAddress(UrlServer);
+            get => _guidUser;
+            set => _guidUser = value;
         }
 
-        internal static GrpcChannel ChannelServer { get; set; }
+        internal static string UrlServer
+        {
+            get => _urlServer;
+            set => _urlServer = value;
+        }
 
         internal static void CloseChannel()
         {
@@ -59,16 +59,16 @@ namespace ProtoConnectionLibWPF
             field = Guid.Parse(fieldStr);
         }
 
-        internal static string UrlServer
+        static Cache()
         {
-            get => _urlServer;
-            set => _urlServer = value;
-        }
-
-        internal static Guid GuidUser
-        {
-            get => _guidUser;
-            set => _guidUser = value;
+            Configuration configFile = ConfigurationManager.OpenExeConfiguration
+                (ConfigurationUserLevel.None);
+            KeyValueConfigurationCollection settings = configFile.AppSettings.Settings;
+            ReadOrWriteSettings
+                (configFile, settings, nameof(UrlServer), "https://localhost:5001", ref _urlServer);
+            ReadOrWriteSettings
+                (configFile, settings, nameof(GuidUser), Guid.NewGuid().ToString(), ref _guidUser);
+            ChannelServer = GrpcChannel.ForAddress(UrlServer);
         }
     }
 }

@@ -35,8 +35,10 @@ namespace WpfApp.View.Page.Reporst
 #endregion
 
         //TODO:Костыль - чтобы GridPanel не был null, потом убрать,а то сроки немного горят
-        protected void GridPanel_OnInitialized(object sender, EventArgs e) => SetGridPanel
-            (sender as Grid);
+        protected void GridPanel_OnInitialized(object sender, EventArgs e)
+        {
+            SetGridPanel(sender as Grid);
+        }
 
         protected void SetGridPanel(Grid grid)
         {
