@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         MinHeight="500"
         MinWidth="650"
-        FontSize="16"
+        FontSize="20"
         d:DataContext="{d:DesignInstance viewModels:MainWindowViewModels}"
         Title="МУВО" Height="450" Width="800">
     <Grid>
