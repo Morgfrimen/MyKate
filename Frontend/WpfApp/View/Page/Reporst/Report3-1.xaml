@@ -288,7 +288,7 @@
                                 <Border Grid.Row="1"
                                         Grid.Column="0"
                                         Grid.ColumnSpan="4"
-                                        Background="Yellow"
+                                        Background="White"
                                         BorderThickness="{StaticResource ThicknessHeaderRightAndBottom}">
                                     <TextBlock Text="1 квартал"
                                                FontWeight="Bold" />
@@ -341,7 +341,7 @@
                                 <Border Grid.Row="1"
                                         Grid.Column="4"
                                         Grid.ColumnSpan="4"
-                                        Background="Yellow"
+                                        Background="White"
                                         BorderThickness="{StaticResource ThicknessHeaderRightAndBottom}">
                                     <TextBlock Text="2 квартал"
                                                FontWeight="Bold" />
@@ -393,7 +393,7 @@
                                 <Border Grid.Row="1"
                                         Grid.Column="8"
                                         Grid.ColumnSpan="4"
-                                        Background="Yellow"
+                                        Background="White"
                                         BorderThickness="{StaticResource ThicknessHeaderRightAndBottom}">
                                     <TextBlock Text="3 квартал"
                                                FontWeight="Bold" />
@@ -446,7 +446,7 @@
                                 <Border Grid.Row="1"
                                         Grid.Column="12"
                                         Grid.ColumnSpan="4"
-                                        Background="Yellow"
+                                        Background="White"
                                         BorderThickness="{StaticResource ThicknessHeaderRightAndBottom}">
                                     <TextBlock Text="4 квартал"
                                                FontWeight="Bold" />

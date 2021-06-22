@@ -119,11 +119,63 @@
                 <ControlTemplate TargetType="DataGridColumnHeader">
                     <Border BorderBrush="Black"
                             Padding="5,5"
-                            BorderThickness="1">
+                            Background="White"
+                            BorderThickness="0.5,1,0.5,1">
                         <ContentControl MaxWidth="150"
                                         VerticalContentAlignment="Center"
                                         HorizontalContentAlignment="Center">
                             <TextBlock TextWrapping="WrapWithOverflow"
+                                       TextAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Text="{TemplateBinding Content}" />
+                        </ContentControl>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- ReSharper disable once InconsistentNaming -->
+    <Style TargetType="DataGridColumnHeader" 
+           BasedOn="{StaticResource DataGridReport3_3_4}"
+           x:Key="DataGridReport3_3_4_Left">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="DataGridColumnHeader">
+                    <Border BorderBrush="Black"
+                            Padding="5,5"
+                            Background="White"
+                            BorderThickness="1,1,0.5,1">
+                        <ContentControl MaxWidth="150"
+                                        VerticalContentAlignment="Center"
+                                        HorizontalContentAlignment="Center">
+                            <TextBlock TextWrapping="WrapWithOverflow"
+                                       VerticalAlignment="Center"
+                                       TextAlignment="Center"
+                                       Text="{TemplateBinding Content}" />
+                        </ContentControl>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="DataGridColumnHeader"
+           BasedOn="{StaticResource DataGridReport3_3_4}"
+           x:Key="DataGridReport3_3_4_Right">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="DataGridColumnHeader">
+                    <Border BorderBrush="Black"
+                            Padding="5,5"
+                            Background="White"
+                            BorderThickness="0.5,1,1,1">
+                        <ContentControl MaxWidth="150"
+                                        VerticalContentAlignment="Center"
+                                        HorizontalContentAlignment="Center">
+                            <TextBlock TextWrapping="WrapWithOverflow"
+                                       TextAlignment="Center"
+                                       VerticalAlignment="Center"
                                        Text="{TemplateBinding Content}" />
                         </ContentControl>
                     </Border>

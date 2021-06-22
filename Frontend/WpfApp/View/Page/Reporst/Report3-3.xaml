@@ -17,13 +17,14 @@
             <RowDefinition Style="{StaticResource Report_FirstRow}" />
             <RowDefinition Style="{StaticResource Report_Footer}" />
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0">
+        <DataGrid Grid.Row="0"
+                  Margin="1,0">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="0.6*"
                                     MinWidth="60"
                                     Header="№ п/п"
                                     ElementStyle="{DynamicResource ReportHeader}"
-                                    HeaderStyle="{DynamicResource DataGridReport3_3_4}" />
+                                    HeaderStyle="{DynamicResource DataGridReport3_3_4_Left}" />
                 <DataGridTextColumn Width="*"
                                     Header="№ позиции закупки"
                                     ElementStyle="{DynamicResource ReportHeader}"
@@ -48,7 +49,7 @@
                                     MinWidth="100"
                                     Header="Фактическая оплата на дату отчета (рублей)"
                                     ElementStyle="{DynamicResource ReportHeader}"
-                                    HeaderStyle="{DynamicResource DataGridReport3_3_4}" />
+                                    HeaderStyle="{DynamicResource DataGridReport3_3_4_Right}" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

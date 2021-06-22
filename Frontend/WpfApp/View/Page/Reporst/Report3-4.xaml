@@ -24,7 +24,7 @@
                 <DataGridTextColumn Width="*"
                                     Header="№ п/п"
                                     ElementStyle="{DynamicResource ReportHeader}"
-                                    HeaderStyle="{DynamicResource DataGridReport3_3_4}" />
+                                    HeaderStyle="{DynamicResource DataGridReport3_3_4_Left}" />
                 <DataGridTextColumn Width="*"
                                     Header="Наименование контрагента"
                                     ElementStyle="{DynamicResource ReportHeader}"
@@ -40,7 +40,7 @@
                 <DataGridTextColumn Width="*"
                                     Header="Примечание"
                                     ElementStyle="{DynamicResource ReportHeader}"
-                                    HeaderStyle="{DynamicResource DataGridReport3_3_4}" />
+                                    HeaderStyle="{DynamicResource DataGridReport3_3_4_Right}" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
