@@ -12,8 +12,9 @@ namespace WpfApp.View.Page
         public static RoutedCommand NavigateToReportsPage { get; } = new();
 
         public static RoutedCommand NavigateToGPZCurrentYearPage { get; } = new();
+        public static RoutedCommand NavigateToGPZPastYearPage { get; } = new();
 
-        private void NavigateToReportsPageOnExecuted(object sender, ExecutedRoutedEventArgs e)
+        private void NavigateToReportsPage_OnExecuted(object sender, ExecutedRoutedEventArgs e)
         {
             _ = MainWindow.FrameMainWindow.Navigate(new SelectReport());
         }
@@ -23,9 +24,14 @@ namespace WpfApp.View.Page
             InitializeComponent();
         }
 
-        private void CommandBinding_OnExecuted(object sender, ExecutedRoutedEventArgs e)
+        private void NavigateToGPZCurrentYearPage_OnExecuted(object sender, ExecutedRoutedEventArgs e)
         {
             _ = MainWindow.FrameMainWindow.Navigate(new GpzCurrentYearPage());
         }
-    }
+
+		private void NavigateToGPZPastYearPage_OnExecuted(object sender, ExecutedRoutedEventArgs e)
+		{
+			_ = MainWindow.FrameMainWindow.Navigate(new GPZPastYearPage());
+		}
+	}
 }

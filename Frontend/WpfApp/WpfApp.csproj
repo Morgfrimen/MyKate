@@ -18,4 +18,18 @@
 		<ProjectReference Include="..\..\Lib\ProtoConnectionLibWPF\ProtoConnectionLibWPF.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="View\GPZ\GPZCurrentYearPage - Копировать.xaml.cs">
+	    <SubType>Code</SubType>
+	    <DependentUpon>GPZCurrentYearPage.xaml.cs</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Page Update="View\GPZ\GPZPastYearPage.xaml">
+	    <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+	    <SubType>Designer</SubType>
+	  </Page>
+	</ItemGroup>
+
 </Project>
