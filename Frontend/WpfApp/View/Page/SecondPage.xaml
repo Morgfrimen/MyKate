@@ -12,6 +12,8 @@
     <Page.CommandBindings>
         <CommandBinding Command="{x:Static page:SecondPage.NavigateToReportsPage}"
                         Executed="NavigateToReportsPageOnExecuted" />
+        <CommandBinding Command="{x:Static page:SecondPage.NavigateToGPZCurrentYearPage}"
+                        Executed="CommandBinding_OnExecuted" />
     </Page.CommandBindings>
     <Page.Resources>
         <Style TargetType="Button" BasedOn="{StaticResource Button_Menu_Standard}" />
@@ -34,7 +36,8 @@
         <!--#region Column 0 -->
         <WrapPanel Grid.Row="0"
                    Grid.Column="0">
-            <Button Content="ГПЗ текущий год" />
+            <Button Content="ГПЗ текущий год" 
+                    Command="{x:Static page:SecondPage.NavigateToGPZCurrentYearPage}"/>
             <Button Content="ГПЗ прошлый год" />
             <Button Content="Договора текущего года" />
             <Button Content="Договора прошлого года" />

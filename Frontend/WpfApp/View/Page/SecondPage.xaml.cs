@@ -1,5 +1,7 @@
 ﻿using System.Windows.Input;
 
+using WpfApp.View.GPZ;
+
 namespace WpfApp.View.Page
 {
     /// <summary>
@@ -9,6 +11,8 @@ namespace WpfApp.View.Page
     {
         public static RoutedCommand NavigateToReportsPage { get; } = new();
 
+        public static RoutedCommand NavigateToGPZCurrentYearPage { get; } = new();
+
         private void NavigateToReportsPageOnExecuted(object sender, ExecutedRoutedEventArgs e)
         {
             _ = MainWindow.FrameMainWindow.Navigate(new SelectReport());
@@ -17,6 +21,11 @@ namespace WpfApp.View.Page
         public SecondPage()
         {
             InitializeComponent();
+        }
+
+        private void CommandBinding_OnExecuted(object sender, ExecutedRoutedEventArgs e)
+        {
+            _ = MainWindow.FrameMainWindow.Navigate(new GpzCurrentYearPage());
         }
     }
 }
