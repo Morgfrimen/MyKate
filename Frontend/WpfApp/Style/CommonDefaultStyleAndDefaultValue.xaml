@@ -136,7 +136,7 @@
     </Style>
 
     <!-- ReSharper disable once InconsistentNaming -->
-    <Style TargetType="DataGridColumnHeader" 
+    <Style TargetType="DataGridColumnHeader"
            BasedOn="{StaticResource DataGridReport3_3_4}"
            x:Key="DataGridReport3_3_4_Left">
         <Setter Property="Template">

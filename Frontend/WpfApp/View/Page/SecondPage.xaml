@@ -38,10 +38,10 @@
         <!--#region Column 0 -->
         <WrapPanel Grid.Row="0"
                    Grid.Column="0">
-            <Button Content="ГПЗ текущий год" 
-                    Command="{x:Static page:SecondPage.NavigateToGPZCurrentYearPage}"/>
+            <Button Content="ГПЗ текущий год"
+                    Command="{x:Static page:SecondPage.NavigateToGPZCurrentYearPage}" />
             <Button Content="ГПЗ прошлый год"
-                    Command="{x:Static page:SecondPage.NavigateToGPZPastYearPage}"/>
+                    Command="{x:Static page:SecondPage.NavigateToGPZPastYearPage}" />
             <Button Content="Договора текущего года" />
             <Button Content="Договора прошлого года" />
             <Button Content="Отчеты"

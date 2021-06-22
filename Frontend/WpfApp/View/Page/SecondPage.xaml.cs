@@ -9,10 +9,20 @@ namespace WpfApp.View.Page
     /// </summary>
     public partial class SecondPage : System.Windows.Controls.Page
     {
-        public static RoutedCommand NavigateToReportsPage { get; } = new();
-
         public static RoutedCommand NavigateToGPZCurrentYearPage { get; } = new();
         public static RoutedCommand NavigateToGPZPastYearPage { get; } = new();
+        public static RoutedCommand NavigateToReportsPage { get; } = new();
+
+        private void NavigateToGPZCurrentYearPage_OnExecuted(
+            object sender, ExecutedRoutedEventArgs e)
+        {
+            _ = MainWindow.FrameMainWindow.Navigate(new GpzCurrentYearPage());
+        }
+
+        private void NavigateToGPZPastYearPage_OnExecuted(object sender, ExecutedRoutedEventArgs e)
+        {
+            _ = MainWindow.FrameMainWindow.Navigate(new GPZPastYearPage());
+        }
 
         private void NavigateToReportsPage_OnExecuted(object sender, ExecutedRoutedEventArgs e)
         {
@@ -23,15 +33,5 @@ namespace WpfApp.View.Page
         {
             InitializeComponent();
         }
-
-        private void NavigateToGPZCurrentYearPage_OnExecuted(object sender, ExecutedRoutedEventArgs e)
-        {
-            _ = MainWindow.FrameMainWindow.Navigate(new GpzCurrentYearPage());
-        }
-
-		private void NavigateToGPZPastYearPage_OnExecuted(object sender, ExecutedRoutedEventArgs e)
-		{
-			_ = MainWindow.FrameMainWindow.Navigate(new GPZPastYearPage());
-		}
-	}
+    }
 }
