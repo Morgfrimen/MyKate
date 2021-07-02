@@ -363,13 +363,14 @@
                                  ActualPayment="0" />
     </x:Array>
     <!--#endregion-->
+    <!--#region Отчет 3-4 -->
     <x:Array Type="reports:Report3_4Models"
              x:Key="DefaultReport3_4">
         <reports:Report3_4Models Number="1"
                                  Name="ИП Канухин А.В."
                                  Subject="Покупка новогодних подарков детям"
-                                 Sum ="18450.00"
-                                 Remark=""/>
+                                 Sum="18450.00"
+                                 Remark="" />
         <reports:Report3_4Models Number="2"
                                  Name="ИП Алехин В.В."
                                  Subject="Покупка новогодних подарков детям"
@@ -407,6 +408,7 @@
                                  Sum="2994"
                                  Remark="" />
     </x:Array>
+    <!--#endregion-->
     <!--#endregion-->
 
 
