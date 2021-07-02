@@ -24,7 +24,7 @@
                   ItemsSource="{StaticResource DefaultReport3_3}"
                   AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Width="0.6*"
+                <DataGridTextColumn Width="0.2*"
                                     MinWidth="60"
                                     Header="№ п/п"
                                     Binding="{Binding NumberPosition}"

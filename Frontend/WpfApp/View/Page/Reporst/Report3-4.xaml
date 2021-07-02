@@ -24,7 +24,7 @@
                   ItemsSource="{StaticResource DefaultReport3_4}"
                   d:DataContext="{d:DesignInstance reports:Report3_4Models}">
             <DataGrid.Columns>
-                <DataGridTextColumn Width="*"
+                <DataGridTextColumn Width="0.2*"
                                     Binding="{Binding Number}"
                                     Header="№ п/п"
                                     ElementStyle="{DynamicResource ReportHeader}"

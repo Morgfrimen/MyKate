@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 using Users;
 
@@ -10,7 +11,15 @@ namespace WpfApp.View.Page.Reporst
 {
     public abstract class ReportBaseView : System.Windows.Controls.Page
     {
+        static ReportBaseView()
+        {
+            BackgroundSelect = DependencyProperty.Register(nameof(BackgroundSelect),typeof(SolidColorBrush),typeof(ReportBaseView));
+        }
+
+
         protected Grid GridPanel { get; private set; }
+
+        public static readonly DependencyProperty BackgroundSelect;
 
 #region Overrides of FrameworkElement
 
