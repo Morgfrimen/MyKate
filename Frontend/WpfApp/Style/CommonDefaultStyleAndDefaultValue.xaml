@@ -206,59 +206,122 @@
                 <gpzCurrentYear:SapPresent>
                     <gpzCurrentYear:SapPresent.First>
                         <models:CountAndSum Count="10"
-                                            PriceRow="100" />
+                                            PriceRow="1340" />
                     </gpzCurrentYear:SapPresent.First>
                     <gpzCurrentYear:SapPresent.Second>
-                        <models:CountAndSum Count="6"
-                                            PriceRow="235" />
+                        <models:CountAndSum Count="54"
+                                            PriceRow="235994.23" />
                     </gpzCurrentYear:SapPresent.Second>
                 </gpzCurrentYear:SapPresent>
             </gpzCurrentYear:RowModels.FirstColumnSap>
             <gpzCurrentYear:RowModels.FirstQuarter>
                 <gpzCurrentYear:Quarter>
                     <gpzCurrentYear:Quarter.AddFirst>
-                        <models:CountAndSum Count="10"
-                                            PriceRow="16000" />
+                        <models:CountAndSum Count="12"
+                                            PriceRow="130540.54" />
                     </gpzCurrentYear:Quarter.AddFirst>
                     <gpzCurrentYear:Quarter.AddSecond>
-                        <models:CountAndSum Count="25"
-                                            PriceRow="274000" />
+                        <models:CountAndSum Count="23"
+                                            PriceRow="2743412.51" />
                     </gpzCurrentYear:Quarter.AddSecond>
                 </gpzCurrentYear:Quarter>
             </gpzCurrentYear:RowModels.FirstQuarter>
             <gpzCurrentYear:RowModels.SecondQuarter>
                 <gpzCurrentYear:Quarter>
                     <gpzCurrentYear:Quarter.AddFirst>
-                        <models:CountAndSum Count="10"
-                                            PriceRow="16000" />
+                        <models:CountAndSum Count="0"
+                                            PriceRow="0" />
                     </gpzCurrentYear:Quarter.AddFirst>
                     <gpzCurrentYear:Quarter.AddSecond>
-                        <models:CountAndSum Count="25"
-                                            PriceRow="274000" />
+                        <models:CountAndSum Count="0"
+                                            PriceRow="0" />
                     </gpzCurrentYear:Quarter.AddSecond>
                 </gpzCurrentYear:Quarter>
             </gpzCurrentYear:RowModels.SecondQuarter>
             <gpzCurrentYear:RowModels.TreeQuarter>
                 <gpzCurrentYear:Quarter>
                     <gpzCurrentYear:Quarter.AddFirst>
-                        <models:CountAndSum Count="10"
-                                            PriceRow="16000" />
+                        <models:CountAndSum Count="0"
+                                            PriceRow="0" />
                     </gpzCurrentYear:Quarter.AddFirst>
                     <gpzCurrentYear:Quarter.AddSecond>
-                        <models:CountAndSum Count="25"
-                                            PriceRow="274000" />
+                        <models:CountAndSum Count="0"
+                                            PriceRow="0" />
                     </gpzCurrentYear:Quarter.AddSecond>
                 </gpzCurrentYear:Quarter>
             </gpzCurrentYear:RowModels.TreeQuarter>
             <gpzCurrentYear:RowModels.FourthQuarter>
                 <gpzCurrentYear:Quarter>
                     <gpzCurrentYear:Quarter.AddFirst>
-                        <models:CountAndSum Count="3"
-                                            PriceRow="1" />
+                        <models:CountAndSum Count="0"
+                                            PriceRow="0" />
                     </gpzCurrentYear:Quarter.AddFirst>
                     <gpzCurrentYear:Quarter.AddSecond>
-                        <models:CountAndSum Count="4"
-                                            PriceRow="50000" />
+                        <models:CountAndSum Count="0"
+                                            PriceRow="0" />
+                    </gpzCurrentYear:Quarter.AddSecond>
+                </gpzCurrentYear:Quarter>
+            </gpzCurrentYear:RowModels.FourthQuarter>
+        </gpzCurrentYear:RowModels>
+        <gpzCurrentYear:RowModels Name="Муво 3"
+                                  Id="2">
+            <gpzCurrentYear:RowModels.FirstColumnSap>
+                <gpzCurrentYear:SapPresent>
+                    <gpzCurrentYear:SapPresent.First>
+                        <models:CountAndSum Count="77"
+                                            PriceRow="56830358.54" />
+                    </gpzCurrentYear:SapPresent.First>
+                    <gpzCurrentYear:SapPresent.Second>
+                        <models:CountAndSum Count="66"
+                                            PriceRow="56830358.54" />
+                    </gpzCurrentYear:SapPresent.Second>
+                </gpzCurrentYear:SapPresent>
+            </gpzCurrentYear:RowModels.FirstColumnSap>
+            <gpzCurrentYear:RowModels.FirstQuarter>
+                <gpzCurrentYear:Quarter>
+                    <gpzCurrentYear:Quarter.AddFirst>
+                        <models:CountAndSum Count="68"
+                                            PriceRow="189987.78" />
+                    </gpzCurrentYear:Quarter.AddFirst>
+                    <gpzCurrentYear:Quarter.AddSecond>
+                        <models:CountAndSum Count="13"
+                                            PriceRow="272342.98" />
+                    </gpzCurrentYear:Quarter.AddSecond>
+                </gpzCurrentYear:Quarter>
+            </gpzCurrentYear:RowModels.FirstQuarter>
+            <gpzCurrentYear:RowModels.SecondQuarter>
+                <gpzCurrentYear:Quarter>
+                    <gpzCurrentYear:Quarter.AddFirst>
+                        <models:CountAndSum Count="0"
+                                            PriceRow="0" />
+                    </gpzCurrentYear:Quarter.AddFirst>
+                    <gpzCurrentYear:Quarter.AddSecond>
+                        <models:CountAndSum Count="0"
+                                            PriceRow="0" />
+                    </gpzCurrentYear:Quarter.AddSecond>
+                </gpzCurrentYear:Quarter>
+            </gpzCurrentYear:RowModels.SecondQuarter>
+            <gpzCurrentYear:RowModels.TreeQuarter>
+                <gpzCurrentYear:Quarter>
+                    <gpzCurrentYear:Quarter.AddFirst>
+                        <models:CountAndSum Count="0"
+                                            PriceRow="0" />
+                    </gpzCurrentYear:Quarter.AddFirst>
+                    <gpzCurrentYear:Quarter.AddSecond>
+                        <models:CountAndSum Count="0"
+                                            PriceRow="0" />
+                    </gpzCurrentYear:Quarter.AddSecond>
+                </gpzCurrentYear:Quarter>
+            </gpzCurrentYear:RowModels.TreeQuarter>
+            <gpzCurrentYear:RowModels.FourthQuarter>
+                <gpzCurrentYear:Quarter>
+                    <gpzCurrentYear:Quarter.AddFirst>
+                        <models:CountAndSum Count="0"
+                                            PriceRow="0" />
+                    </gpzCurrentYear:Quarter.AddFirst>
+                    <gpzCurrentYear:Quarter.AddSecond>
+                        <models:CountAndSum Count="0"
+                                            PriceRow="0" />
                     </gpzCurrentYear:Quarter.AddSecond>
                 </gpzCurrentYear:Quarter>
             </gpzCurrentYear:RowModels.FourthQuarter>
