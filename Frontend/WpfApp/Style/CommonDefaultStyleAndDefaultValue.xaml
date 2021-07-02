@@ -331,15 +331,16 @@
 
     </x:Array>
     <!--#endregion-->
+    <!--#region Отчет 3-3 -->
     <x:Array Type="reports:Report3_3Models"
-             x:Key="DefaultReport3">
+             x:Key="DefaultReport3_3">
         <reports:Report3_3Models NumberPosition="1"
                                  NumberPurchase="3/17"
                                  PurchaseSubject="Оказание услуг по медицинскому освидетельствованию на наличие медицинских противопоказаний к владению оружием работников отдельного отряда №310 МУВО №3 АО «Атом-охрана»"
                                  NameCounterParty="ФГБУЗ СМЦ ФМБА России"
                                  ContractDetails="210/03-5 от 16.02.2021"
                                  ContractPrice="56088.28"
-                                 ActualPayment="0"/>
+                                 ActualPayment="0" />
 
         <reports:Report3_3Models NumberPosition="2"
                                  NumberPurchase="3/36"
@@ -360,6 +361,51 @@
                                  ContractDetails="210/03-8 от 16.03.2021"
                                  ContractPrice="47790"
                                  ActualPayment="0" />
+    </x:Array>
+    <!--#endregion-->
+    <x:Array Type="reports:Report3_4Models"
+             x:Key="DefaultReport3_4">
+        <reports:Report3_4Models Number="1"
+                                 Name="ИП Канухин А.В."
+                                 Subject="Покупка новогодних подарков детям"
+                                 Sum ="18450.00"
+                                 Remark=""/>
+        <reports:Report3_4Models Number="2"
+                                 Name="ИП Алехин В.В."
+                                 Subject="Покупка новогодних подарков детям"
+                                 Sum="52250"
+                                 Remark="" />
+        <reports:Report3_4Models Number="3"
+                                 Name="ИП Комиссарова С.А."
+                                 Subject="Покупка новогодних подарков детям"
+                                 Sum="94920"
+                                 Remark="" />
+        <reports:Report3_4Models Number="4"
+                                 Name="ИП Юсупова И.Ю."
+                                 Subject="Покупка новогодних подарков детям"
+                                 Sum="6600"
+                                 Remark="" />
+        <reports:Report3_4Models Number="5"
+                                 Name="Почта России АО (г.Ангарск)"
+                                 Subject="Отправка корреспонденции"
+                                 Sum="542.4"
+                                 Remark="" />
+
+        <reports:Report3_4Models Number="6"
+                                 Name="ООО «РИЧ»"
+                                 Subject="Изготовление дубликата гос. номера"
+                                 Sum="2500"
+                                 Remark="" />
+        <reports:Report3_4Models Number="7"
+                                 Name="АТЦ ГХК"
+                                 Subject="Диагностическая карта тех.осмотра"
+                                 Sum="530"
+                                 Remark="" />
+        <reports:Report3_4Models Number="8"
+                                 Name="Почта России АО (г.Вилючинск)"
+                                 Subject="Почтовые расходы"
+                                 Sum="2994"
+                                 Remark="" />
     </x:Array>
     <!--#endregion-->
 

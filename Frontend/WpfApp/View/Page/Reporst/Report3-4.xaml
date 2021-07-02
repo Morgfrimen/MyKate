@@ -4,6 +4,7 @@
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                       xmlns:local="clr-namespace:WpfApp.View.Page.Reporst"
+                      xmlns:reports="clr-namespace:WpfApp.Models.Reports"
                       mc:Ignorable="d"
                       Style="{StaticResource Page_Style}"
                       d:DesignHeight="450"
@@ -19,25 +20,32 @@
             <RowDefinition Style="{StaticResource Report_FirstRow}" />
             <RowDefinition Style="{StaticResource Report_Footer}" />
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0">
+        <DataGrid Grid.Row="0" 
+                  ItemsSource="{StaticResource DefaultReport3_4}"
+                  d:DataContext="{d:DesignInstance reports:Report3_4Models}">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="*"
+                                    Binding="{Binding Number}"
                                     Header="№ п/п"
                                     ElementStyle="{DynamicResource ReportHeader}"
                                     HeaderStyle="{DynamicResource DataGridReport3_3_4_Left}" />
                 <DataGridTextColumn Width="*"
+                                    Binding="{Binding Name}"
                                     Header="Наименование контрагента"
                                     ElementStyle="{DynamicResource ReportHeader}"
                                     HeaderStyle="{DynamicResource DataGridReport3_3_4}" />
                 <DataGridTextColumn Width="*"
-                                    Header="Предмет закупки"
+                                    Binding="{Binding Subject}"
+                                    Header="Предмет закупки"                                    
                                     ElementStyle="{DynamicResource ReportHeader}"
                                     HeaderStyle="{DynamicResource DataGridReport3_3_4}" />
                 <DataGridTextColumn Width="*"
+                                    Binding="{Binding Sum}"
                                     Header="Сумма на дату отчета (рублей) с НДС"
                                     ElementStyle="{DynamicResource ReportHeader}"
                                     HeaderStyle="{DynamicResource DataGridReport3_3_4}" />
                 <DataGridTextColumn Width="*"
+                                    Binding="{Binding Remark}"
                                     Header="Примечание"
                                     ElementStyle="{DynamicResource ReportHeader}"
                                     HeaderStyle="{DynamicResource DataGridReport3_3_4_Right}" />

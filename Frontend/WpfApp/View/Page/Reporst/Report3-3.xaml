@@ -21,7 +21,7 @@
         <DataGrid Grid.Row="0"
                   d:DataContext="{d:DesignInstance reports:Report3_3Models}"
                   Margin="1,0"
-                  ItemsSource="{StaticResource DefaultReport3}"
+                  ItemsSource="{StaticResource DefaultReport3_3}"
                   AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="0.6*"
