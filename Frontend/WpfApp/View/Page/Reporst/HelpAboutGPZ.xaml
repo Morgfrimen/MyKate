@@ -1,23 +1,223 @@
 ﻿<Page x:Class="WpfApp.View.Page.Reporst.HelpAboutGPZ"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:WpfApp.View.Page.Reporst"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      mc:Ignorable="d"
+      d:DesignHeight="450"
+      d:DesignWidth="800"
       Title="Справка о выполнении ГПЗ 2021">
+    <Page.Resources>
+        <Style TargetType="Border" x:Key="BorderDataGrid">
+            <Setter Property="BorderBrush"
+                    Value="Black" />
+            <Setter Property="Background"
+                    Value="White" />
+        </Style>
+        <Style TargetType="TextBlock" x:Key="TextBlockDataGrid">
+            <Setter Property="TextAlignment"
+                    Value="Center" />
+            <Setter Property="TextWrapping"
+                    Value="Wrap" />
+            <Setter Property="VerticalAlignment"
+                    Value="Center" />
+        </Style>
+    </Page.Resources>
 
- <Grid>
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Style="{StaticResource Report_FirstRow}" />
             <RowDefinition />
         </Grid.RowDefinitions>
 
         <DataGrid AutoGenerateColumns="False"
-                  Background="Transparent">
-           
-              
+                  Background="Transparent"
+                  ColumnHeaderHeight="100">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Подразделение"
+                                    ElementStyle="{DynamicResource ReportHeader}"
+                                    HeaderStyle="{DynamicResource DataGridReport3_3_4_Left}"
+                                    Width="*" />
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DataGridReport3_3_4}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <ControlTemplate.Resources>
+                                            <Style TargetType="Border" BasedOn="{StaticResource BorderDataGrid}"/>
+                                            <Style TargetType="TextBlock" BasedOn="{StaticResource TextBlockDataGrid}" />
+                                        </ControlTemplate.Resources>
+                                        <ContentControl>
+                                            <Border BorderThickness="1">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition />
+                                                        <RowDefinition />
+                                                    </Grid.RowDefinitions>
+                                                    <TextBlock Text="План ГПЗ в 2021 году" />
+                                                    <Grid Grid.Row="1">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition />
+                                                            <ColumnDefinition />
+                                                        </Grid.ColumnDefinitions>
+
+                                                        <Border Grid.Column="0"
+                                                                BorderThickness="0,1,0,0">
+                                                            <TextBlock Text="К-во (шт)" />
+                                                        </Border>
+                                                        <Border Grid.Column="1"
+                                                                BorderThickness="1,1,0,0">
+                                                            <TextBlock Text="Сумма (тыс.руб.)" />
+                                                        </Border>
+
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+                                        </ContentControl>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DataGridTemplateColumn.HeaderStyle>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <ControlTemplate.Resources>
+                                            <Style TargetType="Border" BasedOn="{StaticResource BorderDataGrid}" />
+                                            <Style TargetType="TextBlock" BasedOn="{StaticResource TextBlockDataGrid}" />
+                                        </ControlTemplate.Resources>
+                                        <ContentControl>
+                                            <Border BorderThickness="1">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition />
+                                                        <RowDefinition />
+                                                    </Grid.RowDefinitions>
+                                                    <TextBlock Text="Заключено в 1-м квартале договоров по ГПЗ 2021 года" />
+                                                    <Grid Grid.Row="1">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition />
+                                                            <ColumnDefinition />
+                                                        </Grid.ColumnDefinitions>
+
+                                                        <Border Grid.Column="0"
+                                                                BorderThickness="0,1,1,0">
+                                                            <TextBlock Text="К-во (шт)" />
+                                                        </Border>
+                                                        <Border Grid.Column="1"
+                                                                BorderThickness="1,1,0,0">
+                                                            <TextBlock Text="Сумма (тыс.руб.)" />
+                                                        </Border>
+
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+                                        </ContentControl>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DataGridTemplateColumn.HeaderStyle>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="*">
+                        <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <ControlTemplate.Resources>
+                                            <Style TargetType="Border" BasedOn="{StaticResource BorderDataGrid}" />
+                                            <Style TargetType="TextBlock" BasedOn="{StaticResource TextBlockDataGrid}" />
+                                        </ControlTemplate.Resources>
+                                        <ContentControl>
+                                            <Border BorderThickness="1">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition />
+                                                        <RowDefinition />
+                                                    </Grid.RowDefinitions>
+                                                    <TextBlock Text="Проведено в 1-м квартале 2021, договор на стадии заключения" />
+                                                    <Grid Grid.Row="1">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition />
+                                                            <ColumnDefinition />
+                                                        </Grid.ColumnDefinitions>
+
+                                                        <Border Grid.Column="0"
+                                                                BorderThickness="0,1,1,0">
+                                                            <TextBlock Text="К-во (шт)" />
+                                                        </Border>
+                                                        <Border Grid.Column="1"
+                                                                BorderThickness="1,1,0,0">
+                                                            <TextBlock Text="Сумма (тыс.руб.)" />
+                                                        </Border>
+
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+                                        </ContentControl>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DataGridTemplateColumn.HeaderStyle>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="*">
+                     <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <ControlTemplate.Resources>
+                                            <Style TargetType="Border" BasedOn="{StaticResource BorderDataGrid}" />
+                                            <Style TargetType="TextBlock" BasedOn="{StaticResource TextBlockDataGrid}" />
+                                        </ControlTemplate.Resources>
+                                        <ContentControl>
+                                            <Border BorderThickness="1">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition />
+                                                        <RowDefinition />
+                                                    </Grid.RowDefinitions>
+                                                    <TextBlock Text="Итого" />
+                                                    <Grid Grid.Row="1">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition />
+                                                            <ColumnDefinition />
+                                                        </Grid.ColumnDefinitions>
+
+                                                        <Border Grid.Column="0"
+                                                                BorderThickness="0,1,1,0">
+                                                            <TextBlock Text="К-во (шт)" />
+                                                        </Border>
+                                                        <Border Grid.Column="1"
+                                                                BorderThickness="1,1,0,0">
+                                                            <TextBlock Text="Сумма (тыс.руб.)" />
+                                                        </Border>
+
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+                                        </ContentControl>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DataGridTemplateColumn.HeaderStyle>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="% выполнения ГПЗ"
+                                    Width="*"
+                                    ElementStyle="{DynamicResource ReportHeader}"
+                                    HeaderStyle="{DynamicResource DataGridReport3_3_4_Right}" />
+            </DataGrid.Columns>
+
+
         </DataGrid>
 
     </Grid>
