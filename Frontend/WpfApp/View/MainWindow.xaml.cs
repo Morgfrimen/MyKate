@@ -1,6 +1,8 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
+using WpfApp.Core;
+
 namespace WpfApp.View
 {
     /// <summary>
@@ -14,6 +16,9 @@ namespace WpfApp.View
         {
             InitializeComponent();
             FrameMainWindow = Frame;
+            EventBroker.ChangeNamePageEvent += OnChangeNamePage;
         }
+
+        private void OnChangeNamePage(string name) => NamePage_TextBlock.Text = name;
     }
 }

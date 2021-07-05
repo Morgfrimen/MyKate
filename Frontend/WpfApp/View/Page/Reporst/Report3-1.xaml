@@ -72,7 +72,7 @@
                 </Style>
             </DataGrid.ColumnHeaderStyle>
             <DataGrid.Columns>
-                <DataGridTemplateColumn Width="5*" MinWidth="50">
+                <DataGridTemplateColumn Width="7*" MinWidth="50">
                     <DataGridTemplateColumn.HeaderTemplate>
                         <DataTemplate>
                             <Grid MaxHeight="{StaticResource MaxHeightGridHeaderDataGrid}">
@@ -107,7 +107,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
-                <DataGridTemplateColumn Width="25*">
+                <DataGridTemplateColumn Width="55*">
                     <DataGridTemplateColumn.HeaderTemplate>
                         <DataTemplate>
                             <Grid Height="{StaticResource MaxHeightGridHeaderDataGrid}">
@@ -158,7 +158,7 @@
                                         Grid.Column="2"
                                         Grid.ColumnSpan="2"
                                         BorderThickness="{StaticResource ThicknessHeaderOnlyBottom}">
-                                    <TextBlock
+                                    <TextBlock Margin="0,-5,0,-5"
                                         Text="на 31.12.2021 по последнему отчету" />
                                 </Border>
                                 <Border Grid.Row="3"
@@ -170,20 +170,20 @@
                                 <Border Grid.Row="3"
                                         Grid.Column="1"
                                         BorderThickness="{StaticResource ThicknessHeaderOnlyRight}">
-                                    <TextBlock
+                                    <TextBlock Margin="0,-5"
                                         Text="сумма (рублей)" />
                                 </Border>
                                 <Border Grid.Row="3"
                                         Grid.Column="2"
 
                                         BorderThickness="{StaticResource ThicknessHeaderOnlyRight}">
-                                    <TextBlock
+                                    <TextBlock 
                                         Text="к-во" />
                                 </Border>
                                 <Border Grid.Row="3"
                                         Grid.Column="3">
-                                    <TextBlock
-                                        Text="сумма (рублей)" />
+                                    <TextBlock Margin="0,-5"
+                                               Text="сумма (рублей)" />
                                 </Border>
 
                             </Grid>
@@ -256,18 +256,18 @@
                                     <ColumnDefinition />
                                     <ColumnDefinition />
                                     <ColumnDefinition />
+                                    <!--<ColumnDefinition />-->
+                                    <!--<ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />-->
+                                    <!--<ColumnDefinition />
                                     <ColumnDefinition />
                                     <ColumnDefinition />
                                     <ColumnDefinition />
                                     <ColumnDefinition />
                                     <ColumnDefinition />
                                     <ColumnDefinition />
-                                    <ColumnDefinition />
-                                    <ColumnDefinition />
-                                    <ColumnDefinition />
-                                    <ColumnDefinition />
-                                    <ColumnDefinition />
-                                    <ColumnDefinition />
+                                    <ColumnDefinition />-->
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition />
@@ -278,7 +278,7 @@
 
                                 <Border Grid.Row="0"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="16"
+                                        Grid.ColumnSpan="4"
                                         BorderThickness="{StaticResource ThicknessHeaderOnlyBottom}">
                                     <TextBlock Text="ГПЗ текущего года (только позиции SAP SRM)" />
                                 </Border>
@@ -336,7 +336,7 @@
                                 <!--#endregion-->
 
 
-                                <!--#region  2 Квартал -->
+                                <!--#region  2 Квартал --><!--
 
                                 <Border Grid.Row="1"
                                         Grid.Column="4"
@@ -386,9 +386,9 @@
                                         Text="сумма (рублей)" />
                                 </Border>
 
-                                <!--#endregion-->
+                                --><!--#endregion-->
 
-                                <!--#region  3 Квартал -->
+                                <!--#region  3 Квартал --><!--
 
                                 <Border Grid.Row="1"
                                         Grid.Column="8"
@@ -438,10 +438,10 @@
                                         Text="сумма (рублей)" />
                                 </Border>
 
-                                <!--#endregion-->
+                                --><!--#endregion-->
 
 
-                                <!--#region  4 Квартал -->
+                                <!--#region  4 Квартал --><!--
 
                                 <Border Grid.Row="1"
                                         Grid.Column="12"
@@ -491,7 +491,7 @@
                                         Text="сумма (рублей)" />
                                 </Border>
 
-                                <!--#endregion-->
+                                --><!--#endregion-->
 
 
                             </Grid>
@@ -505,6 +505,10 @@
                                     <ColumnDefinition />
                                     <ColumnDefinition />
                                     <ColumnDefinition />
+                                    <!--<ColumnDefinition />-->
+                                    <!--<ColumnDefinition />
+                                    <ColumnDefinition />-->
+                                    <!--<ColumnDefinition />
                                     <ColumnDefinition />
                                     <ColumnDefinition />
                                     <ColumnDefinition />
@@ -512,11 +516,7 @@
                                     <ColumnDefinition />
                                     <ColumnDefinition />
                                     <ColumnDefinition />
-                                    <ColumnDefinition />
-                                    <ColumnDefinition />
-                                    <ColumnDefinition />
-                                    <ColumnDefinition />
-                                    <ColumnDefinition />
+                                    <ColumnDefinition />-->
                                 </Grid.ColumnDefinitions>
 
                                 <!--#region 1 квартал -->
@@ -546,7 +546,7 @@
                                 </Border>
                                 <!--#endregion-->
 
-                                <!--#region 2 квартал -->
+                                <!--#region 2 квартал --><!--
                                 <Border Grid.Column="4"
                                         BorderThickness="{StaticResource ThicknessHeaderOnlyRight}"
                                         Style="{StaticResource {x:Type Border}}">
@@ -571,9 +571,9 @@
                                     <TextBlock Text="{Binding SecondQuarter.AddSecond.PriceRow}"
                                                Style="{StaticResource {x:Type TextBlock}}" />
                                 </Border>
-                                <!--#endregion-->
+                                --><!--#endregion-->
 
-                                <!--#region 3 квартал -->
+                                <!--#region 3 квартал --><!--
                                 <Border Grid.Column="8"
                                         BorderThickness="{StaticResource ThicknessHeaderOnlyRight}"
                                         Style="{StaticResource {x:Type Border}}">
@@ -598,9 +598,9 @@
                                     <TextBlock Text="{Binding TreeQuarter.AddSecond.PriceRow}"
                                                Style="{StaticResource {x:Type TextBlock}}" />
                                 </Border>
-                                <!--#endregion-->
+                                --><!--#endregion-->
 
-                                <!--#region 4 квартал -->
+                                <!--#region 4 квартал --><!--
                                 <Border Grid.Column="12"
                                         BorderThickness="{StaticResource ThicknessHeaderOnlyRight}"
                                         Style="{StaticResource {x:Type Border}}">
@@ -624,7 +624,7 @@
                                     <TextBlock Text="{Binding FourthQuarter.AddSecond.PriceRow}"
                                                Style="{StaticResource {x:Type TextBlock}}" />
                                 </Border>
-                                <!--#endregion-->
+                                --><!--#endregion-->
 
 
                             </Grid>

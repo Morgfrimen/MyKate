@@ -63,5 +63,6 @@
                                     HeaderStyle="{DynamicResource DataGridReport3_3_4_Right}" />
             </DataGrid.Columns>
         </DataGrid>
+
     </Grid>
 </local:ReportBaseView>

@@ -210,11 +210,11 @@
                 <gpzCurrentYear:SapPresent>
                     <gpzCurrentYear:SapPresent.First>
                         <models:CountAndSum Count="10"
-                                            PriceRow="1340" />
+                                            PriceRow="1 340" />
                     </gpzCurrentYear:SapPresent.First>
                     <gpzCurrentYear:SapPresent.Second>
                         <models:CountAndSum Count="54"
-                                            PriceRow="235994.23" />
+                                            PriceRow="235 994,23" />
                     </gpzCurrentYear:SapPresent.Second>
                 </gpzCurrentYear:SapPresent>
             </gpzCurrentYear:RowModels.FirstColumnSap>
@@ -222,11 +222,11 @@
                 <gpzCurrentYear:Quarter>
                     <gpzCurrentYear:Quarter.AddFirst>
                         <models:CountAndSum Count="12"
-                                            PriceRow="130540.54" />
+                                            PriceRow="130 540,54" />
                     </gpzCurrentYear:Quarter.AddFirst>
                     <gpzCurrentYear:Quarter.AddSecond>
                         <models:CountAndSum Count="23"
-                                            PriceRow="2743412.51" />
+                                            PriceRow="2 743 412,51" />
                     </gpzCurrentYear:Quarter.AddSecond>
                 </gpzCurrentYear:Quarter>
             </gpzCurrentYear:RowModels.FirstQuarter>
@@ -273,11 +273,11 @@
                 <gpzCurrentYear:SapPresent>
                     <gpzCurrentYear:SapPresent.First>
                         <models:CountAndSum Count="77"
-                                            PriceRow="56830358.54" />
+                                            PriceRow="56 830 358,54" />
                     </gpzCurrentYear:SapPresent.First>
                     <gpzCurrentYear:SapPresent.Second>
                         <models:CountAndSum Count="66"
-                                            PriceRow="56830358.54" />
+                                            PriceRow="23 830 358,54" />
                     </gpzCurrentYear:SapPresent.Second>
                 </gpzCurrentYear:SapPresent>
             </gpzCurrentYear:RowModels.FirstColumnSap>
@@ -285,11 +285,11 @@
                 <gpzCurrentYear:Quarter>
                     <gpzCurrentYear:Quarter.AddFirst>
                         <models:CountAndSum Count="68"
-                                            PriceRow="189987.78" />
+                                            PriceRow="189 987,78" />
                     </gpzCurrentYear:Quarter.AddFirst>
                     <gpzCurrentYear:Quarter.AddSecond>
                         <models:CountAndSum Count="13"
-                                            PriceRow="272342.98" />
+                                            PriceRow="272 342,98" />
                     </gpzCurrentYear:Quarter.AddSecond>
                 </gpzCurrentYear:Quarter>
             </gpzCurrentYear:RowModels.FirstQuarter>

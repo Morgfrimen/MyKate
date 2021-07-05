@@ -17,6 +17,11 @@
             <RowDefinition Height="10*" MaxHeight="30" />
         </Grid.RowDefinitions>
 
+        <TextBlock Text="Name"
+                   x:Name="NamePage_TextBlock"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+
         <Frame Grid.Row="1"
                x:Name="Frame"
                Source="Page/StartPage.xaml"
