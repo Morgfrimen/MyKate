@@ -7,11 +7,22 @@
 		<StartupObject>WpfApp.App</StartupObject>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <Page Remove="View\Page\Reporst\InformationAboutExpenseDefaultValue.xaml" />
+	</ItemGroup>
+
 
 	<ItemGroup>
 		<Folder Include="Core\Command\" />
 		<Folder Include="Core\Exception\" />
 		<Folder Include="ViewModels\Information\" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <None Include="View\Page\Reporst\InformationAboutExpenseDefaultValue.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </None>
 	</ItemGroup>
 
 	<ItemGroup>

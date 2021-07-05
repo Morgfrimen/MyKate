@@ -4,11 +4,11 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:WpfApp.View.Page.Reporst"
+      xmlns:reports="clr-namespace:WpfApp.Models.Reports"
       mc:Ignorable="d"
       d:DesignHeight="450"
       d:DesignWidth="800"
       Title="Сведения о расходе лимитов средств на МЗ">
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Style="{StaticResource Report_FirstRow}" />
@@ -16,34 +16,43 @@
         </Grid.RowDefinitions>
 
         <DataGrid AutoGenerateColumns="False"
-                  Background="Transparent">
+                  Background="Transparent"
+                  d:DataContext="{d:DesignInstance reports:InformationAboutExpense_Report }"
+                  ItemsSource="{StaticResource DataGridValueDefault}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Подраздение"
                                     Width="*"
+                                    Binding="{Binding Division}"
                                     ElementStyle="{DynamicResource ReportHeader}"
                                     HeaderStyle="{DynamicResource DataGridReport3_3_4_Left}" />
                 <DataGridTextColumn Header="Факт.доля конкур.закупок"
                                     Width="*"
+                                    Binding="{Binding FactZak}"
                                     ElementStyle="{DynamicResource ReportHeader}"
                                     HeaderStyle="{DynamicResource DataGridReport3_3_4}" />
                 <DataGridTextColumn Header="Расчетная доля объема  ден.средств на МЗ (5%)"
                                     Width="*"
+                                    Binding="{Binding RachetValue}"
                                     ElementStyle="{DynamicResource ReportHeader}"
                                     HeaderStyle="{DynamicResource DataGridReport3_3_4}" />
                 <DataGridTextColumn Header="Договоры до 100 тыс.рублей"
                                     Width="*"
+                                    Binding="{Binding Dogovor}"
                                     ElementStyle="{DynamicResource ReportHeader}"
                                     HeaderStyle="{DynamicResource DataGridReport3_3_4}" />
                 <DataGridTextColumn Header="Оплата по счетам"
                                     Width="*"
+                                    Binding="{Binding PriseChet}"
                                     ElementStyle="{DynamicResource ReportHeader}"
                                     HeaderStyle="{DynamicResource DataGridReport3_3_4}" />
                 <DataGridTextColumn Header="Всего"
                                     Width="*"
+                                    Binding="{Binding All}"
                                     ElementStyle="{DynamicResource ReportHeader}"
                                     HeaderStyle="{DynamicResource DataGridReport3_3_4}" />
                 <DataGridTextColumn Header="Результат"
                                     Width="*"
+                                    Binding="{Binding Result}"
                                     ElementStyle="{DynamicResource ReportHeader}"
                                     HeaderStyle="{DynamicResource DataGridReport3_3_4_Right}" />
             </DataGrid.Columns>

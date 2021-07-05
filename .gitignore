@@ -367,3 +367,6 @@ FodyWeavers.xsd
 /ExcelData/Приложение №2 на 03.04.2021.xlsx
 /ExcelPatternDataGrid
 /Frontend/WpfApp/View/Page/Reporst/InformationAboutExpense.xaml.DefaultValue
+/Frontend/WpfApp/View/Page/Reporst/InformationAboutExpense.xaml.DefaultValue.xaml
+/Frontend/WpfApp/View/Page/Reporst/InformationAboutExpenseDefaultValue.xaml
+/Frontend/WpfApp/Style/InformationAboutExpenseDefaultValue.xaml
