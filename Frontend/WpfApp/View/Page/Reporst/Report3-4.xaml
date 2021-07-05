@@ -9,7 +9,7 @@
                       Style="{StaticResource Page_Style}"
                       d:DesignHeight="450"
                       d:DesignWidth="800"
-                      Title="Report3_4">
+                      Title="Отчет форма 3-4">
     <Page.Resources>
         <Style TargetType="DataGrid"
                BasedOn="{StaticResource DataGrid_Reports}" />

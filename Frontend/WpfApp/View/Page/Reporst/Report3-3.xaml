@@ -8,7 +8,7 @@
                       mc:Ignorable="d"
                       Style="{StaticResource Page_Style}"
                       d:DesignHeight="450" d:DesignWidth="800"
-                      Title="Report3_3">
+                      Title="Отчет форма 3-3">
     <Page.Resources>
         <Style TargetType="DataGrid" BasedOn="{StaticResource DataGrid_Reports}" />
     </Page.Resources>

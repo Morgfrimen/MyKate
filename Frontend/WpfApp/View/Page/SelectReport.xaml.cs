@@ -35,6 +35,7 @@ namespace WpfApp.View.Page
         public SelectReport()
         {
             InitializeComponent();
+            EventBroker.OnChangeNamePageEvent(Title);
         }
     }
 }

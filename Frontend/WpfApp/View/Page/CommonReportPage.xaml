@@ -1,0 +1,21 @@
+﻿<Page x:Class="WpfApp.View.Page.CommonReportPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp.View.Page"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Style="{StaticResource Page_Style}"
+      Title="Общий отчет">
+    <Page.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource Button_Menu_Standard}"/>
+    </Page.Resources>
+
+    <WrapPanel Orientation="Vertical"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center">
+        <Button Content="Справка о выполнении ГПЗ"/>
+        <Button Content="Сведения о расходе лимитов средств на МЗ"/>
+    </WrapPanel>
+</Page>

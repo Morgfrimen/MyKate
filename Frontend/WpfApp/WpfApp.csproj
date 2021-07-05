@@ -5,7 +5,6 @@
 		<TargetFramework>net6.0-windows</TargetFramework>
 		<UseWPF>true</UseWPF>
 		<StartupObject>WpfApp.App</StartupObject>
-		<ApplicationIcon>B:\КатяДиплом\Frontend\WpfApp\Style\AD1FBAE9A1208D2F13CCC01C2C6AD0AE61C7CF8C.png</ApplicationIcon>
 	</PropertyGroup>
 
 

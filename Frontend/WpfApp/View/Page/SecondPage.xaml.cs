@@ -1,5 +1,6 @@
 ﻿using System.Windows.Input;
 
+using WpfApp.Core;
 using WpfApp.View.GPZ;
 
 namespace WpfApp.View.Page
@@ -32,6 +33,7 @@ namespace WpfApp.View.Page
         public SecondPage()
         {
             InitializeComponent();
+            EventBroker.OnChangeNamePageEvent(Title);
         }
     }
 }
