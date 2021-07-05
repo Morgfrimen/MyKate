@@ -14,12 +14,15 @@
     <Page.CommandBindings>
         <CommandBinding Command="{x:Static local:CommonReportPage.NavigateInformationAboutExpensePage}"
                         Executed="NavigateCommonReport_OnExecuted"/>
+        <CommandBinding Command="{x:Static local:CommonReportPage.NavigateHelpAboutPage}"
+                        Executed="NavigateHelpAbout_OnExecuted" />
     </Page.CommandBindings>
 
     <WrapPanel Orientation="Vertical"
                HorizontalAlignment="Center"
                VerticalAlignment="Center">
-        <Button Content="Справка о выполнении ГПЗ"/>
+        <Button Content="Справка о выполнении ГПЗ"
+                Command="{x:Static local:CommonReportPage.NavigateHelpAboutPage}"/>
         <Button Content="Сведения о расходе лимитов средств на МЗ"
                 Command="{x:Static local:CommonReportPage.NavigateInformationAboutExpensePage}"/>
     </WrapPanel>

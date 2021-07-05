@@ -24,6 +24,7 @@ namespace WpfApp.View.Page
 	public partial class CommonReportPage : System.Windows.Controls.Page
     {
         public static readonly RoutedCommand NavigateInformationAboutExpensePage = new();
+        public static readonly RoutedCommand NavigateHelpAboutPage = new();
 		public CommonReportPage()
 		{
 			InitializeComponent();
@@ -31,5 +32,8 @@ namespace WpfApp.View.Page
 		}
 
         private void NavigateCommonReport_OnExecuted(object sender, ExecutedRoutedEventArgs e) => _ = MainWindow.FrameMainWindow.Navigate(new InformationAboutExpense());
+
+        private void NavigateHelpAbout_OnExecuted(object sender, ExecutedRoutedEventArgs e) =>
+            _ = MainWindow.FrameMainWindow.Navigate(new HelpAboutGPZ());
     }
 }
