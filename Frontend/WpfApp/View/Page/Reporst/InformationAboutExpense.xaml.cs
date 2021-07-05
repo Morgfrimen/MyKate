@@ -18,7 +18,7 @@ namespace WpfApp.View.Page.Reporst
 	/// <summary>
 	/// Логика взаимодействия для InformationAboutExpense.xaml
 	/// </summary>
-	public partial class InformationAboutExpense : Page
+	public partial class InformationAboutExpense : System.Windows.Controls.Page
 	{
 		public InformationAboutExpense()
 		{

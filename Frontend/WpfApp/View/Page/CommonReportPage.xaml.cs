@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using WpfApp.Core;
+using WpfApp.View.Page.Reporst;
 
 namespace WpfApp.View.Page
 {
@@ -21,11 +22,14 @@ namespace WpfApp.View.Page
 	/// Логика взаимодействия для CommonReportPage.xaml
 	/// </summary>
 	public partial class CommonReportPage : System.Windows.Controls.Page
-	{
+    {
+        public static readonly RoutedCommand NavigateInformationAboutExpensePage = new();
 		public CommonReportPage()
 		{
 			InitializeComponent();
 			EventBroker.OnChangeNamePageEvent(Title);
 		}
-	}
+
+        private void NavigateCommonReport_OnExecuted(object sender, ExecutedRoutedEventArgs e) => _ = MainWindow.FrameMainWindow.Navigate(new InformationAboutExpense());
+    }
 }

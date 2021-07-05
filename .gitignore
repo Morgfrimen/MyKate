@@ -366,3 +366,4 @@ FodyWeavers.xsd
 /BackendLib/DbConnectionLib/Migrations
 /ExcelData/Приложение №2 на 03.04.2021.xlsx
 /ExcelPatternDataGrid
+/Frontend/WpfApp/View/Page/Reporst/InformationAboutExpense.xaml.DefaultValue

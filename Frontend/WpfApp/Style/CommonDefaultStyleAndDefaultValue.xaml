@@ -110,6 +110,8 @@
            x:Key="DataGridReport3_3_4">
         <Setter Property="MinHeight"
                 Value="70" />
+        <Setter Property="Background"
+                Value="White"/>
         <Setter Property="ContentTemplate">
             <Setter.Value>
                 <DataTemplate DataType="TextBlock">
