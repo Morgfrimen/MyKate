@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:WpfApp.View.Page.Reporst"
+      xmlns:reports="clr-namespace:WpfApp.Models.Reports"
       mc:Ignorable="d"
       d:DesignHeight="450"
       d:DesignWidth="800"
@@ -23,6 +24,16 @@
             <Setter Property="VerticalAlignment"
                     Value="Center" />
         </Style>
+        <Style TargetType="TextBox" x:Key="TextBoxDataGrid">
+            <Setter Property="TextAlignment"
+                    Value="Center" />
+            <Setter Property="TextWrapping"
+                    Value="Wrap" />
+            <Setter Property="VerticalAlignment"
+                    Value="Center" />
+            <Setter Property="BorderThickness"
+                    Value="0"/> 
+        </Style>
     </Page.Resources>
 
     <Grid>
@@ -33,9 +44,12 @@
 
         <DataGrid AutoGenerateColumns="False"
                   Background="Transparent"
+                  d:DataContext="{d:DesignInstance reports:HelpAboutGPZModels}"
+                  ItemsSource="{StaticResource HelpModels}"
                   ColumnHeaderHeight="100">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Подразделение"
+                                    Binding="{Binding Division}"
                                     ElementStyle="{DynamicResource ReportHeader}"
                                     HeaderStyle="{DynamicResource DataGridReport3_3_4_Left}"
                                     Width="*" />
@@ -50,7 +64,7 @@
                                             <Style TargetType="TextBlock" BasedOn="{StaticResource TextBlockDataGrid}" />
                                         </ControlTemplate.Resources>
                                         <ContentControl>
-                                            <Border BorderThickness="1">
+                                            <Border BorderThickness="1,1,0.5,1">
                                                 <Grid>
                                                     <Grid.RowDefinitions>
                                                         <RowDefinition />
@@ -81,6 +95,35 @@
                             </Setter>
                         </Style>
                     </DataGridTemplateColumn.HeaderStyle>
+                    <DataGridTemplateColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="Background"
+                                    Value="Transparent"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="DataGridCell">
+                                        <ContentControl>
+                                            <Border BorderBrush="Black">
+                                                <UniformGrid Columns="2">
+                                                    <UniformGrid.Resources>
+                                                        <Style TargetType="TextBox"
+                                                               BasedOn="{StaticResource TextBoxDataGrid}" />
+                                                    </UniformGrid.Resources>
+                                                    <Border BorderBrush="Black">
+                                                        <TextBox Text="{Binding Plan.Count}" />
+                                                    </Border>
+                                                    <Border BorderThickness="1,0,0,0"
+                                                            BorderBrush="Black">
+                                                        <TextBox Text="{Binding Plan.Sum}" />
+                                                    </Border>
+                                                </UniformGrid>
+                                            </Border>
+                                        </ContentControl>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DataGridTemplateColumn.CellStyle>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Width="*">
                     <DataGridTemplateColumn.HeaderStyle>
@@ -93,7 +136,7 @@
                                             <Style TargetType="TextBlock" BasedOn="{StaticResource TextBlockDataGrid}" />
                                         </ControlTemplate.Resources>
                                         <ContentControl>
-                                            <Border BorderThickness="1">
+                                            <Border BorderThickness="1,1,0,1">
                                                 <Grid>
                                                     <Grid.RowDefinitions>
                                                         <RowDefinition />
@@ -111,7 +154,7 @@
                                                             <TextBlock Text="К-во (шт)" />
                                                         </Border>
                                                         <Border Grid.Column="1"
-                                                                BorderThickness="1,1,0,0">
+                                                                BorderThickness="0,1,0,0">
                                                             <TextBlock Text="Сумма (тыс.руб.)" />
                                                         </Border>
 
@@ -124,6 +167,35 @@
                             </Setter>
                         </Style>
                     </DataGridTemplateColumn.HeaderStyle>
+                    <DataGridTemplateColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="Background"
+                                    Value="Transparent" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="DataGridCell">
+                                        <ContentControl>
+                                            <Border BorderBrush="Black">
+                                                <UniformGrid Columns="2">
+                                                    <UniformGrid.Resources>
+                                                        <Style TargetType="TextBox"
+                                                               BasedOn="{StaticResource TextBoxDataGrid}" />
+                                                    </UniformGrid.Resources>
+                                                    <Border BorderBrush="Black">
+                                                        <TextBox Text="{Binding Zakl.Count}" />
+                                                    </Border>
+                                                    <Border BorderThickness="1,0,0,0"
+                                                            BorderBrush="Black">
+                                                        <TextBox Text="{Binding Zakl.Sum}" />
+                                                    </Border>
+                                                </UniformGrid>
+                                            </Border>
+                                        </ContentControl>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DataGridTemplateColumn.CellStyle>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Width="*">
                         <DataGridTemplateColumn.HeaderStyle>
@@ -136,7 +208,7 @@
                                             <Style TargetType="TextBlock" BasedOn="{StaticResource TextBlockDataGrid}" />
                                         </ControlTemplate.Resources>
                                         <ContentControl>
-                                            <Border BorderThickness="1">
+                                            <Border BorderThickness="1,1,0,1">
                                                 <Grid>
                                                     <Grid.RowDefinitions>
                                                         <RowDefinition />
@@ -154,7 +226,7 @@
                                                             <TextBlock Text="К-во (шт)" />
                                                         </Border>
                                                         <Border Grid.Column="1"
-                                                                BorderThickness="1,1,0,0">
+                                                                BorderThickness="0,1,0,0">
                                                             <TextBlock Text="Сумма (тыс.руб.)" />
                                                         </Border>
 
@@ -167,6 +239,35 @@
                             </Setter>
                         </Style>
                     </DataGridTemplateColumn.HeaderStyle>
+                    <DataGridTemplateColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="Background"
+                                    Value="Transparent" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="DataGridCell">
+                                        <ContentControl>
+                                            <Border BorderBrush="Black">
+                                                <UniformGrid Columns="2">
+                                                    <UniformGrid.Resources>
+                                                        <Style TargetType="TextBox"
+                                                               BasedOn="{StaticResource TextBoxDataGrid}" />
+                                                    </UniformGrid.Resources>
+                                                    <Border BorderBrush="Black">
+                                                        <TextBox Text="{Binding Provedeno.Count}" />
+                                                    </Border>
+                                                    <Border BorderThickness="1,0,0,0"
+                                                            BorderBrush="Black">
+                                                        <TextBox Text="{Binding Provedeno.Sum}" />
+                                                    </Border>
+                                                </UniformGrid>
+                                            </Border>
+                                        </ContentControl>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DataGridTemplateColumn.CellStyle>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Width="*">
                      <DataGridTemplateColumn.HeaderStyle>
@@ -193,7 +294,7 @@
                                                         </Grid.ColumnDefinitions>
 
                                                         <Border Grid.Column="0"
-                                                                BorderThickness="0,1,1,0">
+                                                                BorderThickness="0,1,0,0">
                                                             <TextBlock Text="К-во (шт)" />
                                                         </Border>
                                                         <Border Grid.Column="1"
@@ -210,9 +311,38 @@
                             </Setter>
                         </Style>
                     </DataGridTemplateColumn.HeaderStyle>
+                    <DataGridTemplateColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="Background"
+                                    Value="Transparent" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="DataGridCell">
+                                        <ContentControl>
+                                            <Border BorderBrush="Black">
+                                                <UniformGrid Columns="2">
+                                                    <UniformGrid.Resources>
+                                                        <Style TargetType="TextBox" BasedOn="{StaticResource TextBoxDataGrid}"/>
+                                                    </UniformGrid.Resources>
+                                                    <Border BorderBrush="Black">
+                                                        <TextBox Text="{Binding Result.Count}" />
+                                                    </Border>
+                                                    <Border BorderThickness="1,0,0,0"
+                                                            BorderBrush="Black">
+                                                        <TextBox Text="{Binding Result.Sum}" />
+                                                    </Border>
+                                                </UniformGrid>
+                                            </Border>
+                                        </ContentControl>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DataGridTemplateColumn.CellStyle>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="% выполнения ГПЗ"
                                     Width="*"
+                                    Binding="{Binding ProcGPZ}"
                                     ElementStyle="{DynamicResource ReportHeader}"
                                     HeaderStyle="{DynamicResource DataGridReport3_3_4_Right}" />
             </DataGrid.Columns>
