@@ -52,7 +52,7 @@
         <WrapPanel Grid.Row="0"
                    Grid.Column="1">
             <Button Content="Поключиться к ЕИС" />
-            <Button Content="Проверить закупку" />
+            <!--<Button Content="Проверить закупку" />-->
         </WrapPanel>
     </Grid>
 </Page>
