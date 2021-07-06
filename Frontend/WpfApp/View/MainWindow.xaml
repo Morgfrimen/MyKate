@@ -10,7 +10,7 @@
         FontSize="20"
         Icon="../Style/Icon.png"
         d:DataContext="{d:DesignInstance viewModels:MainWindowViewModels}"
-        Title="МУВО" Height="450" Width="800">
+        Title="АТОМ-охрана" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="5*" MaxHeight="30" />
