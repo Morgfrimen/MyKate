@@ -25,6 +25,7 @@
 	<ItemGroup>
 		<Folder Include="Core\Command\" />
 		<Folder Include="Core\Exception\" />
+		<Folder Include="Models\GPZMuvo\" />
 		<Folder Include="ViewModels\Information\" />
 	</ItemGroup>
 
