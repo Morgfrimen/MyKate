@@ -5,7 +5,19 @@
 		<TargetFramework>net6.0-windows</TargetFramework>
 		<UseWPF>true</UseWPF>
 		<StartupObject>WpfApp.App</StartupObject>
+		<AssemblyName>Система Закупок</AssemblyName>
+		<ApplicationIcon>$(SolutionDir)Frontend\WpfApp\Style\pngl.jpeg</ApplicationIcon>
+		<NoWin32Manifest>true</NoWin32Manifest>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="Style\Icon.png" />
+	</ItemGroup>
+
+	<!--<ItemGroup>
+	  <None Remove="Style\Icon.ico" />
+	  <None Remove="Style\Icon.png" />
+	</ItemGroup>-->
 
 	<ItemGroup>
 	  <Page Remove="View\Page\Reporst\InformationAboutExpenseDefaultValue.xaml" />
@@ -21,6 +33,24 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\Lib\ProtoConnectionLibWPF\ProtoConnectionLibWPF.csproj" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <Resource Include="Style\Icon.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Resource>
+	</ItemGroup>
+
+	<!--<ItemGroup>
+	  <Resource Include="Style\Icon.ico">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Resource>
+	</ItemGroup>-->
+
+	<!--<ItemGroup>
+	  <EmbeddedResource Include="Style\Icon.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	</ItemGroup>-->
 
 	<ItemGroup>
 	  <Compile Update="View\GPZ\GPZCurrentYearPage - Копировать.xaml.cs">
