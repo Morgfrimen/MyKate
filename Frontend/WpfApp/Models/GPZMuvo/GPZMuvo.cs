@@ -25,6 +25,7 @@
     {
         public string DataPublishProc { get; set; }
         public string Deadline { get; set; }
+        public string DataPublishDeadZayava { get; set; }
         public string DAtaPublishItog { get; set; }
         public string DataZaklDogovor { get; set; }
         public string StatusProc { get; set; }

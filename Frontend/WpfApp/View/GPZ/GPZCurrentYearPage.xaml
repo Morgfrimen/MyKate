@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:gpzMuvo="clr-namespace:WpfApp.Models.GPZMuvo"
       mc:Ignorable="d"
       Style="{StaticResource Page_Style}"
       d:DesignHeight="450" d:DesignWidth="800"
@@ -78,46 +79,110 @@
                       HorizontalAlignment="Stretch">
             <DataGrid Background="Transparent" 
                       MinWidth="1800"
+                      d:DataContext="{d:DesignInstance gpzMuvo:GPZMuvo}"
                       HorizontalAlignment="Center"
+                      ItemsSource="{StaticResource GPZDefaultValue}"
                       AutoGenerateColumns="False">
+                <!--#region Стиль ячек общий для всех -->
+                <DataGrid.CellStyle>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="Background"
+                                Value="Transparent" />
+                        <Setter Property="HorizontalAlignment"
+                                Value="Stretch" />
+                        <Setter Property="HorizontalContentAlignment"
+                                Value="Center"/>
+                        <Setter Property="FontSize"
+                                Value="18" />
+                        <Setter Property="FontFamily"
+                                Value="Times new romans" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Status}"
+                                         Value="{x:Static gpzMuvo:StatusRow.Green}">
+                                <Setter Property="Background"
+                                        Value="Green" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Status}"
+                                         Value="{x:Static gpzMuvo:StatusRow.Red}">
+                                <Setter Property="Background"
+                                        Value="Red" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Status}"
+                                         Value="{x:Static gpzMuvo:StatusRow.Yellow}">
+                                <Setter Property="Background"
+                                        Value="Yellow" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Status}"
+                                         Value="{x:Static gpzMuvo:StatusRow.Blue}">
+                                <Setter Property="Background"
+                                        Value="Blue" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Status}"
+                                         Value="{x:Static gpzMuvo:StatusRow.Common}">
+                                <Setter Property="Background"
+                                        Value="White" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.CellStyle>
+                <!--#endregion-->
+
+                <!--#region Колонны и шапка -->
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Номер позиции закупки №п/п"
                                         Width="*"
+                                        Binding="{Binding NumberPositionZak}"
+                                        ElementStyle="{DynamicResource ReportHeader}"
                                         HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
                     <DataGridTextColumn Header="Предмет закупки"
                                         MaxWidth="80"
                                         MinWidth="50"
+                                        FontSize="18"
                                         Width="*"
+                                        Binding="{Binding ObjectZak}"
+                                        ElementStyle="{DynamicResource ReportHeader}"
                                         HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
                     <DataGridTextColumn Header="Направление деятельности"
                                         MaxWidth="100"
                                         MinWidth="100"
                                         Width="*"
+                                        Binding="{Binding FieldActivity}"
+                                        ElementStyle="{DynamicResource ReportHeader}"
                                         HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
                     <DataGridTextColumn Header="Источник финансирования"
                                         MaxWidth="200"
                                         MinWidth="100"
                                         Width="*"
+                                        Binding="{Binding SourceFunding}"
+                                        ElementStyle="{DynamicResource ReportHeader}"
                                         HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
                     <DataGridTextColumn Header="Группа продукции, работ и услуг"
                                         MaxWidth="200"
                                         MinWidth="100"
                                         Width="*"
+                                        Binding="{Binding GroupProductsWorksServices}"
+                                        ElementStyle="{DynamicResource ReportHeader}"
                                         HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
                     <DataGridTextColumn Header="Планируемая цена (тыс.руб. с НДС)"
                                         MaxWidth="80"
                                         MinWidth="50"
                                         Width="*"
+                                        Binding="{Binding PlannedPrice}"
+                                        ElementStyle="{DynamicResource ReportHeader}"
                                         HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
                     <DataGridTextColumn Header="Код ОКПД2 и его наименование"
-                                        MaxWidth="80"
-                                        MinWidth="50"
+                                        MaxWidth="250"
+                                        MinWidth="150"
                                         Width="*"
+                                        Binding="{Binding OKPDCodeName}"
+                                        ElementStyle="{DynamicResource ReportHeader}"
                                         HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
                     <DataGridTextColumn Header="Доля закупок у российского призводителя по ПП 2013"
                                         MaxWidth="200"
                                         MinWidth="100"
-                                        Width="*">
+                                        Width="*"
+                                        Binding="{Binding RussianManufacturer}"
+                                        ElementStyle="{DynamicResource ReportHeader}">
                         <DataGridTextColumn.HeaderStyle>
                             <Style TargetType="DataGridColumnHeader"
                                    BasedOn="{StaticResource {x:Type DataGridColumnHeader}}">
@@ -127,51 +192,223 @@
                         </DataGridTextColumn.HeaderStyle>
                     </DataGridTextColumn>
                     <DataGridTextColumn Header="Уникальный реестровый номер ГИСП"
-                                        MaxWidth="200"
-                                        MinWidth="100"
+                                        MaxWidth="250"
+                                        MinWidth="150"
                                         Width="*"
+                                        Binding="{Binding UniqueGYPSUMRegistrationNumber}"
+                                        ElementStyle="{DynamicResource ReportHeader}"
                                         HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
                     <DataGridTextColumn Header="Детализация по ГИСП"
                                         MaxWidth="200"
                                         MinWidth="50"
                                         Width="*"
+                                        Binding="{Binding DetailedInformationGIS}"
+                                        ElementStyle="{DynamicResource ReportHeader}"
                                         HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
                     <DataGridTextColumn Header="Планируемый способ закупки"
                                         MaxWidth="200"
                                         MinWidth="100"
                                         Width="*"
+                                        Binding="{Binding PlannedPurchaseMethod}"
+                                        ElementStyle="{DynamicResource ReportHeader}"
                                         HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
                     <DataGridTextColumn Header="Основание закупки (в соответсвии с ЕОСЗ)"
                                         FontSize="5"
                                         MaxWidth="200"
                                         MinWidth="100"
                                         Width="*"
+                                        Binding="{Binding InAccordanceEEA}"
+                                        ElementStyle="{DynamicResource ReportHeader}"
                                         HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
                     <DataGridTextColumn Header="Единица измерения"
                                         MaxWidth="200"
                                         MinWidth="50"
                                         Width="*"
+                                        Binding="{Binding UnitMeasurement}"
+                                        ElementStyle="{DynamicResource ReportHeader}"
                                         HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
                     <DataGridTextColumn Header="Количество"
                                         MaxWidth="200"
                                         MinWidth="50"
                                         Width="*"
+                                        Binding="{Binding Quantity}"
+                                        ElementStyle="{DynamicResource ReportHeader}"
                                         HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
                     <DataGridTextColumn Header="Приказ/письмо АО «Атом-охрана»"
                                         MinWidth="100"
                                         Width="*"
+                                        Binding="{Binding OrderLetterJSC}"
+                                        ElementStyle="{DynamicResource ReportHeader}"
                                         HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
                     <DataGridTemplateColumn MinWidth="500"
                                             Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+
+                                    <DataGridCell Grid.Column="0"
+                                                  BorderThickness="0.5"
+                                                  BorderBrush="Black"
+                                                  Height="{TemplateBinding DataGridCell.ActualHeight}"
+                                                  Content="{Binding IntegrationEic.DataPublishProc}">
+                                        <DataGridCell.ContentTemplate>
+                                            <DataTemplate>
+                                                <TextBox Background="Transparent"
+                                                         Text="{TemplateBinding DataGridCell.Content}"
+                                                         VerticalAlignment="Center"
+                                                         BorderThickness="0"
+                                                         MinWidth="100"
+                                                         HorizontalAlignment="Center"
+                                                         FontSize="20">
+                                                    <TextBox.LayoutTransform>
+                                                        <RotateTransform Angle="270"
+                                                                         CenterX="0.5"
+                                                                         CenterY="0.5"/>
+                                                    </TextBox.LayoutTransform>
+                                                </TextBox>
+                                            </DataTemplate>
+                                        </DataGridCell.ContentTemplate>
+                                    </DataGridCell>
+
+                                    <DataGridCell Grid.Column="1"
+                                                  BorderThickness="0.5"
+                                                  BorderBrush="Black"
+                                                  Height="{TemplateBinding DataGridCell.ActualHeight}"
+                                                  Content="{Binding IntegrationEic.Deadline}">
+                                        <DataGridCell.ContentTemplate>
+                                            <DataTemplate>
+                                                <TextBox Background="Transparent"
+                                                         Text="{TemplateBinding DataGridCell.Content}"
+                                                         VerticalAlignment="Center"
+                                                         BorderThickness="0"
+                                                         MinWidth="100"
+                                                         HorizontalAlignment="Center"
+                                                         FontSize="20">
+                                                    <TextBox.LayoutTransform>
+                                                        <RotateTransform Angle="270"
+                                                                         CenterX="0.5"
+                                                                         CenterY="0.5" />
+                                                    </TextBox.LayoutTransform>
+                                                </TextBox>
+                                            </DataTemplate>
+                                        </DataGridCell.ContentTemplate>
+                                    </DataGridCell>
+
+                                    <DataGridCell Grid.Column="2"
+                                                  BorderThickness="0.5"
+                                                  BorderBrush="Black"
+                                                  Height="{TemplateBinding DataGridCell.ActualHeight}"
+                                                  Content="{Binding IntegrationEic.DataPublishDeadZayava}">
+                                        <DataGridCell.ContentTemplate>
+                                            <DataTemplate>
+                                                <TextBox Background="Transparent"
+                                                         Text="{TemplateBinding DataGridCell.Content}"
+                                                         VerticalAlignment="Center"
+                                                         BorderThickness="0"
+                                                         MinWidth="100"
+                                                         HorizontalAlignment="Center"
+                                                         FontSize="20">
+                                                    <TextBox.LayoutTransform>
+                                                        <RotateTransform Angle="270"
+                                                                         CenterX="0.5"
+                                                                         CenterY="0.5" />
+                                                    </TextBox.LayoutTransform>
+                                                </TextBox>
+                                            </DataTemplate>
+                                        </DataGridCell.ContentTemplate>
+                                    </DataGridCell>
+
+                                    <DataGridCell Grid.Column="3"
+                                                  BorderThickness="0.5"
+                                                  BorderBrush="Black"
+                                                  Height="{TemplateBinding DataGridCell.ActualHeight}"
+                                                  Content="{Binding IntegrationEic.DAtaPublishItog}">
+                                        <DataGridCell.ContentTemplate>
+                                            <DataTemplate>
+                                                <TextBox Background="Transparent"
+                                                         Text="{TemplateBinding DataGridCell.Content}"
+                                                         VerticalAlignment="Center"
+                                                         BorderThickness="0"
+                                                         MinWidth="100"
+                                                         HorizontalAlignment="Center"
+                                                         FontSize="20">
+                                                    <TextBox.LayoutTransform>
+                                                        <RotateTransform Angle="270"
+                                                                         CenterX="0.5"
+                                                                         CenterY="0.5" />
+                                                    </TextBox.LayoutTransform>
+                                                </TextBox>
+                                            </DataTemplate>
+                                        </DataGridCell.ContentTemplate>
+                                    </DataGridCell>
+
+                                    <DataGridCell Grid.Column="4"
+                                                  BorderThickness="0.5"
+                                                  BorderBrush="Black"
+                                                  Height="{TemplateBinding DataGridCell.ActualHeight}"
+                                                  Content="{Binding IntegrationEic.DataZaklDogovor}">
+                                        <DataGridCell.ContentTemplate>
+                                            <DataTemplate>
+                                                <TextBox Background="Transparent"
+                                                         Text="{TemplateBinding DataGridCell.Content}"
+                                                         VerticalAlignment="Center"
+                                                         BorderThickness="0"
+                                                         MinWidth="100"
+                                                         HorizontalAlignment="Center"
+                                                         FontSize="20">
+                                                    <TextBox.LayoutTransform>
+                                                        <RotateTransform Angle="270"
+                                                                         CenterX="0.5"
+                                                                         CenterY="0.5" />
+                                                    </TextBox.LayoutTransform>
+                                                </TextBox>
+                                            </DataTemplate>
+                                        </DataGridCell.ContentTemplate>
+                                    </DataGridCell>
+
+                                    <DataGridCell Grid.Column="5"
+                                                  BorderThickness="0.5"
+                                                  BorderBrush="Black"
+                                                  Height="{TemplateBinding DataGridCell.ActualHeight}"
+                                                  Content="{Binding IntegrationEic.StatusProc}">
+                                        <DataGridCell.ContentTemplate>
+                                            <DataTemplate>
+                                                <TextBox Background="Transparent"
+                                                         Text="{TemplateBinding DataGridCell.Content}"
+                                                         VerticalAlignment="Center"
+                                                         BorderThickness="0"
+                                                         MinWidth="150"
+                                                         HorizontalAlignment="Center"
+                                                         FontSize="20">
+                                                    <TextBox.LayoutTransform>
+                                                        <RotateTransform Angle="270"
+                                                                         CenterX="0.5"
+                                                                         CenterY="0.5" />
+                                                    </TextBox.LayoutTransform>
+                                                </TextBox>
+                                            </DataTemplate>
+                                        </DataGridCell.ContentTemplate>
+                                    </DataGridCell>
+                                    
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
                         <DataGridTemplateColumn.HeaderStyle>
                             <Style TargetType="DataGridColumnHeader"
                                    BasedOn="{StaticResource DataGridReport3_3_4}">
                                 <Setter Property="MaxHeight"
-                                        Value="250"/>
+                                        Value="250" />
                                 <Setter Property="Template">
                                     <Setter.Value>
                                         <ControlTemplate TargetType="DataGridColumnHeader">
-                                            
                                             <ContentControl>
                                                 <Grid>
                                                     <Grid.RowDefinitions>
@@ -257,6 +494,7 @@
 
 
                 </DataGrid.Columns>
+                <!--#endregion-->
             </DataGrid>
         </ScrollViewer>
 
