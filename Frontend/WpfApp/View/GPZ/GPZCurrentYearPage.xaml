@@ -100,22 +100,22 @@
                             <DataTrigger Binding="{Binding Status}"
                                          Value="{x:Static gpzMuvo:StatusRow.Green}">
                                 <Setter Property="Background"
-                                        Value="Green" />
+                                        Value="#92d050" />
                             </DataTrigger>
                             <DataTrigger Binding="{Binding Status}"
                                          Value="{x:Static gpzMuvo:StatusRow.Red}">
                                 <Setter Property="Background"
-                                        Value="Red" />
+                                        Value="#ff0000" />
                             </DataTrigger>
                             <DataTrigger Binding="{Binding Status}"
                                          Value="{x:Static gpzMuvo:StatusRow.Yellow}">
                                 <Setter Property="Background"
-                                        Value="Yellow" />
+                                        Value="#ffff00" />
                             </DataTrigger>
                             <DataTrigger Binding="{Binding Status}"
                                          Value="{x:Static gpzMuvo:StatusRow.Blue}">
                                 <Setter Property="Background"
-                                        Value="Blue" />
+                                        Value="#00b0f0" />
                             </DataTrigger>
                             <DataTrigger Binding="{Binding Status}"
                                          Value="{x:Static gpzMuvo:StatusRow.Common}">
@@ -213,7 +213,7 @@
                                         ElementStyle="{DynamicResource ReportHeader}"
                                         HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
                     <DataGridTextColumn Header="Основание закупки (в соответсвии с ЕОСЗ)"
-                                        FontSize="5"
+                                        FontSize="18"
                                         MaxWidth="200"
                                         MinWidth="100"
                                         Width="*"
@@ -503,7 +503,7 @@
                    Padding="25,0,0,0"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Center"
-                   Text="Итого заключённых договоров:" />
+                   Text="Итого заключённых договоров: 1556.38" />
         <Border Grid.Row="3"
                 BorderBrush="Black"
                 BorderThickness="0,0.1,0,0">
@@ -511,7 +511,7 @@
                        Padding="25,0,0,0"
                        HorizontalAlignment="Left"
                        VerticalAlignment="Center"
-                       Text="Всего ГПЗ:" />
+                       Text="Всего ГПЗ: 15562.08" />
         </Border>
 
     </Grid>

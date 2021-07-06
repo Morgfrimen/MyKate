@@ -15,7 +15,7 @@
         public string PlannedPurchaseMethod { get; set; }
         public string InAccordanceEEA { get; set; }
         public string UnitMeasurement { get; set; }
-        public uint Quantity { get; set; }
+        public uint? Quantity { get; set; }
         public string OrderLetterJSC { get; set; }
         public IntegrationEIC IntegrationEic { get; set; }
         public StatusRow Status { get; set; }
