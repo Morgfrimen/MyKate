@@ -373,7 +373,7 @@
         <reports:Report3_4Models Number="1"
                                  Name="ИП Канухин А.В."
                                  Subject="Покупка новогодних подарков детям"
-                                 Sum="18450.00"
+                                 Sum="18450"
                                  Remark="" />
         <reports:Report3_4Models Number="2"
                                  Name="ИП Алехин В.В."
@@ -393,7 +393,7 @@
         <reports:Report3_4Models Number="5"
                                  Name="Почта России АО (г.Ангарск)"
                                  Subject="Отправка корреспонденции"
-                                 Sum="542.4"
+                                 Sum="5424"
                                  Remark="" />
 
         <reports:Report3_4Models Number="6"
