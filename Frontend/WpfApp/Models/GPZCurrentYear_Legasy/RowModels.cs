@@ -1,4 +1,4 @@
-﻿namespace WpfApp.Models.GPZCurrentYear
+﻿namespace WpfApp.Models.GPZCurrentYear_Legasy
 {
     /// <summary>
     ///     Одна строка данных для ГПЗ текущего года

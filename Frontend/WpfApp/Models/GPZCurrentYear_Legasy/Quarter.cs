@@ -1,4 +1,4 @@
-﻿namespace WpfApp.Models.GPZCurrentYear
+﻿namespace WpfApp.Models.GPZCurrentYear_Legasy
 {
     public sealed class Quarter
     {

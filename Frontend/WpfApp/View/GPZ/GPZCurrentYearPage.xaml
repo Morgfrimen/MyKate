@@ -72,170 +72,193 @@
         </Border>
         <!--<TextBlock Grid.Row="1"
                    Text="Приобретение основных средств:  (т.е. средств стоимостью  без НДС 40 тыс. руб. и более)"/>-->
-        <DataGrid Grid.Row="1"
-                  Background="Transparent"
-                  AutoGenerateColumns="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Номер позиции закупки №п/п"
-                                    MaxWidth="100"
-                                    Width="*"
-                                    HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}"/>
-                <DataGridTextColumn Header="Предмет закупки"
-                                    MaxWidth="50"
-                                    Width="*"
-                                    HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}"/>
-                <DataGridTextColumn Header="Направление деятельности"
-                                    MaxWidth="100"
-                                    Width="*"
-                                    HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
-                <DataGridTextColumn Header="Источник финансирования"
-                                    MaxWidth="100"
-                                    Width="*"
-                                    HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
-                <DataGridTextColumn Header="Группа продукции, работ и услуг"
-                                    MaxWidth="100"
-                                    Width="*"
-                                    HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
-                <DataGridTextColumn Header="Планируемая цена (тыс.руб. с НДС)"
-                                    MaxWidth="80"
-                                    Width="*"
-                                    HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
-                <DataGridTextColumn Header="Код ОКПД2 и его наименование"
-                                    MaxWidth="80"
-                                    Width="*"
-                                    HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
-                <DataGridTextColumn Header="Доля закупок у российского призводителя по ПП 2013"
-                                    MaxWidth="100"
-                                    Width="*">
-                    <DataGridTextColumn.HeaderStyle>
-                        <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource {x:Type DataGridColumnHeader}}">
-                            <Setter Property="FontSize"
-                                    Value="18"/>
-                        </Style>
-                    </DataGridTextColumn.HeaderStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="Уникальный реестровый номер ГИСП"
-                                    MaxWidth="100"
-                                    Width="*"
-                                    HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
-                <DataGridTextColumn Header="Детализация по ГИСП"
-                                    MaxWidth="100"
-                                    Width="*"
-                                    HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
-                <DataGridTextColumn Header="Планируемый способ закупки"
-                                    MaxWidth="100"
-                                    Width="*"
-                                    HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
-                <DataGridTextColumn Header="Основание закупки (в соответсвии с ЕОСЗ)"
-                                    FontSize="5"
-                                    MaxWidth="100"
-                                    Width="*"
-                                    HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
-                <DataGridTextColumn Header="Единица измерения"
-                                    MaxWidth="100"
-                                    Width="*"
-                                    HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
-                <DataGridTextColumn Header="Количество"
-                                    MaxWidth="100"
-                                    Width="*"
-                                    HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
-                <DataGridTextColumn Header="Приказ/письмо АО «Атом-охрана»"
-                                    MaxWidth="100"
-                                    Width="*"
-                                    HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
-                <DataGridTemplateColumn Width="*">
-                    <DataGridTemplateColumn.HeaderStyle>
-                        <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DataGridReport3_3_4}">
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="DataGridColumnHeader">
-                                        <ContentControl>
-                                            <Grid>
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="10*"/>
-                                                    <RowDefinition Height="90*"/>
-                                                </Grid.RowDefinitions>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition/>
-                                                    <ColumnDefinition/>
-                                                    <ColumnDefinition/>
-                                                    <ColumnDefinition/>
-                                                    <ColumnDefinition/>
-                                                    <ColumnDefinition/>
-                                                </Grid.ColumnDefinitions>
+        <ScrollViewer Grid.Row="1"
+                      VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Auto"
+                      HorizontalAlignment="Stretch">
+            <DataGrid Background="Transparent" 
+                      MinWidth="1800"
+                      HorizontalAlignment="Center"
+                      AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Номер позиции закупки №п/п"
+                                        Width="*"
+                                        HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
+                    <DataGridTextColumn Header="Предмет закупки"
+                                        MaxWidth="80"
+                                        MinWidth="50"
+                                        Width="*"
+                                        HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
+                    <DataGridTextColumn Header="Направление деятельности"
+                                        MaxWidth="100"
+                                        MinWidth="100"
+                                        Width="*"
+                                        HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
+                    <DataGridTextColumn Header="Источник финансирования"
+                                        MaxWidth="200"
+                                        MinWidth="100"
+                                        Width="*"
+                                        HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
+                    <DataGridTextColumn Header="Группа продукции, работ и услуг"
+                                        MaxWidth="200"
+                                        MinWidth="100"
+                                        Width="*"
+                                        HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
+                    <DataGridTextColumn Header="Планируемая цена (тыс.руб. с НДС)"
+                                        MaxWidth="80"
+                                        MinWidth="50"
+                                        Width="*"
+                                        HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
+                    <DataGridTextColumn Header="Код ОКПД2 и его наименование"
+                                        MaxWidth="80"
+                                        MinWidth="50"
+                                        Width="*"
+                                        HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
+                    <DataGridTextColumn Header="Доля закупок у российского призводителя по ПП 2013"
+                                        MaxWidth="200"
+                                        MinWidth="100"
+                                        Width="*">
+                        <DataGridTextColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader"
+                                   BasedOn="{StaticResource {x:Type DataGridColumnHeader}}">
+                                <Setter Property="FontSize"
+                                        Value="18" />
+                            </Style>
+                        </DataGridTextColumn.HeaderStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Уникальный реестровый номер ГИСП"
+                                        MaxWidth="200"
+                                        MinWidth="100"
+                                        Width="*"
+                                        HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
+                    <DataGridTextColumn Header="Детализация по ГИСП"
+                                        MaxWidth="200"
+                                        MinWidth="50"
+                                        Width="*"
+                                        HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
+                    <DataGridTextColumn Header="Планируемый способ закупки"
+                                        MaxWidth="200"
+                                        MinWidth="100"
+                                        Width="*"
+                                        HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
+                    <DataGridTextColumn Header="Основание закупки (в соответсвии с ЕОСЗ)"
+                                        FontSize="5"
+                                        MaxWidth="200"
+                                        MinWidth="100"
+                                        Width="*"
+                                        HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
+                    <DataGridTextColumn Header="Единица измерения"
+                                        MaxWidth="200"
+                                        MinWidth="50"
+                                        Width="*"
+                                        HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
+                    <DataGridTextColumn Header="Количество"
+                                        MaxWidth="200"
+                                        MinWidth="50"
+                                        Width="*"
+                                        HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
+                    <DataGridTextColumn Header="Приказ/письмо АО «Атом-охрана»"
+                                        MinWidth="100"
+                                        Width="*"
+                                        HeaderStyle="{StaticResource {x:Type DataGridColumnHeader}}" />
+                    <DataGridTemplateColumn MinWidth="500"
+                                            Width="*">
+                        <DataGridTemplateColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader"
+                                   BasedOn="{StaticResource DataGridReport3_3_4}">
+                                <Setter Property="MaxHeight"
+                                        Value="250"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="DataGridColumnHeader">
+                                            
+                                            <ContentControl>
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="10*" />
+                                                        <RowDefinition Height="90*" />
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                    </Grid.ColumnDefinitions>
 
-                                                <Border BorderThickness="0,0,0.5,1"
-                                                        BorderBrush="Black"
-                                                        Grid.Row="0"
-                                                        Grid.ColumnSpan="6">
-                                                    <TextBlock 
-                                                               Text="Интеграция ЕИС"
-                                                               Style="{StaticResource {x:Type TextBlock}}" />
-                                                </Border>
-                                                <Border Grid.Row="1"
-                                                        Grid.Column="0"
-                                                        BorderThickness="0,0,0.5,0"
-                                                        BorderBrush="Black">
-                                                    <TextBlock 
-                                                               Text="Дата публикации процедуры"
-                                                               Style="{StaticResource TextBlockRotation}"
-                                                               MinWidth="200" />
-                                                </Border>
-                                                <Border Grid.Row="1"
-                                                        Grid.Column="1"
-                                                        BorderThickness="0,0,0.5,0"
-                                                        BorderBrush="Black">
-                                                    <TextBlock MinWidth="200"
-                                                               Text="Срок завершения подачи заявок"
-                                                               Style="{StaticResource TextBlockRotation}" />
-                                                </Border>
-                                                <Border Grid.Row="1"
-                                                        Grid.Column="2"
-                                                        BorderThickness="0,0,0.5,0"
-                                                        BorderBrush="Black">
-                                                    <TextBlock MinWidth="200"
-                                                               FontSize="18"
-                                                               Text="Дата публикации протокодла рассмотрения заявок"
-                                                               Style="{StaticResource TextBlockRotation}" />
-                                                </Border>
-                                                <Border Grid.Row="1"
-                                                        Grid.Column="3"
-                                                        BorderThickness="0,0,0.5,0"
-                                                        BorderBrush="Black">
-                                                    <TextBlock MinWidth="200"
-                                                               Text="Дата публикации итогового протокола"
-                                                               Style="{StaticResource TextBlockRotation}" />
-                                                </Border>
-                                                <Border Grid.Row="1"
-                                                        Grid.Column="4"
-                                                        BorderThickness="0,0,0.5,0"
-                                                        BorderBrush="Black">
-                                                    <TextBlock MinWidth="200"
-                                                               Text="Дата заключения договора"
-                                                               Style="{StaticResource TextBlockRotation}" />
-                                                </Border>
-                                                <Border Grid.Row="1"
-                                                        Grid.Column="5"
-                                                        BorderThickness="0,0,0.5,0"
-                                                        BorderBrush="Black">
-                                                    <TextBlock MinWidth="200"
-                                                               Text="Статус процедуры"
-                                                               Style="{StaticResource TextBlockRotation}" />
-                                                </Border>
+                                                    <Border BorderThickness="0,0,0.5,1"
+                                                            BorderBrush="Black"
+                                                            Grid.Row="0"
+                                                            Grid.ColumnSpan="6">
+                                                        <TextBlock Text="Интеграция ЕИС"
+                                                                   VerticalAlignment="Center"
+                                                                   Style="{StaticResource {x:Type TextBlock}}" />
+                                                    </Border>
+                                                    <Border Grid.Row="1"
+                                                            Grid.Column="0"
+                                                            BorderThickness="0,0,0.5,0"
+                                                            BorderBrush="Black">
+                                                        <TextBlock Text="Дата публикации процедуры"
+                                                                   Style="{StaticResource TextBlockRotation}"
+                                                                   MinWidth="200" />
+                                                    </Border>
+                                                    <Border Grid.Row="1"
+                                                            Grid.Column="1"
+                                                            BorderThickness="0,0,0.5,0"
+                                                            BorderBrush="Black">
+                                                        <TextBlock MinWidth="200"
+                                                                   Text="Срок завершения подачи заявок"
+                                                                   Style="{StaticResource TextBlockRotation}" />
+                                                    </Border>
+                                                    <Border Grid.Row="1"
+                                                            Grid.Column="2"
+                                                            BorderThickness="0,0,0.5,0"
+                                                            BorderBrush="Black">
+                                                        <TextBlock MinWidth="200"
+                                                                   FontSize="18"
+                                                                   Text="Дата публикации протокола рассмотрения заявок"
+                                                                   Style="{StaticResource TextBlockRotation}" />
+                                                    </Border>
+                                                    <Border Grid.Row="1"
+                                                            Grid.Column="3"
+                                                            BorderThickness="0,0,0.5,0"
+                                                            BorderBrush="Black">
+                                                        <TextBlock MinWidth="200"
+                                                                   Text="Дата публикации итогового протокола"
+                                                                   Style="{StaticResource TextBlockRotation}" />
+                                                    </Border>
+                                                    <Border Grid.Row="1"
+                                                            Grid.Column="4"
+                                                            BorderThickness="0,0,0.5,0"
+                                                            BorderBrush="Black">
+                                                        <TextBlock MinWidth="200"
+                                                                   Text="Дата заключения договора"
+                                                                   Style="{StaticResource TextBlockRotation}" />
+                                                    </Border>
+                                                    <Border Grid.Row="1"
+                                                            Grid.Column="5"
+                                                            BorderThickness="0,0,0.5,0"
+                                                            BorderBrush="Black">
+                                                        <TextBlock MinWidth="200"
+                                                                   Text="Статус процедуры"
+                                                                   Style="{StaticResource TextBlockRotation}" />
+                                                    </Border>
 
 
-                                            </Grid>
-                                        </ContentControl>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </DataGridTemplateColumn.HeaderStyle>
-                </DataGridTemplateColumn>
+                                                </Grid>
+                                            </ContentControl>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </DataGridTemplateColumn.HeaderStyle>
+                    </DataGridTemplateColumn>
 
 
-            </DataGrid.Columns>
-        </DataGrid>
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
 
         <TextBlock Grid.Row="2"
                    TextAlignment="Left"
